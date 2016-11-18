@@ -10,20 +10,26 @@
  
     <!-- preload all our textures -->
     <a-assets>
-        <img id='moon' crossorigin src='https://textures.forrest.cz/textures/library/maps/Earth-hires.jpg'/>
+        <img id='earth' crossorigin src='https://textures.forrest.cz/textures/library/maps/Earth-hires.jpg'/>
         <img id='stars' crossorigin src='stars.jpg'/>
         <img id='ground' crossorigin src='ground.jpg'>
+        <img id='moon' crossorigin src='moon.jpg'/>
     </a-assets>
  
     <!-- add the moon to the scene -->
-    <a-sphere position='0 50 0' radius='25' material='src: #moon;'>
+    <a-sphere position='200 50 0' radius='50' material='src: #earth;'>
         <!-- add an animation to make it rotate -->
-        <a-animation to='360 360 0' easing='linear' dur='200000' repeat='indefinite'/>
+        <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
+    </a-sphere>
+      
+    <a-sphere position='-200 50 0' radius='15' material='src: #moon;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
     </a-sphere>
  
     <!-- add the backdrop of stars -->
     <a-sky src='#stars' radius='2500'></a-sky>
-      <a-animation to='180 360 0' easing='linear' dur='2000000' repeat='indefinite'/>
+      <a-animation to='360 360 0' easing='linear' dur='2000000' repeat='indefinite'/>
                 
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
