@@ -15,7 +15,7 @@
         <img id='ground' crossorigin src='ground.jpg'>
         <img id='moon' crossorigin src='moon.jpg'/>
         <img id='sun' crossorigin src='http://solarviews.com/raw/sun/suncyl1.jpg'/>
-        <img id='jupier' crossorigin src='https://textures.forrest.cz/textures/library/maps/Jupiter.jpg'/>
+        <img id='jupiter' crossorigin src='https://textures.forrest.cz/textures/library/maps/Jupiter.jpg'/>
     </a-assets>
  
     <!-- add the moon to the scene -->
@@ -29,14 +29,14 @@
         <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
     </a-sphere>
       
-     <a-sphere position='0 700 -2000' radius='50' material='src: #jupiter;'>
+     <a-sphere position='0 500 -2000' radius='50' material='src: #jupiter;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
       </a-sphere>
       
       <a-sphere position='0 700 2000' radius='50' material='src: #sun;'>
         <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
+        <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
       </a-sphere>
   
     <!-- add the backdrop of stars -->
