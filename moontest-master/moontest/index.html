@@ -29,7 +29,7 @@
     <a-sphere position='-100 50 0' radius='25' material='src: #moon;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
-        <a-animation from='0 60 0' to='0 40 0' easing='ease-in-out-quint' repeat='indefinite'/>
+        <a-animation from='60 0 0' to='40 0 0' easing='ease-in-out-quint' repeat='indefinite'/>
     </a-sphere>
       
      <a-sphere position='0 500 -2000' radius='50' material='src: #jupiter;'>
@@ -40,6 +40,9 @@
       <a-sphere position='0 700 2000' radius='50' material='src: #sun;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+          <a-light intensity="1">
+            <a-animation attribute="intensity" to="5"></a-animation>
+          </a-light>
       </a-sphere>
       
       <a-sphere position='400 100 -1000' radius='25' material='src: #mars;'>
@@ -49,7 +52,7 @@
       
                 <!-- add the backdrop of stars -->
     <a-sky src='#stars' radius='2500'></a-sky>
-      <a-animation to='360 360 0' easing='linear' dur='5000000' repeat='indefinite'/>
+      <a-animation to='360 360 0' easing='linear' dur='3000000' repeat='indefinite'/>
       
 
     <!-- add a view camera (2d only) -->
