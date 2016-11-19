@@ -24,8 +24,7 @@
         <img id='uranus' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_uranus.jpg'/>
         <img id='uranusring' crossorigin src='http://pre09.deviantart.net/ef82/th/pre/i/2015/272/4/7/uranus__rings_by_jcpag2010-d98olap.png'/>
         <img id='neptune' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_neptune.jpg'/>
-        
-    </a-assets>
+        </a-assets>
  
       
     <!-- add the moon to the scene -->
@@ -67,7 +66,7 @@
         <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere position='80 500 1500' radius='15' material='src: #mercury;'>
+      <a-sphere position='80 500 1500' radius='10' material='src: #mercury;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
         </a-sphere>
@@ -77,10 +76,14 @@
         <a-animation to='360 0 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere position='-2000 50 -500' radius='10' rotation='0 90 0' material='src: #neptune;'>
+      <a-sphere position='-2000 50 -500' radius='15' rotation='0 90 0' material='src: #neptune;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
+      
+      <a-entity id="earth" rotation="0 0 0">
+        <a-entity id="moon"></a-entity>
+      </a-entity>
       
       <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
       <a-ring src="#uranusring" position='2000 50 0' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
