@@ -19,9 +19,6 @@
         <img id='mars' crossorigin src='https://textures.forrest.cz/textures/library/maps/Mars.jpg'/>
     </a-assets>
  
-          <!-- add the backdrop of stars -->
-    <a-sky src='#stars' radius='2500'></a-sky>
-      <a-animation to='360 360 0' easing='linear' dur='2500000' repeat='indefinite'/>
       
     <!-- add the moon to the scene -->
     <a-sphere position='1000 0 0' radius='250' material='src: #earth;'>
@@ -49,6 +46,10 @@
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
+      
+                <!-- add the backdrop of stars -->
+    <a-sky src='#stars' radius='2500'></a-sky>
+      <a-animation to='360 360 0' easing='linear' dur='25000000' repeat='indefinite'/>
       
 
     <!-- add a view camera (2d only) -->
