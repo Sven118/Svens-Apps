@@ -42,6 +42,9 @@
     <!-- add the backdrop of stars -->
     <a-sky src='#stars' radius='2500'></a-sky>
       <a-animation to='360 360 0' easing='linear' dur='2000000' repeat='indefinite'/>
+      
+      <a-light type="ambient" color="#222"></a-light>
+      <a-light type="point" color="blue" position="0 5 0" light.intensity="5.0"></a-light>
                 
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
