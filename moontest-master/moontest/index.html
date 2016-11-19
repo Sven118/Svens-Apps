@@ -16,6 +16,7 @@
         <img id='moon' crossorigin src='moon.jpg'/>
         <img id='sun' crossorigin src='http://solarviews.com/raw/sun/suncyl1.jpg'/>
         <img id='jupiter' crossorigin src='https://textures.forrest.cz/textures/library/maps/Jupiter.jpg'/>
+        <img id='mars' crossorigin src='https://textures.forrest.cz/textures/library/maps/Mars.jpg'/>
     </a-assets>
  
     <!-- add the moon to the scene -->
@@ -35,6 +36,11 @@
       </a-sphere>
       
       <a-sphere position='0 700 2000' radius='50' material='src: #sun;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='0 400 -1050' radius='25' material='src: #mars;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
       </a-sphere>
