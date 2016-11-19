@@ -20,6 +20,7 @@
         <img id='saturn' crossorigin src='http://www.orxonox.net/export/8726/data/pool/images/textures/stellarobjects/sol/planet_saturn.png'/>
         <img id="ring" src="http://pre04.deviantart.net/f880/th/pre/i/2013/228/4/f/stock_image___saturn_rings_by_alpha_element-d6ifske.png">
         <img id='venus' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_venus_atmosphere.jpg'/>
+        <img id='mercury' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_mercury.jpg'/>
     </a-assets>
  
       
@@ -58,6 +59,11 @@
       </a-sphere>
       
       <a-sphere position='-100 100 600' radius='25' material='src: #venus;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='80 700 1500' radius='25' material='src: #mercury;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
       </a-sphere>
