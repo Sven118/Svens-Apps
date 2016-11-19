@@ -24,6 +24,7 @@
         <img id='uranus' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_uranus.jpg'/>
         <img id='uranusring' crossorigin src='http://pre09.deviantart.net/ef82/th/pre/i/2015/272/4/7/uranus__rings_by_jcpag2010-d98olap.png'/>
         <img id='neptune' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_neptune.jpg'/>
+        <img id="floor" src="http://vignette3.wikia.nocookie.net/chiquito/images/f/f3/Tron_Background.jpg/revision/20130531122013?path-prefix=es">
         </a-assets>
  
       
@@ -81,9 +82,7 @@
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-entity id="earth" rotation="0 45 0">
-        <a-entity id="moon"></a-entity>
-      </a-entity>
+      <a-circle src="#floor" radius="50" rotation="-90 0 0"></a-circle>
       
       <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
       <a-ring src="#uranusring" position='2000 50 0' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
