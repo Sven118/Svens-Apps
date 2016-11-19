@@ -16,6 +16,7 @@
         <img id='moon' crossorigin src='moon.jpg'/>
         <img id='sun' crossorigin src='http://solarviews.com/raw/sun/suncyl1.jpg'/>
         <img id='jupiter' crossorigin src='https://textures.forrest.cz/textures/library/maps/Jupiter.jpg'/>
+        <a-asset-item id="astorid" src="astroid.dae"/>
     </a-assets>
  
     <!-- add the moon to the scene -->
@@ -38,6 +39,8 @@
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
       </a-sphere>
+      
+      <a-collada-model src="#astroid"></a-collada-model>
   
     <!-- add the backdrop of stars -->
     <a-sky src='#stars' radius='2500' rotate='200 0 0'></a-sky>
