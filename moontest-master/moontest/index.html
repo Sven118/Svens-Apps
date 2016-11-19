@@ -23,6 +23,7 @@
         <img id='mercury' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_mercury.jpg'/>
         <img id='uranus' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_uranus.jpg'/>
         <img id='uranusring' crossorigin src='http://pre09.deviantart.net/ef82/th/pre/i/2015/272/4/7/uranus__rings_by_jcpag2010-d98olap.png'/>
+        <img id='neptune' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_neptune.jpg'/>
     </a-assets>
  
       
@@ -71,6 +72,11 @@
         </a-sphere>
       
       <a-sphere position='2000 50 0' radius='30' rotation='0 90 0' material='src: #uranus;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='360 0 0' easing='linear' dur='100000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='-2000 50 -500' radius='30' rotation='0 90 0' material='src: #neptune;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
