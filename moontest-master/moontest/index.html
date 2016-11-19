@@ -19,15 +19,21 @@
         <img id='mars' crossorigin src='https://textures.forrest.cz/textures/library/maps/Mars.jpg'/>
     </a-assets>
  
+          <!-- add the backdrop of stars -->
+    <a-sky src='#stars' radius='2500' rotate='200 0 0'></a-sky>
+      <a-animation to='360 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+      
     <!-- add the moon to the scene -->
     <a-sphere position='1000 0 0' radius='250' material='src: #earth;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+        <a-animation easing='ease-in-out-cubic'/>
     </a-sphere>
       
     <a-sphere position='-100 50 0' radius='25' material='src: #moon;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
+        <a-animation easing='ease-in-out-cubic' repeat='indefinite'/>
     </a-sphere>
       
      <a-sphere position='0 500 -2000' radius='50' material='src: #jupiter;'>
@@ -45,9 +51,6 @@
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-  
-    <!-- add the backdrop of stars -->
-    <a-sky src='#stars' radius='2500' rotate='200 0 0'></a-sky>
 
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
