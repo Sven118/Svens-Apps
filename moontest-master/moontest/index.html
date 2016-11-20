@@ -24,7 +24,7 @@
         <img id='uranus' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_uranus.jpg'/>
         <img id='uranusring' crossorigin src='http://pre09.deviantart.net/ef82/th/pre/i/2015/272/4/7/uranus__rings_by_jcpag2010-d98olap.png'/>
         <img id='neptune' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_neptune.jpg'/>
-        <img id="floor" src="https://s-media-cache-ak0.pinimg.com/originals/d7/8d/40/d78d4069da54ade6085b7d540cfde597.jpg">
+        <img id="floor" src="floor.jpg">
         </a-assets>
  
       
@@ -82,10 +82,8 @@
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-box material='src: #floor;' position='-48 .005 -48' depth="32" height="0" width="32" e></a-box>
-      <a-box material='src: #floor;' position='-16 .005 -16' depth="32" height="0" width="32" e></a-box>
-      <a-box material='src: #floor;' position='-48 .005 -16' depth="32" height="0" width="32" e></a-box>
-      <a-box material='src: #floor;' position='-16 .005 -48' depth="32" height="0" width="32" e></a-box>
+      <a-box material='src: #floor;' position='0 .005 0' depth="128" height="0" width="128" e></a-box>
+
       
       <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
       <a-ring src="#uranusring" position='2000 50 0' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
