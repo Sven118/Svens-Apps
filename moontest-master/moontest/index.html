@@ -82,7 +82,9 @@
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-entity class="not-clickable" geometry="primitive: sphere" position="-1 0 0"></a-entity>
+      <a-entity raycaster="objects: .clickable" cursor></a-entity>
+        <a-entity class="clickable" geometry="primitive: box" position="1 0 0"></a-entity>
+        <a-entity class="not-clickable" geometry="primitive: sphere" position="-1 0 0"></a-entity>
 
       
       <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
