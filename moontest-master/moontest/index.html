@@ -39,7 +39,7 @@
         <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
     </a-sphere>
       
-     <a-sphere position='0 500 -2000' radius='50' material='src: #jupiter;'>
+     <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
@@ -81,13 +81,7 @@
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
-      
-      <a-entity raycaster="objects: .clickable" cursor
-               class="clickable" geometry="primitive: box" position="1 0 0"
-               class="not-clickable" geometry="primitive: sphere" position="-1 0 0">
-      </a-entity>
-
-      
+       
       <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
       <a-ring src="#uranusring" position='2000 50 0' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
       
