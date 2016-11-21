@@ -25,6 +25,7 @@
         <img id='uranusring' crossorigin src='http://pre09.deviantart.net/ef82/th/pre/i/2015/272/4/7/uranus__rings_by_jcpag2010-d98olap.png'/>
         <img id='neptune' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_neptune.jpg'/>
         <img id="floor" src="floor.jpg">
+        <img id="floor" src="http://naturalearth.springercarto.com/ne3_data/8192/clouds/storm_clouds_8k.jpg">
         </a-assets>
  
       
@@ -32,6 +33,10 @@
     <a-sphere position='1000 0 500' radius='250' material='src: #earth;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+    </a-sphere>
+      
+     <a-sphere position='1000 0 500' radius='255' material='src: #clouds;'>
+        <a-animation to='0 360 0' easing='linear' dur='200500' repeat='indefinite'/>
     </a-sphere>
       
     <a-sphere position='-100 50 0' radius='25' material='src: #moon;'>
