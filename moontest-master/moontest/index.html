@@ -26,6 +26,7 @@
         <img id='neptune' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_neptune.jpg'/>
         <img id="floor" src="floor.jpg">
         <img id="clouds" crossorigin src="clouds1.png">
+        <a-asset-item id="ship" src="ship.dae"></a-asset-item>
         </a-assets>
  
       
@@ -39,7 +40,7 @@
         <a-animation to='0 360 0' easing='linear' dur='305000' repeat='indefinite'/>
     </a-sphere>
       
-    <a-sphere position='-100 50 0' radius='25' spherecollider='enable' material='src: #moon;'>
+    <a-sphere position='-100 50 0' radius='25' spherecollider='true' material='src: #moon;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
     </a-sphere>
@@ -93,6 +94,8 @@
        
       <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
       <a-ring src="#uranusring" position='2000 50 0' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
+      
+      <a-entity collada-model="#ship"></a-entity>
       
                 <!-- add the backdrop of stars -->
     <a-sky src='#stars' radius='2500'></a-sky>
