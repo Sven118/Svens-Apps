@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- set up the scene -->
-    <a-scene altspace="verticalAlign: bottom">
+    <a-scene altspace="fullspace: true">
  
     <!-- preload all our textures -->
     <a-assets>
@@ -84,11 +84,6 @@
       </a-sphere>
       
       <a-sphere position='-2000 50 -500' radius='15' rotation='0 90 0' material='src: #neptune;'>
-        <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
-      </a-sphere>
-      
-      <a-sphere position='100 20 0' radius='5' rotation='0 90 0' material='src: #neptune;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
