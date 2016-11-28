@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <title>Moon Test</title>
+    <meta name="moontest" content="Models — A-Frame">
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
     <script src="../index.js"></script>
     <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.1.0/dist/aframe-altspace-component.min.js"></script>
   </head>
   <body>
     <!-- set up the scene -->
-    <a-scene altspace='altspace="fullspace: true";'>
+    <a-scene altspace="vertical-align: bottom;">
  
     <!-- preload all our textures -->
     <a-assets>
         <img id='stars' crossorigin src='stars.jpg'/>
     </a-assets>
- 
-    <!-- add the backdrop of stars -->
-    <a-sky src='#stars' radius='2000'></a-sky>
+      
+     <a-sky src='#stars' radius='2500'></a-sky>
                 
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
