@@ -2,8 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Sky Boxes</title>
-    <meta name="skybox" content="Skybox — A-Frame">
+    <title>Moon Test</title>
+    <meta name="moontest" content="Models — A-Frame">
     <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
     <script src="../index.js"></script>
     <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.1.0/dist/aframe-altspace-component.min.js"></script>
@@ -14,11 +14,92 @@
  
     <!-- preload all our textures -->
     <a-assets>
-        <img id='stars' crossorigin src='http://kvkh.16mb.com/wp-content/uploads/2015/02/Skybox_abstract_1-e1429639470735.jpg'/>
+        <img id='earth' crossorigin src='https://textures.forrest.cz/textures/library/maps/Earth-hires.jpg'/>
+        <img id='stars' crossorigin src='stars.jpg'/>
+        <img id='ground' crossorigin src='ground.jpg'>
+        <img id='moon' crossorigin src='moon.jpg'/>
+        <img id='sun' crossorigin src='http://solarviews.com/raw/sun/suncyl1.jpg'/>
+        <img id='jupiter' crossorigin src='https://textures.forrest.cz/textures/library/maps/Jupiter.jpg'/>
+        <img id='mars' crossorigin src='https://textures.forrest.cz/textures/library/maps/Mars.jpg'/>
+        <img id='saturn' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_saturn.jpg'/>
+        <img id="ring" src="http://pre04.deviantart.net/f880/th/pre/i/2013/228/4/f/stock_image___saturn_rings_by_alpha_element-d6ifske.png">
+        <img id='venus' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_venus_atmosphere.jpg'/>
+        <img id='mercury' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_mercury.jpg'/>
+        <img id='uranus' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_uranus.jpg'/>
+        <img id='uranusring' crossorigin src='http://pre09.deviantart.net/ef82/th/pre/i/2015/272/4/7/uranus__rings_by_jcpag2010-d98olap.png'/>
+        <img id='neptune' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_neptune.jpg'/>
+        <img id="floor" src="floor.jpg">
+        <img id="clouds" crossorigin src="clouds1.png">
         </a-assets>
+
       
-     <a-sky src='#stars' radius='2500'></a-sky>
-                
+    <!-- add the moon to the scene -->
+    <a-sphere position='1000 0 500' radius='250' material='src: #earth;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+    </a-sphere>
+      
+     <a-sphere position='1000 0 500' radius='256' transparent='true' material='src: #clouds;'>
+        <a-animation to='0 360 0' easing='linear' dur='305000' repeat='indefinite'/>
+    </a-sphere>
+      
+    <a-sphere position='-100 50 0' radius='25' spherecollider='true' material='src: #moon;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
+    </a-sphere>
+      
+     <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='0 700 2000' radius='50' material='src: #sun;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='400 100 -500' radius='25' material='src: #mars;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='-1000 200 -2000' radius='40' rotation='0 90 0' material='src: #saturn;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='-200 100 600' radius='25' material='src: #venus;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='80 500 1500' radius='10' material='src: #mercury;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+        </a-sphere>
+      
+      <a-sphere position='2000 50 0' radius='20' rotation='0 90 0' material='src: #uranus;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='360 0 0' easing='linear' dur='100000' repeat='indefinite'/>
+      </a-sphere>
+      
+      <a-sphere position='-2000 50 -500' radius='15' rotation='0 90 0' material='src: #neptune;'>
+        <!-- add an animation to make it rotate -->
+        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+      </a-sphere>
+            
+      <a-box material='src: #floor;' position='0 .005 0' depth="128" height="0" width="128" class="not-clickable" 
+            altspace-collider="enabled: false"  
+        ></a-box>
+       
+      <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
+      <a-ring src="#uranusring" position='2000 50 0' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
+
+
+    <a-sky src='#stars' radius='2500'></a-sky>
+  
+      
+
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
         <a-camera></a-camera>
