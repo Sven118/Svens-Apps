@@ -1,29 +1,18 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-    <script src="../index.js"></script>
-    <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.1.0/dist/aframe-altspace-component.min.js"></script>
+    <meta charset="utf-8">
+    <title>Models</title>
+    <meta name="description" content="Models — A-Frame">
+  <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.1.0/dist/aframe-altspace-component.min.js"></script>
+
   </head>
   <body>
-    <!-- set up the scene -->
-    <a-scene altspace="vertical-align: bottom;">
- 
-    <!-- preload all our textures -->
-    <a-assets>
-        <img id='stars' crossorigin src='stars.jpg'/>
-        </a-assets>
+    <a-scene altspace ='fullspace: true' >
 
-    <a-sky src='#stars' radius='2500'></a-sky>
-  
-      
+      <a-assets>
+        
+        <img id="sky1" src="http://cdn.eso.org/images/large/eso0932a.jpg">
+           </a-assets>
 
-    <!-- add a view camera (2d only) -->
-    <a-entity position='0 0 2'>
-        <a-camera></a-camera>
-    </a-entity>
- 
-    </a-scene>
- 
-  </body>
-</html>
+<a-sky src="#sky1" radius="2500"></a-sky>
