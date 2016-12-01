@@ -45,14 +45,12 @@
     <a-sphere position='-100 50 0' radius='25' spherecollider='true' material='src: #moon;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
-      <a-entity>
           <a-entity position="50 0 0"></a-entity>
             <a-animation attribute="rotation"
                dur="10000"
                fill="forwards"
                to="0 360 0"
                repeat="indefinite"></a-animation>
-          </a-entity>
     </a-sphere>
       
      <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'>
