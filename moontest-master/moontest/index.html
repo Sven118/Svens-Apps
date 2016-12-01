@@ -43,17 +43,17 @@
       <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
             material="color: #FFC107"
             position="1000 0 500">
-  <a-entity id="moonOrbit">
-    <a-animation attribute="rotation"
+       <a-entity id="moonOrbit">
+            <a-animation attribute="rotation"
                  dur="305000"
                  to="0 360 0"
                  repeat="indefinite" 
                  easing="linear"></a-animation>
-    <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
+            <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
               material="src: #moon;"
               position="-1300 50 0"></a-entity>
-      </a-entity>
-  </a-entity>
+            </a-entity>
+        </a-entity>
       
      <a-sphere position='1000 0 500' radius='256' transparent='true' material='src: #clouds;'>
         <a-animation to='0 360 0' easing='linear' dur='550000' repeat='indefinite'/>
@@ -88,16 +88,16 @@
             material="color: #FFC107"
             position='0 700 2000'>
       <a-entity id="mercuryOrbit">
-        <a-animation attribute="rotation"
+         <a-animation attribute="rotation"
                  dur="100000"
                  to="0 360 0"
                  repeat="indefinite" 
                  easing="linear"></a-animation>
-    <a-entity id="mercury" geometry="primitive: sphere; radius: 10" 
+           <a-entity id="mercury" geometry="primitive: sphere; radius: 10" 
               material="src: #mercury;"
               position="60 -30 0"></a-entity>
+           </a-entity>
       </a-entity>
-  </a-entity>
       
       <a-sphere position='2000 -100 -300' radius='20' rotation='0 90 0' material='src: #uranus;'>
         <!-- add an animation to make it rotate -->
@@ -110,8 +110,8 @@
       </a-sphere>
             
       <a-box material='src: #floor;' position='0 .005 0' depth="128" height="0" width="128" class="not-clickable" 
-            altspace-collider="enabled: false"  
-        ></a-box>
+            altspace-collider="enabled: false">
+      </a-box>
        
       <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
       <a-ring src="#uranusring" position='2000 -100 -300' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
