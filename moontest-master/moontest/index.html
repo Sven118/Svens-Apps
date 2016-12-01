@@ -34,10 +34,9 @@
       
       <a-entity id="earth" geometry="primitive: sphere; radius: 250" 
             material="src: #earth;"
-            position="1000 0 500"></a-entity>
+            position="1000 0 500">
   <a-entity id="moonOrbit">
     <a-animation attribute="rotation"
-                 rotation="1000 0 500"
                  dur="100000"
                  to="0 360 0"
                  repeat="indefinite" 
@@ -45,6 +44,7 @@
     <a-entity id="moon" geometry="primitive: sphere; radius: 25" 
               material="src: #moon;"
               position="500 0 0"></a-entity>
+      </a-entity>
   </a-entity>
       
       
