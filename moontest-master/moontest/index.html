@@ -32,7 +32,7 @@
         </a-assets>
 
       
-     <a-sphere position='1000 0 500' radius='250' transparent='true' material='src: #earth;'>
+     <a-sphere position='1000 0 500' radius='250' material='src: #earth;'>
         <a-animation to='0 360 0' easing='linear' dur='355000' repeat='indefinite'/>
     </a-sphere>
       
@@ -41,13 +41,13 @@
             position="1000 0 500">
   <a-entity id="moonOrbit">
     <a-animation attribute="rotation"
-                 dur="200000"
+                 dur="300000"
                  to="0 360 0"
                  repeat="indefinite" 
                  easing="linear"></a-animation>
-    <a-entity id="moon" geometry="primitive: sphere; radius: 25" 
+    <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
               material="src: #moon;"
-              position="1500 0 0"></a-entity>
+              position="-1500 0 0"></a-entity>
       </a-entity>
   </a-entity>
       
