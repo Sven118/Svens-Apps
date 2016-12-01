@@ -39,6 +39,10 @@
             <a-entity geometry="primitive: sphere"  position='-100 50 0' radius='25' spherecollider='true' material='src: #moon;'></a-entity>
     </a-sphere>
       
+    <a-entity position='1000 0 500' geometry="primitive: circle; radius: 1">
+       <a-entity geometry="primitive: sphere; radius: 25" position='500 0 0' scale='0.12 0.12 0.12' material='src: #moon;'/>
+     </a-entity>
+      
      <a-sphere position='1000 0 500' radius='256' transparent='true' material='src: #clouds;'>
         <a-animation to='0 360 0' easing='linear' dur='305000' repeat='indefinite'/>
     </a-sphere>
