@@ -36,21 +36,14 @@
     <a-sphere position='1000 0 500' radius='250' material='src: #earth;'>
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+            <a-sphere position='-100 50 0' radius='25' spherecollider='true' material='src: #moon;'>
+               <!-- add an animation to make it rotate -->
+               <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
+           </a-sphere>
     </a-sphere>
       
      <a-sphere position='1000 0 500' radius='256' transparent='true' material='src: #clouds;'>
         <a-animation to='0 360 0' easing='linear' dur='305000' repeat='indefinite'/>
-    </a-sphere>
-      
-    <a-sphere position='-100 50 0' radius='25' spherecollider='true' material='src: #moon;'>
-        <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
-          <a-entity position="50 0 0"></a-entity>
-            <a-animation attribute="rotation"
-               dur="10000"
-               fill="forwards"
-               to="0 360 0"
-               repeat="indefinite"></a-animation>
     </a-sphere>
       
      <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'>
@@ -93,7 +86,7 @@
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
             
-      <a-box color='#676767' metalness='1' roughness='1' position='0 .005 0' depth="128" height="0" width="128" class="not-clickable" 
+      <a-box material='src: #floor;' position='0 .005 0' depth="128" height="0" width="128" class="not-clickable" 
             altspace-collider="enabled: false"  
         ></a-box>
        
