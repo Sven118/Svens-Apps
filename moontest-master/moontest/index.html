@@ -32,26 +32,24 @@
         </a-assets>
 
       
-      <a-entity id="earth" geometry="primitive: sphere; radius: 250" 
-            material="src: #earth;"
+     <a-sphere position='1000 0 500' radius='250' transparent='true' material='src: #earth;'>
+        <a-animation to='0 360 0' easing='linear' dur='355000' repeat='indefinite'/>
+    </a-sphere>
+      
+      <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
+            material="color: #FFC107"
             position="1000 0 500">
   <a-entity id="moonOrbit">
     <a-animation attribute="rotation"
-                 dur="100000"
+                 dur="200000"
                  to="0 360 0"
                  repeat="indefinite" 
                  easing="linear"></a-animation>
     <a-entity id="moon" geometry="primitive: sphere; radius: 25" 
               material="src: #moon;"
-              position="500 0 0"></a-entity>
+              position="1500 0 0"></a-entity>
       </a-entity>
   </a-entity>
-      
-      
-     <a-sphere position='-100 50 0' radius='25' spherecollider='true' material='src: #moon;'>
-        <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='200000' repeat='indefinite'/>
-    </a-sphere>
       
      <a-sphere position='1000 0 500' radius='256' transparent='true' material='src: #clouds;'>
         <a-animation to='0 360 0' easing='linear' dur='305000' repeat='indefinite'/>
