@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+    <html lang=en>
+		<head>
+			<meta charset=utf-8>
+						<title>Svens Space Place</title>
+						<script src="https://cdn.rawgit.com/mrdoob/three.js/r74/build/three.min.js"></script>
+						<script src="http://sdk.altvr.com/libs/altspace.js/0.22.1/altspace.min.js"></script>
+						<script type="text/javascript" src="http://norybiak.com/js/UltimateLoader.min.js"></script>
+						<script type="text/javascript" src="http://norybiak.com/tools/DevNewRefactored/AudioSpace.js"></script>
+				</head>
+				<body>
+					<script>
+        if (!window.altspace || !window.altspace.inClient) document.write('
+							<h3>To view this example, please open this page in 
+								<a href="http://altvr.com"> AltspaceVR </a>
+							</h3>');
+
+		var NighttimeSpace = (function()
+		{
+		  var ppm = 246.913574;
+		  var loadedObjects = [];
+
+		  var modelBaseUrl = 'models/';
+ 
+		  var masterScale = 1;
+
+		  var skybox1;
+
+		  var earthPosition = new THREE.Vector3(-80000, 80000, -80000);
+		  var earthScale = 16000;
+
+		  scene.add(group);
+
+		  return group;
+		}
+
+		    // Creation of ThreeJS Cube (End)
+
+      function createSkybox(url, update, _opacity)
+      {
+          var _opacity = _opacity || false;
+          var sphereGeo = new THREE.SphereGeometry(400, 20, 20, Math.PI + 0.3, -2*Math.PI);
+          var texture = THREE.ImageUtils.loadTexture( url );
+
+          texture.needsUpdate = update;
+          texture.minFilter = THREE.LinearFilter;
+          texture.magFilter = THREE.LinearFilter;
+          texture.format = THREE.RGBFormat;
+
+          var config;
+          if (_opacity)
+          {
+              config = { color: 0xffffff, map: texture, opacity: _opacity, transparent : true, side: THREE.DoubleSide };
+          }
+          else
+          {
+              config = { color: 0xffffff, map: texture, side: THREE.DoubleSide };
+          }
+
+          var sphereMaterial = new THREE.MeshBasicMaterial( config );
+
+          return new THREE.Mesh(sphereGeo, sphereMaterial);
+      }
+
+      function onLoaded()
+      {
+          var modelRoot = new THREE.Group();
+          modelRoot.scale.set(ppm, ppm, ppm);
+          scene.add(modelRoot);
+          for (var i = 0; i < models.length; i++)
+          {
+              var obj = models[i].object;
+              var name = models[i].name;
+              var spawnPosition = new THREE.Vector3();
+
+              spawnPosition.copy(models[i].position);
+              spawnPosition.multiplyScalar(masterScale);
+              obj.position.copy(spawnPosition);//initial position
+              obj.scale.set(masterScale, masterScale, masterScale);
+
+          }
+      }
+
+      function RandInt(min, max)
+      {
+          return Math.floor(Math.random() * (max - min)) + min;
+      }
+
+      function start()
+      {
+          scene.scale.set(1/ppm, 1/ppm, 1/ppm);
+          scene.position.set(-2.35, 2.68, -5.84);
+          var promises =
+          [
+              altspace.getEnclosure(),
+              altspace.getThreeJSTrackingSkeleton(),
+              altspace.instantiateNativeObject("colliders/spherenavigable"),
+              altspace.instantiateNativeObject("colliders/spherenavigable"),
+              altspace.instantiateNativeObject("colliders/spherenavigable"),
+              altspace.instantiateNativeObject("colliders/spherenavigable"),
+              altspace.instantiateNativeObject("colliders/spherenavigable"),
+              altspace.instantiateNativeObject("colliders/spherenavigable")
+          ];
+
+          Promise.all(promises).then(function (array)
+          {
+              enclosure = array.shift();
+              var skeleton = array.shift();
+              moonCollider = array.shift();
+
+              scene.add(earthGroup = new THREE.Object3D());
+              earthCollider.position.copy(earthPosition);
+              earthCollider.scale.set(earthScale, earthScale, earthScale);
+              earthGroup.add(earthCollider);
+
+              var earthTexture = THREE.ImageUtils.loadTexture( "models/earth.jpg" );
+              earthGroup.add(earth = new THREE.Mesh(earthGeo = new THREE.SphereGeometry((earthScale/2), 80, 80, Math.PI + 0.3, 2*Math.PI), earthMat = new THREE.MeshBasicMaterial({ color: 0xffffff, map: earthTexture })));
+              earth.position.copy(earthPosition);
+              earth.userData.altspace = {collider: {enabled: false}};
+
+              var objectUrls = new Array(models.length);
+              for (var i = 0; i < models.length; i++)
+              {
+                  objectUrls[i] = modelBaseUrl + models[i].name + models[i].type;
+              }
+
+              UltimateLoader.multiload(objectUrls, function(objects)
+              {
+                  for (var i = 0; i < objects.length; i++)
+                  {
+                      models[i].object = objects[i];
+                  }
+
+                  onLoaded();
+              });
+
+              // url, update, opacity
+              skybox1 = createSkybox('https://upload.wikimedia.org/wikipedia/commons/a/a1/ESO_-_The_Milky_Way_panorama_(by).jpg', true)
+              skybox1.position.set(0,0,0);
+              skybox1.scale.z = -1;
+              skybox1.scale.set(600, 600, 600);
+              scene.add(skybox1);
+
+              /*var skybox2 = createSkybox('models/panohaze.png', false, 0.8);
+              skybox2.position.set(0,0,0);
+              skybox2.scale.z = -1;
+              skybox2.scale.set(500, 500, 500);
+              scene.add(skybox2);*/
+
+              //randomShift = RandInt(100, 1000);
+              //fires.push(createFire());
+
+              animate();
+
+          }).catch(function (err)
+          {
+              console.log('Failed to get Altspace browser properties', err);
+          });
+      }
+
+      function animate()
+      {
+          animationInc++;
+          requestAnimationFrame(animate);
+          //ParticleAnimateFunction();
+          renderer.render(scene);
+          earth.rotation.x += -0.0000314;
+          earth.rotation.y += -0.000032;
+          earth.rotation.z += -0.0000155;
+      }
+
+
+      return { start: start };
+      }());
+
+      altspace.getEnclosure().then(function (enclosure) {
+          enclosure.requestFullspace().then(function () {
+              NighttimeSpace.start();
+          });
+      })
