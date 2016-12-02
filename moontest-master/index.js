@@ -221,28 +221,3 @@ AFRAME.registerComponent('altspace-collider', {
           this.el.addEventListener('model-loaded', setColliderFlag);
         }
       });
-
-AFRAME.registerComponent('altspace-navigable', {
-        schema: { enabled: { default: false } },
-        init: function () {
-			function RandInt(min, max)
-			{
-				return Math.floor(Math.random() * (max - min)) + min;
-			}
-
-			function start()
-			{
-			    scene.scale.set(1/ppm, 1/ppm, 1/ppm);
-			    scene.position.set(-2.35, 2.68, -5.84);
-				var promises =
-				[
-					altspace.getEnclosure(),
-					altspace.getThreeJSTrackingSkeleton(),
-					altspace.instantiateNativeObject("colliders/spherenavigable"),
-					altspace.instantiateNativeObject("colliders/spherenavigable"),
-					altspace.instantiateNativeObject("colliders/spherenavigable"),
-					altspace.instantiateNativeObject("colliders/spherenavigable"),
-					altspace.instantiateNativeObject("colliders/spherenavigable"),
-					altspace.instantiateNativeObject("colliders/spherenavigable")
-				];
-
