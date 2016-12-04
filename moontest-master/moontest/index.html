@@ -30,6 +30,7 @@
         <img id="clouds" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/clouds1.png">
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceship2.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceship2.mtl"></a-asset-item>
+        <a-asset-item id="ship" src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/shipb.dae"></a-asset-item>
         </a-assets>
 
       
@@ -114,6 +115,8 @@
       <a-ring src="#uranusring" position='2000 -100 -300' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
       
       <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 10 0' scale='10 10 10' class="not-clickable" altspace-collider="enabled: false"></a-entity>
+      
+      <a-entity collada-model="#ship" position='0 10 0' scale='1 1 1' class="not-clickable" altspace-collider="enabled: false"></a-entity>
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
       
