@@ -29,7 +29,8 @@
         <img id='neptune' crossorigin src='http://www.solarsystemscope.com/assets/texture_pack/preview_neptune.jpg'/>
         <img id="floor" src="floor.jpg">
         <img id="clouds" crossorigin src="clouds1.png">
-        <a-asset-item id="ship" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/shipb.dae"></a-asset-item>
+        <a-asset-item id="ship-obj" src="/path/to/tree.obj"></a-asset-item>
+        <a-asset-item id="ship-mtl" src="/path/to/tree.mtl"></a-asset-item>
         </a-assets>
 
       
@@ -113,7 +114,7 @@
       <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
       <a-ring src="#uranusring" position='2000 -100 -300' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
       
-      <a-entity collada-model="#ship" position='0 2 0' scale='10 10 10' class="not-clickable" altspace-collider="enabled: false"></a-entity>
+      <a-entity obj-model="obj: #tree-obj; mtl: #tree-mtl" position='0 2 0' scale='10 10 10' class="not-clickable" altspace-collider="enabled: false"></a-entity>
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
       
