@@ -6,7 +6,6 @@
       <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
       <script src="../index.js"></script>
       <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.1.1/dist/aframe-altspace-component.min.js"></script>
-	  <script src="https://cdn.rawgit.com/mrdoob/three.js/r74/build/three.js"></script>
     </head>
   <body>
     <!-- set up the scene -->
@@ -134,7 +133,26 @@
     </a-scene>
  
   </body>
-  <script>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Collision Test</title>
+		<script src="https://cdn.rawgit.com/mrdoob/three.js/r74/build/three.js"></script>
+		<script src="https://sdk.altvr.com/libs/altspace.js/0.19.2/altspace.min.js"></script>
+	</head>
+	<body>
+		<script>
+
+		(function(){var a = window.altspace; (function insert(ss, t){for(var i in ss) {for (var j in ss[i]) {t[j] = ss[i][j];}};})([a, a.utilities,a.utilities.behaviors, a.utilities.shims], window.alt = {})})();
+
+		var TestApp = (function() 
+		{
+			var scene = new THREE.Scene();
+			var renderer = altspace.getThreeJSRenderer();
+			
 			function start()
 			{
 				
@@ -152,7 +170,7 @@
 					platformGroup.add(platform);
 					
 					platformGroup.scale.set(10, 10, 10);
-					platformGroup.position.set(0, 1, 0);
+					platformGroup.position.set(0, -360, 0);
 					console.log(platformGroup);
 				});
 				
@@ -174,4 +192,5 @@
 		TestApp.start();
 		
 		</script>
+	</body>
 </html>
