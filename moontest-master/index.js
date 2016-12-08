@@ -221,17 +221,3 @@ AFRAME.registerComponent('altspace-collider', {
           this.el.addEventListener('model-loaded', setColliderFlag);
         }
       });
-
-AFRAME.registerComponent('solid', {
-        schema: { enabled: { default: false } },
-        init: function () {
-          var flags = {solid: {enabled: this.data.enabled}};
-          var self = this;
-          function altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject)
-              }
-            })
-          }
-          setColliderFlag();
-          this.el.addEventListener('model-loaded', setColliderFlag);
-        }
-      });
