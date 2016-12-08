@@ -144,8 +144,6 @@
 	<body>
 		<script>
 
-		(function(){var a = window.altspace; (function insert(ss, t){for(var i in ss) {for (var j in ss[i]) {t[j] = ss[i][j];}};})([a, a.utilities,a.utilities.behaviors, a.utilities.shims], window.alt = {})})();
-
 		var TestApp = (function() 
 		{
 			var scene = new THREE.Scene();
@@ -168,12 +166,9 @@
 					platformGroup.add(platform);
 					
 					platformGroup.scale.set(10, 10, 10);
-					platformGroup.position.set(0, 1, 0);
+					platformGroup.position.set(0, -360, 0);
 					console.log(platformGroup);
 				});
-				
-				console.log(altspace);
-		
 		</script>
 	</body>
 </html>
