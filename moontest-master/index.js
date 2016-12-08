@@ -221,17 +221,6 @@ AFRAME.registerComponent('altspace-collider', {
           this.el.addEventListener('model-loaded', setColliderFlag);
         }
       });
-
-AFRAME.registerComponet('solid', {
-       schema: { altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject) }, 
-				init: function () {
-        var flags = {solid: {enabled: this.data.enabled}};
-        var self = this;
-				var platformGroup = new THREE.Object3D();
-          }
-       }
-  
-  
   
   
   
