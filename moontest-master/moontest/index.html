@@ -124,7 +124,10 @@
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
 	    
-	 <a-box material="color: #FFC107" position='0 1 0' depth="10" height="2" width="10" solid="enabled: true"> 
+	 <a-box material="color: #FFC107" position='0 1 0' depth="10" height="2" width="10">
+		 <script altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject) 
+				{
+			 var platformGroup = new THREE.Object3D();></script>
       	</a-box>
       
 
