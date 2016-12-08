@@ -123,46 +123,6 @@
         <a-animation to='0 0 360' easing='linear' dur='800000' repeat='indefinite'/>
       </a-entity>
       
-      <script>
-			function start()
-			{
-				
-				altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject) 
-				{
-					var platformGroup = new THREE.Object3D();
-					
-					scene.add(platformGroup);
-					platformGroup.add(nativeObject);
-					
-					var platform_material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-					var platform_geometry = new THREE.BoxGeometry(1, 1, 1);
-					var platform = new THREE.Mesh(platform_geometry, platform_material);
-					
-					platformGroup.add(platform);
-					
-					platformGroup.scale.set(10, 10, 10);
-					platformGroup.position.set(0, -360, 0);
-					console.log(platformGroup);
-				});
-				
-				console.log(altspace);
-				
-				animate();
-			}
-			
-			function animate() 
-			{
-				
-				requestAnimationFrame(animate);
-				renderer.render(scene);
-			}
-			
-			return { start: start };
-		}());
-		
-		TestApp.start();
-		
-		</script>
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
       
