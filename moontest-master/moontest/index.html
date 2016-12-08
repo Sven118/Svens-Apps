@@ -6,9 +6,8 @@
       <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
       <script src="../index.js"></script>
       <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.1.1/dist/aframe-altspace-component.min.js"></script>
-	<script src="https://cdn.rawgit.com/mrdoob/three.js/r74/build/three.min.js"></script>
-	<script src="https://cdn.rawgit.com/mrdoob/three.js/r74/examples/js/loaders/MTLLoader.js"></script>
-	<script src="https://cdn.rawgit.com/mrdoob/three.js/r74/examples/js/loaders/OBJLoader.js"></script>
+	<script src="https://cdn.rawgit.com/mrdoob/three.js/r74/build/three.js"></script>
+	<script src="https://sdk.altvr.com/libs/altspace.js/0.19.2/altspace.min.js"></script>
     </head>
   <body>
     <!-- set up the scene -->
@@ -124,13 +123,7 @@
         <a-animation to='0 0 360' easing='linear' dur='800000' repeat='indefinite'/>
       </a-entity>
       
-      <script> (function(){var a = window.altspace; (function insert(ss, t){for(var i in ss) {for (var j in ss[i]) {t[j] = ss[i][j];}};})([a, a.utilities,a.utilities.behaviors, a.utilities.shims], window.alt = {})})();
-
-		var TestApp = (function() 
-		{
-			var scene = new THREE.Scene();
-			var renderer = altspace.getThreeJSRenderer();
-			
+      <script>
 			function start()
 			{
 				
