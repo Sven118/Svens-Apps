@@ -123,6 +123,9 @@
       
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
+	    
+	 <a-box material="color: #FFC107" position='0 1 0' depth="10" height="2" width="10" solid="enabled: true"> 
+      	</a-box>
       
 
     <!-- add a view camera (2d only) -->
@@ -133,42 +136,4 @@
     </a-scene>
  
   </body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Collision Test</title>
-	</head>
-	<body>
-		<script>
-
-		var TestApp = (function() 
-		{
-			var scene = new THREE.Scene();
-			var renderer = altspace.getThreeJSRenderer();
-			
-			function start()
-			{
-				
-				altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject) 
-				{
-					var platformGroup = new THREE.Object3D();
-					
-					scene.add(platformGroup);
-					platformGroup.add(nativeObject);
-					
-					var platform_material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
-					var platform_geometry = new THREE.BoxGeometry(1, 1, 1);
-					var platform = new THREE.Mesh(platform_geometry, platform_material);
-					
-					platformGroup.add(platform);
-					
-					platformGroup.scale.set(10, 10, 10);
-					platformGroup.position.set(0, 1, 0);
-					console.log(platformGroup);
-				});
-		</script>
-	</body>
 </html>
