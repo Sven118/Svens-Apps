@@ -129,7 +129,20 @@
 			 
 			 altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject) 
 				{
-			 var platformGroup = new THREE.Object3D();></script>
+			 var platformGroup = new THREE.Object3D();
+			 scene.add(platformGroup);
+					platformGroup.add(nativeObject);
+					
+					var platform_material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+					var platform_geometry = new THREE.BoxGeometry(1, 1, 1);
+					var platform = new THREE.Mesh(platform_geometry, platform_material);
+					
+					platformGroup.add(platform);
+					
+					platformGroup.scale.set(10, 1, 10);
+					platformGroup.position.set(0, 0, 0);
+					console.log(platformGroup);>
+		 </script>
       	</a-box>
       
 
