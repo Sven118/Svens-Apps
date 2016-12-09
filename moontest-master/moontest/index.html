@@ -125,7 +125,16 @@
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
 	    
-	<a-entity n-spawner="res:interactables/soccerball" position="0 2 0"></a-entity>    
+	<a-entity n-spawner="res:interactables/soccerball" position="0 2 0"></a-entity>
+	    
+	    <a-sphere color="blue" 
+		      scale="2 2 2" 
+		      opacity="0.4" 
+		      id="trigger-0" 
+		      n-sphere-collider="isTrigger:true" 
+		      n-container="capacity:3" 
+		      position="0 1 -20">
+	    </a-sphere>
       
 
     <!-- add a view camera (2d only) -->
