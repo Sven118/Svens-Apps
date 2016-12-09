@@ -128,7 +128,23 @@
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
 	    
-	    <script>
+	    <head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Collision Test</title>
+	</head>
+	<body>
+		<script>
+
+		(function(){var a = window.altspace; (function insert(ss, t){for(var i in ss) {for (var j in ss[i]) {t[j] = ss[i][j];}};})([a, a.utilities,a.utilities.behaviors, a.utilities.shims], window.alt = {})})();
+
+		var TestApp = (function() 
+		{
+			var scene = new THREE.Scene();
+			var renderer = altspace.getThreeJSRenderer();
+			
+			function start()
+			{
+				
 				altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject) 
 				{
 					var platformGroup = new THREE.Object3D();
@@ -146,7 +162,26 @@
 					platformGroup.position.set(0, -360, 0);
 					console.log(platformGroup);
 				});
-				</script>
+				
+				console.log(altspace);
+				
+				animate();
+			}
+			
+			function animate() 
+			{
+				
+				requestAnimationFrame(animate);
+				renderer.render(scene);
+			}
+			
+			return { start: start };
+		}());
+		
+		TestApp.start();
+		
+		</script>
+	</body>
       
 
     <!-- add a view camera (2d only) -->
