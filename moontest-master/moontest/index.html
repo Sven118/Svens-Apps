@@ -6,6 +6,7 @@
       <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
       <script src="../index.js"></script>
       <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.1.1/dist/aframe-altspace-component.min.js"></script>
+	<script src="https://sdk.altvr.com/libs/altspace.js/0.25.0/altspace.min.js"></script>
     </head>
   <body>
     <!-- set up the scene -->
@@ -124,7 +125,7 @@
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
 	    
-	    <a-sphere color="blue" scale="2 2 2" opacity="0.4" id="trigger-0" n-sphere-collider="isTrigger:true" n-container="capacity:3" position="0 1 -20"></a-sphere>
+	<a-entity n-spawner="res:interactables/soccerball" position="0 2 0"></a-entity>    
       
 
     <!-- add a view camera (2d only) -->
