@@ -37,7 +37,7 @@
 
       <!-- Add Planets -->
      <a-sphere position='1000 0 500' radius='250' material='src: #earth;'>
-        <a-animation to='0 360 0' easing='linear' dur='400000' repeat='indefinite' n-sphere-collider="isTrigger:true"/>
+        <a-animation to='0 360 0' easing='linear' dur='400000' repeat='indefinite'/>
     </a-sphere>
       
       <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
@@ -126,7 +126,8 @@
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
 	    
-	    <a-entity n-object="objects/basketball net" position="-9 3 -14"></a-entity>
+	    <a-entity n-object="primitive: sphere; radius: 10" 
+              material="src: #mercury;" position="0 3 0"></a-entity>
 	    
       
 
