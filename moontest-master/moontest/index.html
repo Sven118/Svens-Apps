@@ -126,8 +126,40 @@
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
 	    
-	    <a-entity n-geometry="primitive: sphere; radius: 10" 
+	    <a-entity n-geometry="sphere; radius: 10" 
               material="src: #mercury;" position="0 3 0"></a-entity>
+	    <script>
+		document.addEventListener('DOMContentLoaded', function(){
+			var trigger = document.querySelector('#trigger-0');
+
+			var fireworks = document.createElement("a-entity");
+			trigger.appendChild(fireworks);
+
+			var label = document.createElement("a-entity");
+			trigger.appendChild(label); 
+			label.setAttribute('position', '0 1.5 0');
+			label.setAttribute('rotation', '0 180 0');
+			label.setAttribute('scale', '0.5 0.5 0.5');
+			label.setAttribute('n-text', 'text:' + 0);
+			label.setAttribute('n-billboard');
+
+			trigger.addEventListener('stateadded', function(){
+				if(event.detail.state === 'container-full'){
+					fireworks.setAttribute('n-object', 'effects/fireworks');
+				}
+			});
+
+			trigger.addEventListener('stateremoved', function(){
+				if(event.detail.state === 'container-full'){
+					fireworks.removeAttribute('n-object');
+				}
+			});
+
+			trigger.addEventListener('container-count-changed', function(event){
+				label.setAttribute('n-text', 'text:' + event.detail.count);
+			});
+		});
+	</script>
 	    
       
 
