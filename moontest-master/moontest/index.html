@@ -126,8 +126,7 @@
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
 	    
-	    <a-entity n-geometry="sphere; radius: 10" 
-              material="src: #mercury;" position="0 3 0"></a-entity>
+	    <a-sphere color="blue" scale="2 2 2" opacity="0.4" id="trigger-0" n-sphere-collider="isTrigger:true" n-container="capacity:3" position="0 1 -20"></a-sphere>
 	    <script>
 		document.addEventListener('DOMContentLoaded', function(){
 			var trigger = document.querySelector('#trigger-0');
@@ -160,6 +159,19 @@
 			});
 		});
 	</script>
+	    						<a-entity n-spawner="res:interactables/box" position="1 2 -18"></a-entity>
+						<a-entity n-spawner="res:interactables/soccerball" position="0 2 -16"></a-entity>
+						<a-entity n-spawner="res:interactables/bowling pin" position="1 2 -16"></a-entity>
+						<a-entity n-spawner="res:interactables/gem" position="2 2 -16"></a-entity>
+						<a-entity n-object="objects/basketball net" position="-9 3 -14"></a-entity>
+						<a-entity n-spawner="res:interactables/basketball" position="-6 1 -14"></a-entity>
+						<a-entity n-object="objects/target archery" position="-2 3 -14"></a-entity>
+						<a-entity n-browser position="0 3 0"></a-entity>
+						<a-entity position="0 3 0">
+							<a-animation attribute="rotation" dur="50000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
+							<a-entity position="2 0 0" n-object="effects/sparkler"></a-entity>
+						</a-entity>
+	    					<a-entity n-text="text:hello world" position="2 3 2"></a-entity>
 	    
       
 
