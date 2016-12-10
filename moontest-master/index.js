@@ -225,7 +225,7 @@ AFRAME.registerComponent('altspace-collider', {
 AFRAME.registerComponent('native-boxcollider', {
 				schema: {
 					visible: { default: false },
-					color: { default: 0x00ff00 }
+					color: { default: 0xff0000 }
 				},
 				init: function () {
 					var self = this;
@@ -248,8 +248,9 @@ AFRAME.registerComponent('native-boxcollider', {
 							
 							nativeObject.add(collider);
 							
+							nativeObject.position.set(selfObj.position.x, selfObj.position.y, selfObj.position.z);
 							nativeObject.rotation.set(selfObj.rotation.x, selfObj.rotation.y, selfObj.rotation.z);
-							nativeObject.scale.set(selfObj.scale.x, selfObj.scale.y, selfObj.scale.z);
+							nativeObject.scale.set(bBox.size().x, bBox.size().y, bBox.size().z);
 							
 							selfObj.add(nativeObject);
 						});
@@ -258,10 +259,12 @@ AFRAME.registerComponent('native-boxcollider', {
 					this.el.addEventListener('model-loaded', initNativeBoxCollider);
 				}
 			});
+
+
 			AFRAME.registerComponent('native-spherecollider', {
 				schema: {
 					visible: { default: false },
-					color: { default: 0x00ff00 }
+					color: { default: 0xff0000 }
 				},
 				init: function () {
 					var self = this;
@@ -274,7 +277,7 @@ AFRAME.registerComponent('native-boxcollider', {
 						
 						altspace.instantiateNativeObject("colliders/spherenavigable").then(function (nativeObject) {
 							
-							//var bBox = new THREE.Box3().setFromObject(selfObj);
+							var bBox = new THREE.Box3().setFromObject(selfObj);
 							
 							var collider_material = new THREE.MeshBasicMaterial({ color: self.data.color });
 							var collider_geometry = new THREE.SphereGeometry(1, 10, 10);
@@ -283,8 +286,9 @@ AFRAME.registerComponent('native-boxcollider', {
 							
 							nativeObject.add(collider);
 							
-							nativeObject.rotation.set(selfObj.rotation.x, selfObj.rotation.y, selfObj.rotation.z);
-							nativeObject.scale.set(selfObj.scale.x, selfObj.scale.y, selfObj.scale.z);
+							//nativeObject.position.set(selfObj.position.x, selfObj.position.y, selfObj.position.z);
+							//nativeObject.rotation.set(selfObj.rotation.x, selfObj.rotation.y, selfObj.rotation.z);
+							nativeObject.scale.set(bBox.size().x, bBox.size().y, bBox.size().z);
 							
 							selfObj.add(nativeObject);
 						});
