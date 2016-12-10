@@ -241,7 +241,7 @@ AFRAME.registerComponent('altspace-collider', {
 							var bBox = new THREE.Box3().setFromObject(selfObj);
 							
 							var collider_material = new THREE.MeshBasicMaterial({ color: self.data.color });
-							var collider_geometry = new THREE.BoxGeometry(1, 1, 1);
+							var collider_geometry = new THREE.BoxGeometry(0, 0, 0);
 							var collider = new THREE.Mesh(collider_geometry, collider_material);
 							collider.visible = self.data.visible;
 							
