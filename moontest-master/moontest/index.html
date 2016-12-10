@@ -127,7 +127,9 @@
       
       <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
 
-	<a-entity geometry="primitive: box" material="color: #C03546" native-boxcollider scale="10.25 10.25 10.25"></a-entity>
+	<a-entity geometry="primitive: box" material="color: #C03546" native-boxcollider scale="10.25 10.25 10.25">
+	    <a-animation to='360 0 0' easing='linear' dur='800000' repeat='indefinite'/>
+	    </a-entity>
 	   
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
