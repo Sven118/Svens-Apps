@@ -222,6 +222,81 @@ AFRAME.registerComponent('altspace-collider', {
         }
       });
   
+AFRAME.registerComponent('native-boxcollider', {
+				schema: {
+					visible: { default: false },
+					color: { default: 0xff0000 }
+				},
+				init: function () {
+					var self = this;
+					var selfObj = self.el.object3D;
+					
+					var scene = document.querySelector('a-scene');
+					
+					function initNativeBoxCollider() {
+						selfObj.userData.altspace = {collider: {enabled: false}};
+						
+						altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject) {
+							
+							var bBox = new THREE.Box3().setFromObject(selfObj);
+							
+							var collider_material = new THREE.MeshBasicMaterial({ color: self.data.color });
+							var collider_geometry = new THREE.BoxGeometry(1, 1, 1);
+							var collider = new THREE.Mesh(collider_geometry, collider_material);
+							collider.visible = self.data.visible;
+							collider.userData.altspace = {collider: {enabled: false}};
+							
+							nativeObject.add(collider);
+							
+							nativeObject.position.set(selfObj.position.x, selfObj.position.y, selfObj.position.z);
+							nativeObject.rotation.set(selfObj.rotation.x, selfObj.rotation.y, selfObj.rotation.z);
+							nativeObject.scale.set(bBox.size().x, bBox.size().y, bBox.size().z);
+							
+							selfObj.add(nativeObject);
+						});
+					}
+					initNativeBoxCollider();
+					this.el.addEventListener('model-loaded', initNativeBoxCollider);
+				}
+			});
+
+
+			AFRAME.registerComponent('native-spherecollider', {
+				schema: {
+					visible: { default: false },
+					color: { default: 0xff0000 }
+				},
+				init: function () {
+					var self = this;
+					var selfObj = self.el.object3D;
+					
+					var scene = document.querySelector('a-scene');
+					
+					function initNativeSphereCollider() {
+						selfObj.userData.altspace = {collider: {enabled: false}};
+						
+						altspace.instantiateNativeObject("colliders/spherenavigable").then(function (nativeObject) {
+							
+							var bBox = new THREE.Box3().setFromObject(selfObj);
+							
+							var collider_material = new THREE.MeshBasicMaterial({ color: self.data.color });
+							var collider_geometry = new THREE.SphereGeometry(1, 10, 10);
+							var collider = new THREE.Mesh(collider_geometry, collider_material);
+							collider.visible = self.data.visible;
+							
+							nativeObject.add(collider);
+							
+							//nativeObject.position.set(selfObj.position.x, selfObj.position.y, selfObj.position.z);
+							//nativeObject.rotation.set(selfObj.rotation.x, selfObj.rotation.y, selfObj.rotation.z);
+							nativeObject.scale.set(bBox.size().x, bBox.size().y, bBox.size().z);
+							
+							selfObj.add(nativeObject);
+						});
+					}
+					initNativeSphereCollider();
+					this.el.addEventListener('model-loaded', initNativeSphereCollider);
+				}
+			});
   
   
   
