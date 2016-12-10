@@ -290,4 +290,4 @@ AFRAME.registerComponent('native-boxcollider', {
 					initNativeSphereCollider();
 					this.el.addEventListener('model-loaded', initNativeSphereCollider);
 				}
-			});
+			}); 
