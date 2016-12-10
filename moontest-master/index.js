@@ -225,7 +225,7 @@ AFRAME.registerComponent('altspace-collider', {
 AFRAME.registerComponent('native-boxcollider', {
 				schema: {
 					visible: { default: false },
-					color: { default: 0xff0000 }
+					color: { default: 0x00ff00 }
 				},
 				init: function () {
 					var self = this;
@@ -248,9 +248,9 @@ AFRAME.registerComponent('native-boxcollider', {
 							
 							nativeObject.add(collider);
 							
-							nativeObject.position.set(selfObj.position.x, selfObj.position.y, selfObj.position.z);
+							//nativeObject.position.set(selfObj.position.x, selfObj.position.y, selfObj.position.z);
 							nativeObject.rotation.set(selfObj.rotation.x, selfObj.rotation.y, selfObj.rotation.z);
-							nativeObject.scale.set(bBox.size().x, bBox.size().y, bBox.size().z);
+							nativeObject.scale.set(bBox.size().x/2, bBox.size().y/2, bBox.size().z/2);
 							
 							selfObj.add(nativeObject);
 						});
@@ -259,12 +259,10 @@ AFRAME.registerComponent('native-boxcollider', {
 					this.el.addEventListener('model-loaded', initNativeBoxCollider);
 				}
 			});
-
-
 			AFRAME.registerComponent('native-spherecollider', {
 				schema: {
 					visible: { default: false },
-					color: { default: 0xff0000 }
+					color: { default: 0x00ff00 }
 				},
 				init: function () {
 					var self = this;
@@ -286,9 +284,7 @@ AFRAME.registerComponent('native-boxcollider', {
 							
 							nativeObject.add(collider);
 							
-							//nativeObject.position.set(selfObj.position.x, selfObj.position.y, selfObj.position.z);
-							//nativeObject.rotation.set(selfObj.rotation.x, selfObj.rotation.y, selfObj.rotation.z);
-							nativeObject.scale.set(bBox.size().x, bBox.size().y, bBox.size().z);
+							nativeObject.scale.set(bBox.size().x/2, bBox.size().y/2, bBox.size().z/2);
 							
 							selfObj.add(nativeObject);
 						});
