@@ -222,10 +222,10 @@ AFRAME.registerComponent('altspace-collider', {
         }		
       });
 
-AFRAME.registerComponent('native-boxcollider', {
+			AFRAME.registerComponent('native-boxcollider', {
 				schema: {
 					visible: { default: false },
-					color: { default: 0x00ff00 }
+					color: { default: 0xff0000 }
 				},
 				init: function () {
 					var self = this;
@@ -241,14 +241,11 @@ AFRAME.registerComponent('native-boxcollider', {
 							var bBox = new THREE.Box3().setFromObject(selfObj);
 							
 							var collider_material = new THREE.MeshBasicMaterial({ color: self.data.color });
-							var collider_geometry = new THREE.BoxGeometry(1, 1, 1);
+							var collider_geometry = new THREE.BoxGeometry(1, 10, 10);
 							var collider = new THREE.Mesh(collider_geometry, collider_material);
 							collider.visible = self.data.visible;
-							collider.userData.altspace = {collider: {enabled: false}};
 							
 							nativeObject.add(collider);
-							
-							nativeObject.rotation.set(selfObj.rotation.x, selfObj.rotation.y, selfObj.rotation.z);
 							nativeObject.scale.set(bBox.size().x, bBox.size().y, bBox.size().z);
 							
 							selfObj.add(nativeObject);
@@ -258,6 +255,7 @@ AFRAME.registerComponent('native-boxcollider', {
 					this.el.addEventListener('model-loaded', initNativeBoxCollider);
 				}
 			});
+
 			AFRAME.registerComponent('native-spherecollider', {
 				schema: {
 					visible: { default: false },
