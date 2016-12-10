@@ -130,8 +130,29 @@
 	<a-entity geometry="primitive: box;" 
            	material="color: #FFC107"
             	position='0 0 0'
-		scale="10 10 10"
-		native-boxcollider>
+		scale="10 10 10">
+		<script> function initNativeBoxCollider() {
+						selfObj.userData.altspace = {collider: {enabled: false}};
+						
+						altspace.instantiateNativeObject("colliders/cubenavigable").then(function (nativeObject) {
+							
+							var bBox = new THREE.Box3().setFromObject(selfObj);
+							
+							var collider_material = new THREE.MeshBasicMaterial({ color: self.data.color });
+							var collider_geometry = new THREE.BoxGeometry(10, 10, 10);
+							var collider = new THREE.Mesh(collider_geometry, collider_material);
+							collider.visible = self.data.visible;
+							
+							nativeObject.add(collider);
+							nativeObject.scale.set(bBox.size().x, bBox.size().y, bBox.size().z);
+							
+							selfObj.add(nativeObject);
+						});
+					}
+					initNativeBoxCollider();
+					this.el.addEventListener('model-loaded', initNativeBoxCollider);
+		</script>
+		
 	</a-entity>
 
 	   
