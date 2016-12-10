@@ -284,7 +284,7 @@ AFRAME.registerComponent('native-boxcollider', {
 							
 							nativeObject.add(collider);
 							
-							nativeObject.scale.set(bBox.size().x/2, bBox.size().y/2, bBox.size().z/2);
+							//nativeObject.scale.set(bBox.size().x/2, bBox.size().y/2, bBox.size().z/2);
 							
 							selfObj.add(nativeObject);
 						});
@@ -293,6 +293,4 @@ AFRAME.registerComponent('native-boxcollider', {
 					this.el.addEventListener('model-loaded', initNativeSphereCollider);
 				}
 			});
-  
-  
   
