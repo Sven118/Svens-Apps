@@ -204,6 +204,24 @@ AFRAME.registerComponent('altspace-tracked-controls', {
   }
 });
 
+AFRAME.registerComponent('altspace-collider', {		
+         schema: { enabled: { default: true } },		
+         init: function () {		
+           var flags = {collider: {enabled: this.data.enabled}};		
+           var self = this;		
+           function setColliderFlag() {		
+             self.el.object3D.userData.altspace = flags;		
+             self.el.object3D.traverse(function (obj) {		
+               if (obj instanceof THREE.Mesh) {		
+                 obj.userData.altspace = flags;		
+               }		
+             })		
+           }		
+           setColliderFlag();		
+          this.el.addEventListener('model-loaded', setColliderFlag);		
+        }		
+      });
+
 AFRAME.registerComponent('native-boxcollider', {
 				schema: {
 					visible: { default: false },
