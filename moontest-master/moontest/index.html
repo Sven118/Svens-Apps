@@ -200,7 +200,7 @@
 		    
 		<a-entity id="rail-3" geometry="primitive:box;"
 			scale='10 .5 .05'
-			material='src: #rail; repeat: 10 1'
+			material='src: #rail; repeat: 5 1'
 			position='0 .5 10'
 			transparent='true'
 			n-mesh-collider="enabled: true; type: environment">
@@ -208,8 +208,15 @@
 		    
 		<a-entity id="rail-4" geometry="primitive:box;"
 			scale='10 .5 .05'
-			material='src: #rail; repeat: 10 1'
+			material='src: #rail; repeat: 5 1'
 			position='0 .5 -10'
+			transparent='true'
+			n-mesh-collider="enabled: true; type: environment">
+		</a-entity>
+		<a-entity id="rail-5" geometry="primitive:box;"
+			scale='.05 .5 10'
+			material='src: #rail; repeat: 10 1'
+			position='5 .5 0'
 			transparent='true'
 			n-mesh-collider="enabled: true; type: environment">
 		</a-entity>
