@@ -51,7 +51,7 @@
             <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
               material="src: #moon;"
               position="-1300 50 0"
-		native-spherecollider></a-entity>
+		n-sphere-collider="enabled: true; type: environment; radius: 50"></a-entity>
             </a-entity>
         </a-entity>
       
@@ -127,12 +127,14 @@
             altspace-cursor-collider="enabled: false">
       </a-box>
        
-      <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'></a-ring>
-      <a-ring src="#uranusring" position='2000 -100 -300' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
+      <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'
+	      n-mesh-collider="enabled: true"></a-ring>
+      <a-ring src="#uranusring" position='2000 -100 -300' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'
+	      n-mesh-collider="enabled: true"></a-ring>
       
       <!-- Add Spaceship -->
-      <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70' class="not-clickable" altspace-cursor-collider="enabled: false"></a-entity>
-      <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70' class="not-clickable" altspace-cursor-collider="enabled: false">
+      <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70' n-mesh-collider="enabled: true"></a-entity>
+      <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70' n-mesh-collider="enabled: true">
         <a-animation to='0 0 360' easing='linear' dur='800000' repeat='indefinite'/>
       </a-entity>
       
