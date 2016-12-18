@@ -59,7 +59,7 @@
      <a-sphere position='1000 0 500' 
 	radius='259' transparent='true' 
 	opacity="0.7" material='src: #clouds;'
-	n-mesh-collider 
+	n-sphere-collider="isTrigger:true; type:object; radius: 260" 
 	class="not-clickable" 
 	altspace-collider="enabled: false">
         <a-animation to='0 360 0' easing='linear' dur='550000' repeat='indefinite'/>
