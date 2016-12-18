@@ -130,7 +130,8 @@
             altspace-cursor-collider="enabled: false">
       </a-box>
        
-      <a-ring src="#ring"
+	<!-- Add Planet Rings -->
+	<a-ring src="#ring"
 	      position='-1000 200 -2000'
 	      radius-inner='40'
 	      radius-outer='110'
@@ -155,8 +156,10 @@
         <a-animation to='0 0 360' easing='linear' dur='800000' repeat='indefinite'/>
       </a-entity>
       
-      <a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false"></a-sky>
-	    
+	<!-- Add Skybox -->    
+	<a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false"></a-sky>
+	 
+	<!-- Add Collider Objects -->
 	<a-entity geometry="primitive: box;" 
            	material='src: #floor2;'
             	position='5 0 0'
