@@ -64,7 +64,7 @@
 	altspace-collider="enabled: false">
         <a-animation to='0 360 0' easing='linear' dur='550000' repeat='indefinite'/>
     </a-sphere>
-      <a-sphere position='1000 0 500' radius='256' color="#0095FF" opacity="0.25" class="not-clickable" altspace-collider="enabled: false">
+      <a-sphere position='1000 0 500' radius='256' color="#0095FF" opacity="0.25" class="not-clickable" altspace-cursor-collider="enabled: false">
     </a-sphere>
       
      <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'>
@@ -124,12 +124,12 @@
       <a-ring src="#uranusring" position='2000 -100 -300' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'></a-ring>
       
       <!-- Add Spaceship -->
-      <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70' class="not-clickable" altspace-collider="enabled: false"></a-entity>
-      <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70' class="not-clickable" altspace-collider="enabled: false">
+      <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70' class="not-clickable" altspace-cursor-collider="enabled: false"></a-entity>
+      <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70' class="not-clickable" altspace-cursor-collider="enabled: false">
         <a-animation to='0 0 360' easing='linear' dur='800000' repeat='indefinite'/>
       </a-entity>
       
-      <a-sky src='#stars' radius='2500' class="not-clickable"></a-sky>
+      <a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false"></a-sky>
 	    
 	<a-entity geometry="primitive: box;" 
            	material="color: #FFC107"
