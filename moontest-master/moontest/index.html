@@ -171,19 +171,19 @@
 	</a-entity>
 	    
 	<a-entity class='platform' position='11.5 20 0'>
-		<a-entity id="platform1" geometry="primitive: box; scale= 10 .1 20" 
+		<a-entity id="platform1" geometry="primitive: box; depth= 10 height= .1  width= 20" 
 			material='src: #floor2; repeat: 5 10'
             		position='0 0 0'
 			n-mesh-collider="enabled: true; type: environment">
 		</a-entity>
 	    
-		<a-entity id="rail-1" geometry="primitive:box; scale= .2 .5 7"
+		<a-entity id="rail-1" geometry="primitive:box; depth= .2 height= .2 width= 7"
 		    	material='src: #rail; repeat: 20 1'
 		    	position='0 1 5'
 		    	transparent='true'>
 		</a-entity>
 		
-		<a-entity id="rail-2" geometry="primitive:box; scale= .2 .2 7"
+		<a-entity id="rail-2" geometry="primitive:box; depth= .2 height= .5 width= 7"
 		    	material='src: #rail; repeat: 20 1'
 		    	position='0 1 -5'
 		    	transparent='true'>
