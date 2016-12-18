@@ -10,7 +10,14 @@
     </head>
   <body>
     <!-- set up the scene -->
-    <a-scene altspace= "fullspace: true" position="0 0 0" sync-system= "autor= sven; app: moontest; refUrl= https://moontest-65076.firebaseio.com;">
+    <a-scene altspace= "fullspace: true" position="0 0 0" 
+	sync-system= "autor id= AltspaceVR; app id= moontest; 
+		var config = { authorId: 'AltspaceVR', appId: 'moontest' };
+		Promise.all([
+		modelPromise,
+		altspace.utilities.sync.connect(config),
+		altspace.inClient ? altspace.getEnclosure() : Promise.resolve()
+	])">
  
     <!-- preload all our textures -->
     <a-assets>
