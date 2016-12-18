@@ -231,4 +231,4 @@ AFRAME.registerComponet('synctime', {
     };
     r.send(null);
   }
-}
+});
