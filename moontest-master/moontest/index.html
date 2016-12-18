@@ -26,7 +26,7 @@
         <img id='uranus' crossorigin src='https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/uranus.jpg'/>
         <img id='uranusring' crossorigin src='https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/uranusring.png'/>
         <img id='neptune' crossorigin src='https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/neptune.jpg'/>
-        <img id="floor" src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/floor.jpg">
+        <img id="floortile" src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/floortile.jpg">
 	<img id="floor2" src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/floor2.jpg">
         <img id="clouds" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/clouds1.png">
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.obj"></a-asset-item>
@@ -124,7 +124,7 @@
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
             
-      <a-box material='src: #floor;' position='0 .005 0' depth="128" height="0" width="128" class="not-clickable" 
+      <a-box material='src: #floortile; repeat: 128 128' position='0 .005 0' depth="128" height="0" width="128" class="not-clickable" 
             altspace-cursor-collider="enabled: false">
       </a-box>
        
