@@ -204,31 +204,16 @@ AFRAME.registerComponent('altspace-tracked-controls', {
   }
 });
 
-AFRAME.registerComponet('synctime', {
-  
-  function syncTime() {
-    // Set up our time object, synced by the HTTP DATE header
-    // Fetch the page over JS to get just the headers
-    console.log("syncing time")
-    var r = new XMLHttpRequest();
-    var start = (new Date).getTime();
 
-    r.open('HEAD', document.location, false);
-    r.onreadystatechange = function()
-    {
-        if (r.readyState != 4)
-        {
-            return;
-        }
-        var latency = (new Date).getTime() - start;
-        var timestring = r.getResponseHeader("DATE");
-
-        // Set the time to the **slightly old** date sent from the 
-        // server, then adjust it to a good estimate of what the
-        // server time is **right now**.
-        systemtime = new Date(timestring);
-        systemtime.setMilliseconds(systemtime.getMilliseconds() + (latency / 2))
-    };
-    r.send(null);
-  }
-});
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+	<script>
+ // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAHntH3MbnEbaZRW1yGR0RPhLggHqv_m9c",
+    authDomain: "moontest-65076.firebaseapp.com",
+    databaseURL: "https://moontest-65076.firebaseio.com",
+    storageBucket: "moontest-65076.appspot.com",
+    messagingSenderId: "69113853979"
+  };
+  firebase.initializeApp(config);
+</script>
