@@ -133,8 +133,10 @@
 	      n-mesh-collider="enabled: true"></a-ring>
       
       <!-- Add Spaceship -->
-      <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70' n-mesh-collider="enabled: true"></a-entity>
-      <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70' n-mesh-collider="enabled: true">
+      <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70'
+		n-mesh-collider="enabled: true; type: environment"></a-entity>
+      <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70'
+		n-mesh-collider="enabled: true; type: environment">
         <a-animation to='0 0 360' easing='linear' dur='800000' repeat='indefinite'/>
       </a-entity>
       
