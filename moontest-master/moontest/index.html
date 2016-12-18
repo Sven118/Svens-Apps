@@ -27,6 +27,7 @@
         <img id='uranusring' crossorigin src='https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/uranusring.png'/>
         <img id='neptune' crossorigin src='https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/neptune.jpg'/>
         <img id="floor" src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/floor.jpg">
+	<img id="floor2" src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/floor2.jpg">
         <img id="clouds" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/clouds1.png">
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
@@ -143,7 +144,7 @@
       <a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false"></a-sky>
 	    
 	<a-entity geometry="primitive: box;" 
-           	material='src: #floor;'
+           	material='src: #floor2;'
             	position='5 0 0'
 		scale="3 .1 3"
 		n-mesh-collider="enabled: true; type: environment">
@@ -156,8 +157,8 @@
 	</a-entity>
 	    
 	<a-entity geometry="primitive: box;" 
-		material='src: #floor;'
-            	position='7.5 20 0'
+		material='src: #floor2;'
+            	position='7.8 20 0'
 		scale="3 .1 3"
 		n-mesh-collider="enabled: true; type: environment">
 	</a-entity>
