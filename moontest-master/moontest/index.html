@@ -58,7 +58,7 @@
      <a-sphere position='1000 0 500' 
 	radius='259' transparent='true' 
 	opacity="0.7" material='src: #clouds;'
-	n-sphere-collider="enabled:true; type:environment; radius: 260" 
+	n-sphere-collider="enabled: true; type: environment; radius: 260" 
 	class="not-clickable" 
 	altspace-collider="enabled: false">
         <a-animation to='0 360 0' easing='linear' dur='550000' repeat='indefinite'/>
@@ -66,27 +66,32 @@
       <a-sphere position='1000 0 500' radius='256' color="#0095FF" opacity="0.25" class="not-clickable" altspace-cursor-collider="enabled: false">
     </a-sphere>
       
-     <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'>
+     <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'
+	       n-sphere-collider="enabled: true; type: environment; radius: 60">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere position='0 700 2000' radius='50' material='src: #sun;'>
+      <a-sphere position='0 700 2000' radius='50' material='src: #sun;'
+		n-sphere-collider="enabled: true; type: environment; radius: 50">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere position='400 100 -500' radius='25' material='src: #mars;'>
+      <a-sphere position='400 100 -500' radius='25' material='src: #mars;'
+		n-sphere-collider="enabled: true; type: environment; radius: 25">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere position='-1000 200 -2000' radius='40' rotation='0 90 0' material='src: #saturn;'>
+      <a-sphere position='-1000 200 -2000' radius='40' rotation='0 90 0' material='src: #saturn;'
+		n-sphere-collider="enabled: true; type: environment; radius: 40">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere position='-200 300 700' radius='30' material='src: #venus;'>
+      <a-sphere position='-200 300 700' radius='30' material='src: #venus;'
+		n-sphere-collider="enabled: true; type: environment; radius: 30">
         <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
       </a-sphere>
       
@@ -101,16 +106,19 @@
                  easing="linear"></a-animation>
            <a-entity id="mercury" geometry="primitive: sphere; radius: 10" 
               material="src: #mercury;"
-              position="60 -30 0"></a-entity>
+              position="60 -30 0"
+		n-sphere-collider="enabled: true; type: environment; radius: 10"></a-entity>
            </a-entity>
       </a-entity>
       
-      <a-sphere position='2000 -100 -300' radius='20' rotation='0 90 0' material='src: #uranus;'>
+      <a-sphere position='2000 -100 -300' radius='20' rotation='0 90 0' material='src: #uranus;'
+		n-sphere-collider="enabled: true; type: environment; radius: 20">
         <!-- add an animation to make it rotate -->
         <a-animation to='360 0 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere position='-2000 50 -500' radius='15' rotation='0 90 0' material='src: #neptune;'>
+      <a-sphere position='-2000 50 -500' radius='15' rotation='0 90 0' material='src: #neptune;'
+		n-sphere-collider="enabled: true; type: environment; radius: 15">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
       </a-sphere>
@@ -131,24 +139,11 @@
       <a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false"></a-sky>
 	    
 	<a-entity geometry="primitive: box;" 
-           	material="color: #FFC107"
-            	position='0 0 0'
+           	material="color: gray"
+            	position='0 -1 0'
 		scale="3 3 3"
 		n-box-collider="enabled: true; type: environment; scale: 3 3 3">	
 	</a-entity>
-	    
-	<a-entity class="railings" position="0, 0, -30">
-				<a-entity class="railing-bottom" position="0, 0, 0">
-					<a-entity n-object="architecture/railing-4l" position="-6, 0, 0" rotation="0 90 0"></a-entity>
-					<a-entity n-object="architecture/railing-4l" position="-2, 0, 0" rotation="0 90 0"></a-entity>
-					<a-entity n-object="architecture/railing-4l" position="2, 0, 0" rotation="0 90 0"></a-entity>
-				</a-entity>
-				<a-entity class="railing-bottom" position="0, 8, 0" rotation="0 0 180">
-					<a-entity n-object="architecture/railing-4l" position="-6, 0, 0" rotation="0 90 0"></a-entity>
-					<a-entity n-object="architecture/railing-4l" position="-2, 0, 0" rotation="0 90 0"></a-entity>
-					<a-entity n-object="architecture/railing-4l" position="2, 0, 0" rotation="0 90 0"></a-entity>
-				</a-entity>
-			</a-entity>
 	   
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
