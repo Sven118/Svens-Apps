@@ -29,6 +29,7 @@
         <img id="floortile" src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/floortile.jpg">
 	<img id="floor2" src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/floor2.jpg">
         <img id="clouds" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/clouds1.png">
+	<img id="rail" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/rail.png">
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
         <a-asset-item id="ring-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.obj"></a-asset-item>
@@ -57,7 +58,8 @@
         </a-entity>
       
      <a-sphere position='1000 0 500' 
-	radius='259' transparent='true' 
+	radius='259' 
+	transparent='true' 
 	opacity="0.7" material='src: #clouds;'
 	n-sphere-collider="enabled: true; type: environment; radius: 260" 
 	class="not-clickable" 
@@ -128,10 +130,22 @@
             altspace-cursor-collider="enabled: false">
       </a-box>
        
-      <a-ring src="#ring" position='-1000 200 -2000' radius-inner='40' radius-outer='110' side='double' rotation='90 90 45'
-	     n-mesh-collider="enabled: true; type: environment"></a-ring>
-      <a-ring src="#uranusring" position='2000 -100 -300' radius-inner='30' radius-outer='50' side='double' rotation='0 45 0'
-	     n-mesh-collider="enabled: true; type: environment"></a-ring>
+      <a-ring src="#ring"
+	      position='-1000 200 -2000'
+	      radius-inner='40'
+	      radius-outer='110'
+	      transparent='true'
+	      side='double'
+	      rotation='90 90 45'
+	      n-mesh-collider="enabled: true; type: environment"></a-ring>
+      <a-ring src="#uranusring"
+	      position='2000 -100 -300'
+	      radius-inner='30'
+	      radius-outer='50'
+	      transparent='true'
+	      side='double'
+	      rotation='0 45 0'
+	      n-mesh-collider="enabled: true; type: environment"></a-ring>
       
       <!-- Add Spaceship -->
       <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70'></a-entity>
@@ -162,6 +176,7 @@
 		scale="10 .1 20"
 		n-mesh-collider="enabled: true; type: environment">
 	</a-entity>
+	  <a-entity geometry="primitive:box;
 	    
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
