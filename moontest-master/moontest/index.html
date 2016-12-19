@@ -13,6 +13,10 @@
 	<script src="https://rawgit.com/ngokevin/aframe-firebase-component/master/dist/aframe-firebase-component.min.js"></script>
     </head>
   <body>
+
+    <!-- set up the scene -->
+    <a-scene altspace= "fullspace: true" position="0 0 0">
+	    
 <script>
   // Initialize Firebase
   var config = {
@@ -24,9 +28,6 @@
   };
   firebase.initializeApp(config);
 </script>
-
-    <!-- set up the scene -->
-    <a-scene altspace= "fullspace: true" position="0 0 0"> 
 	    
     <!-- preload all our textures -->
     <a-assets>
