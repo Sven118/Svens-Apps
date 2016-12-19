@@ -21,7 +21,8 @@
 	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.2.0/dist/aframe-altspace-component.min.js"></script>
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.26.3/altspace.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/3.0.0/nunjucks.min.js"></script>
-	<script src="https://rawgit.com/ngokevin/kframe/master/dist/kframe.min.js"></script>
+	<script src="https://rawgit.com/ngokevin/kframe/master/dist/kframe.min.js"></script> 	
+	<script src="https://rawgit.com/ngokevin/aframe-firebase-component/master/dist/aframe-firebase-component.min.js"></script>
     </head>
   <body>  
 
@@ -90,8 +91,12 @@
 	n-sphere-collider="enabled: true; type: environment; radius: 260" 
 	class="not-clickable" 
 	altspace-collider="enabled: false">
-        <a-animation to='0 360 0' easing='linear' dur='550000' repeat='indefinite'/>
+        <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='550000'
+		     repeat='indefinite'/>
     </a-sphere>
+	    
       <a-sphere position='1000 0 500' radius='256' color="#0095FF" opacity="0.25" class="not-clickable" altspace-cursor-collider="enabled: false">
     </a-sphere>
       
