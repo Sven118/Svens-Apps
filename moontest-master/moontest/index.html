@@ -259,10 +259,11 @@
 			     repeat='indefinite'/>
 	</a-entity>
 	    
-	 <a-entity id="discoball" position= "0 30 40">
+	 <a-entity class="discoball" position= "0 30 40">
 		
-		   <a-entity geometry="primitive: sphere; radius= 4; material='src: #disco;'">
-		  	<a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/></a-entity>
+		 <a-entity id='disco-ball' geometry="primitive: sphere; radius= 4; material='src: #disco;'">
+		  	<a-animation to='0 360 0' easing='linear' dur='2000' repeat='indefinite'/>
+		 </a-entity>
 		 	
 		 <a-animation attribute="position"
 			     direction='alternate' 
