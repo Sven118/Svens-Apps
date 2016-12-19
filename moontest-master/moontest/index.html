@@ -249,7 +249,7 @@
 				<a-entity n-object="res:architecture/wall-4w-4h" rotation="0 90 0" position="0 0 0"></a-entity>
 				<a-entity n-object="res:architecture/wall-4w-4h" rotation="0 90 0" position="-4 0 0"></a-entity>
 			</a-entity>
-		</a-entity>
+		</a-entity> 
 		
 			<a-animation attribute="position"
 			     direction='alternate' 
@@ -259,19 +259,18 @@
 			     repeat='indefinite'/>
 	</a-entity>
 	    
-	<a-sphere position='0 30 40' radius='4' material='src: #disco;'>
-
-		<a-animation attribute="position"
+	 <a-entity id="discoball" position= "0 30 40">
+		
+		   <a-entity geometry="primitive: sphere; radius= 4; material='src: #disco;'">
+		  	<a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/></a-entity>
+		 	
+		 <a-animation attribute="position"
 			     direction='alternate' 
 			     from='0 29 40' to='0 31 40' 
 			     ease='linear' 
 			     dur='9000' 
 			     repeat='indefinite'/>
-		<a-animation to='0 360 0' 
-			     easing='linear' 
-			     dur='40000' 
-			     repeat='indefinite'/>
-    	</a-sphere>
+	  </a-entity>
 	    
 	    
     <!-- add a view camera (2d only) -->
