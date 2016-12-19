@@ -36,6 +36,8 @@
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
         <a-asset-item id="ring-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.obj"></a-asset-item>
         <a-asset-item id="ring-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.mtl"></a-asset-item>
+	<a-asset-item id="speaker-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.mtl"></a-asset-item>
+	<a-asset-item id="speaker-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.obj"></a-asset-item>
         </a-assets>
 
       <!-- Add Planets -->
@@ -270,6 +272,9 @@
 			     repeat='indefinite'/>
 	  </a-entity>
 	    
+	<a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 0 0' scale='10 10 10'
+		n-mesh-collider="enabled: true; type: environment">
+	</a-entity>
 	    
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
