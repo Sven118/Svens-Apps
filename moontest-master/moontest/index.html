@@ -228,6 +228,13 @@
 	    
 	<a-entity class="Billboard" position="0 0 5">
 		
+		<a-animation attribute="position"
+			     direction='alternate' 
+			     from='5 -3 0' to='5 3 0' 
+			     ease-in-out='linear' 
+			     dur='10000' 
+			     repeat='indefinite'/>
+		
 		<a-entity position='6 1 0' rotation='0 90 0' scale="0.3 0.3 0.3">
 			<a-entity position='0 6 -0.6' rotation='0 180 0'
 				n-text='text: Welcome; fontSize: 15'></a-entity>
