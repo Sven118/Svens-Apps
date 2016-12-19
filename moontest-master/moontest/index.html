@@ -58,9 +58,13 @@
 
       <!-- Add Planets -->
      <a-sphere position='1000 0 500' radius='250' material='src: #earth;'>
-        <a-animation to='0 360 0' easing='linear' dur='400000' repeat='indefinite'/>
+        <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='400000' 
+		     repeat='indefinite'/>
     </a-sphere>
-          
+	    
+      <!--Add Moon Orbit -->          
       <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
             material="color: #FFC107"
             position="1000 0 500">
@@ -93,32 +97,48 @@
      <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'
 	       n-sphere-collider="enabled: true; type: environment; radius: 60">
         <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+        <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='100000' 
+		     repeat='indefinite'/>
       </a-sphere>
       
       <a-sphere position='0 700 2000' radius='50' material='src: #sun;'
 		n-sphere-collider="enabled: true; type: environment; radius: 50">
         <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+        <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='20000' 
+		     repeat='indefinite'/>
       </a-sphere>
       
       <a-sphere position='400 100 -500' radius='25' material='src: #mars;'
 		n-sphere-collider="enabled: true; type: environment; radius: 25">
         <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+        <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='100000' 
+		     repeat='indefinite'/>
       </a-sphere>
       
       <a-sphere position='-1000 200 -2000' radius='40' rotation='0 90 0' material='src: #saturn;'
 		n-sphere-collider="enabled: true; type: environment; radius: 40">
         <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+        <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='100000' 
+		     repeat='indefinite'/>
       </a-sphere>
       
       <a-sphere position='-200 300 700' radius='30' material='src: #venus;'
 		n-sphere-collider="enabled: true; type: environment; radius: 30">
-        <a-animation to='0 360 0' easing='linear' dur='250000' repeat='indefinite'/>
+        <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='250000' 
+		     repeat='indefinite'/>
       </a-sphere>
-      
+	    
+      <!-- Add Mercury Orbit -->
       <a-entity id="sun" geometry="primitive: sphere; radius: 1" 
             material="color: #FFC107"
             position='0 700 2000'>
@@ -138,13 +158,19 @@
       <a-sphere position='2000 -100 -300' radius='20' rotation='0 90 0' material='src: #uranus;'
 		n-sphere-collider="enabled: true; type: environment; radius: 20">
         <!-- add an animation to make it rotate -->
-        <a-animation to='360 0 0' easing='linear' dur='100000' repeat='indefinite'/>
+        <a-animation to='360 0 0' 
+		     easing='linear' 
+		     dur='100000' 
+		     repeat='indefinite'/>
       </a-sphere>
       
       <a-sphere position='-2000 50 -500' radius='15' rotation='0 90 0' material='src: #neptune;'
 		n-sphere-collider="enabled: true; type: environment; radius: 15">
         <!-- add an animation to make it rotate -->
-        <a-animation to='0 360 0' easing='linear' dur='100000' repeat='indefinite'/>
+        <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='100000' 
+		     repeat='indefinite'/>
       </a-sphere>
             
       <a-box material='src: #floortile; repeat: 32 32' position='0 .005 0' depth="128" height="0" width="128" class="not-clickable" 
@@ -174,7 +200,10 @@
       <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70'
 		n-mesh-collider="enabled: true; type: environment"
 		class="not-clickable" altspace-cursor-collider="enabled: false">
-        <a-animation to='0 0 360' easing='linear' dur='800000' repeat='indefinite'/>
+        <a-animation to='0 0 360' 
+		     easing='linear' 
+		     dur='800000' 
+		     repeat='indefinite'/>
       </a-entity>
       
 	<!-- Add Skybox -->    
@@ -280,7 +309,10 @@
 	 <a-entity class="discoball" position= "0 30 40">
 		
 		 <a-sphere id='disco-ball' radius= '4' material='src: #disco'>
-		  	<a-animation to='0 360 0' easing='linear' dur='20000' repeat='indefinite'/>
+		  	<a-animation to='0 360 0' 
+				     easing='linear' 
+				     dur='20000' 
+				     repeat='indefinite'/>
 		 </a-sphere>
 		 	
 		 <a-animation attribute="position"
