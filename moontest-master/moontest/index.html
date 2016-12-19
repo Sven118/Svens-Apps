@@ -60,7 +60,7 @@
      <a-sphere position='1000 0 500' radius='250' material='src: #earth;'>
         <a-animation to='0 360 0' easing='linear' dur='400000' repeat='indefinite'/>
     </a-sphere>
-      
+          
       <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
             material="color: #FFC107"
             position="1000 0 500">
@@ -162,12 +162,12 @@
 	      n-box-collider="enabled: true; type: environment size: 110 .01 110"></a-ring>
       <a-ring src="#uranusring"
 	      position='2000 -100 -300'
-	      radius-inner='30'
+	      radius-inner='25'
 	      radius-outer='50'
 	      transparent='true'
 	      side='double'
-	      rotation='0 45 0'
-	      n-box-collider="enabled: true; type: environment size: 50 .01 50"></a-ring>
+	      rotation='0 45 0'>
+      </a-ring>
       
       <!-- Add Spaceship -->
       <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70'></a-entity>
@@ -241,6 +241,7 @@
 			transparent='true'
 			n-mesh-collider="enabled: true; type: environment">
 		</a-entity>
+		    
 		<a-entity id="rail-5" geometry="primitive:box;"
 			rotation='0 90 0'
 			scale='.05 .5 50'
@@ -274,7 +275,7 @@
 			     ease-in-out='linear' 
 			     dur='6000' 
 			     repeat='indefinite'/>
-	</a-entity>
+                </a-entity>
 	    
 	 <a-entity class="discoball" position= "0 30 40">
 		
