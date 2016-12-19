@@ -48,7 +48,6 @@
             position="1000 0 500">
        <a-entity id="moonOrbit">
             <a-animation attribute="rotation"
-		 sync-transform="ownOn: true;"
                  dur="305000"
                  to="0 360 0"
                  repeat="indefinite" 
@@ -106,7 +105,6 @@
             position='0 700 2000'>
       <a-entity id="mercuryOrbit">
          <a-animation attribute="rotation"
-		 sync-transform="ownOn: true;"
                  dur="100000"
                  to="0 360 0"
                  repeat="indefinite" 
@@ -171,7 +169,6 @@
 		rotation='0 90 0'
 		n-mesh-collider="enabled: true; type: environment">
 		<a-animation attribute="position"
-			     sync-transform="ownOn: true;"
 			     direction='alternate' 
 			     from='0 0 18.5' to='0 15 18.5' 
 			     ease-in-out='linear' 
@@ -261,9 +258,9 @@
 	    
 	 <a-entity class="discoball" position= "0 30 40">
 		
-		 <a-entity id='disco-ball' geometry="primitive: sphere; radius= 4; material='src: #disco;'">
-		  	<a-animation to='0 360 0' easing='linear' dur='2000' repeat='indefinite'/>
-		 </a-entity>
+		 <a-sphere id='disco-ball' radius= '4' material='src: #disco'>
+		  	<a-animation to='0 360 0' easing='linear' dur='9000' repeat='indefinite'/>
+		 </a-sphere>
 		 	
 		 <a-animation attribute="position"
 			     direction='alternate' 
