@@ -10,8 +10,8 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd E:\Users\Stephen\Desktop\Altspace SDK\models\speaker\Speaker copy.jpg
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Kd Speaker copy.jpg
+map_Ka Texture copy.tif
 
 newmtl BlackMagnet
 Ns 254.901961
@@ -22,7 +22,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl Box
 Ns 254.901961
@@ -33,7 +33,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl Cover
 Ns 254.901961
@@ -44,7 +44,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl CoverMembran
 Ns 254.901961
@@ -55,8 +55,8 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd E:\Users\Stephen\Desktop\Altspace SDK\models\speaker\Speaker copy.jpg
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Kd Speaker copy.jpg
+map_Ka Texture copy.tif
 
 newmtl Default
 Ns 96.078431
@@ -67,7 +67,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl Glasses
 Ns 254.901961
@@ -78,7 +78,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 0.200000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl InJack
 Ns 254.901961
@@ -89,7 +89,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl Iron
 Ns 254.901961
@@ -100,7 +100,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl Jack
 Ns 254.901961
@@ -111,7 +111,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl Light
 Ns 254.901961
@@ -122,7 +122,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
 
 newmtl Rubber_Membran
 Ns 254.901961
@@ -133,4 +133,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Ka E:\\Users\\Stephen\\Desktop\\Altspace SDK\\models\\speaker\\Texture copy.tif
+map_Ka Texture copy.tif
