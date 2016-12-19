@@ -3,15 +3,29 @@
   <head>
     <meta charset="utf-8">
       <title>Moon Test</title>
-	<script src="../index.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 	<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
 	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.2.0/dist/aframe-altspace-component.min.js"></script>
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.26.3/altspace.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/nunjucks/3.0.0/nunjucks.min.js"></script>
+	<script src="https://rawgit.com/ngokevin/kframe/master/dist/kframe.min.js"></script>
     </head>
   <body>
     <!-- set up the scene -->
     <a-scene altspace= "fullspace: true" position="0 0 0">
- 
+	  
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAHntH3MbnEbaZRW1yGR0RPhLggHqv_m9c",
+    authDomain: "moontest-65076.firebaseapp.com",
+    databaseURL: "https://moontest-65076.firebaseio.com",
+    storageBucket: "moontest-65076.appspot.com",
+    messagingSenderId: "69113853979"
+  };
+  firebase.initializeApp(config);
+</script> 
+	    
     <!-- preload all our textures -->
     <a-assets>
         <img id='earth' crossorigin src='https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/earth.jpg'/>
@@ -57,6 +71,7 @@
             <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
               material="src: #moon;"
               position="-1300 50 0"
+		firebase-broadcast="components: position, geometry, scale, rotation"	
 		n-sphere-collider="enabled: true; type: environment; radius: 50"></a-entity>
             </a-entity>
         </a-entity>
@@ -170,8 +185,9 @@
 		scale="3 .1 3"
 		rotation='0 90 0'
 		n-mesh-collider="enabled: true; type: environment">
-		<a-animation attribute="position"
-			     direction='alternate' 
+		firebase-broadcast="components: position, geometry, scale, rotation"
+	<a-animation attribute="position"
+	direction='alternate' 
 			     from='0 0 18.5' to='0 15 18.5' 
 			     ease-in-out='linear' 
 			     dur='10000' 
