@@ -7,7 +7,93 @@
 	<script src="https://aframe.io/releases/0.3.1/aframe.min.js"></script>
 	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.2.0/dist/aframe-altspace-component.min.js"></script>
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.26.3/altspace.min.js"></script>
-	<script src="https://rawgit.com/ngokevin/kframe/master/dist/kframe.min.js"></script> 	
+	<script src="https://rawgit.com/ngokevin/kframe/master/dist/kframe.min.js"></script>
+	<script>
+	 AFRAME.registerComponent('unfolding-path',
+	{
+		schema: {
+			length: {type: 'int'}
+		},
+		init: function(){
+			var component = this;
+			var duration = 500;
+			var gap = 0.1;
+			var tileWidth = 4;
+			//todo meet in middle
+			function unfold(){
+				var max = component.data.length / tileWidth;
+				var i;
+				var halfMax = Math.floor(max / 2);
+				var secondHalfMax = max - halfMax;
+				for(i = 0; i < halfMax; i++){
+					console.log(i);
+					var z = -i * tileWidth - (tileWidth * gap);
+					var section = document.createElement("a-entity");
+					component.el.appendChild(section);
+					section.setAttribute('rotation', '90 180 0');
+					section.setAttribute('position', '-2 -2 0');
+					section.setAttribute('scale', '1 1 ' + (1 - gap));
+					section.setAttribute('n-object', 'res', 'architecture/floor-4w-4l');
+					var animation = document.createElement("a-animation");
+					animation.setAttribute('attribute', 'rotation');
+					animation.setAttribute('dur', duration);
+					animation.setAttribute('to', '0 180 0');
+					animation.setAttribute('delay', duration * 0.8 * i);
+					animation.setAttribute('easing', 'ease');
+					section.appendChild(animation);
+					animation = document.createElement("a-animation");
+					animation.setAttribute('attribute', 'position');
+					animation.setAttribute('dur', duration);
+					animation.setAttribute('to', '-2 0 ' + z);
+					animation.setAttribute('delay', duration * 0.8 * i);
+					animation.setAttribute('easing', 'ease');
+					section.appendChild(animation);
+				}
+				for(var j = 0; j < secondHalfMax; j++){
+					console.log(j);
+					var z = -(secondHalfMax - j) * tileWidth - (halfMax * tileWidth);
+					var section = document.createElement("a-entity");
+					component.el.appendChild(section);
+					section.setAttribute('rotation', '90 0 0');
+					section.setAttribute('position', '2 -2 ' + max * -tileWidth);
+					section.setAttribute('scale', '1 1 ' + (1 - gap));
+					section.setAttribute('n-object', 'res', 'architecture/floor-4w-4l');
+					var animation = document.createElement("a-animation");
+					animation.setAttribute('attribute', 'rotation');
+					animation.setAttribute('dur', duration);
+					animation.setAttribute('to', '0 0 0');
+					animation.setAttribute('delay', duration * 0.8 * j);
+					animation.setAttribute('easing', 'ease');
+					section.appendChild(animation);
+					animation = document.createElement("a-animation");
+					animation.setAttribute('attribute', 'position');
+					animation.setAttribute('dur', duration);
+					animation.setAttribute('to', '2 0 ' + z);
+					animation.setAttribute('delay', duration * 0.8 * j);
+					animation.setAttribute('easing', 'ease');
+					section.appendChild(animation);
+				}
+			}
+			function fold(){
+				component.el.innerHTML = '';
+			}
+			component.onStateAdded = function(){
+				var state = event.detail.state;
+				if (state === "unfolded") {
+					unfold();
+				}
+			}
+			component.onStateRemoved = function(){
+				var state = event.detail.state;
+				if (state === "unfolded") {
+					fold();
+				}
+			}
+			this.el.addEventListener('stateadded', component.onStateAdded);
+			this.el.addEventListener('stateremoved', component.onStateRemoved);
+		}
+	});
+	</script>
     </head>
   <body>
 
@@ -313,6 +399,12 @@
 			     dur='9000' 
 			     repeat='indefinite'/>
 	  </a-entity>
+	    
+	<a-entity id="path1" unfolding-path="length:20" position='5 15 18.5'></a-entity>
+		<a-entity id="trigger1" position="0 0 -16" n-box-collider="isTrigger:true; type:environment; size: 8 4 27" n-container="capacity:1"
+			wire="targets:#path1; gained: container-full; gain: unfolded"
+			wire__0="targets:#path1; lost: container-full; lose: unfolded">
+	</a-entity>
 	    
 	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 1 0' scale='20 20 20'>
 	</a-entity> -->
