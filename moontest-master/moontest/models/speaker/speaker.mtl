@@ -10,7 +10,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd Speaker copy.jpg
 map_Ka Texture copy.tif
 
 newmtl BlackMagnet
@@ -55,7 +54,6 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd Speaker copy.jpg
 map_Ka Texture copy.tif
 
 newmtl Default
