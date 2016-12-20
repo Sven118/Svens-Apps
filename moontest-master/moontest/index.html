@@ -57,9 +57,8 @@
       <!--Add Moon Orbit -->          
       <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
 	material="color: #FFC107"
-	position="1000 0 500"
-	sync-transform>
-       <a-entity id="moonOrbit">
+	position="1000 0 500">
+       <a-entity id="moonOrbit" sync="own-on: clientId" sync-transform>
             <a-animation attribute="rotation"
                  dur="305000"
                  to="0 360 0"
