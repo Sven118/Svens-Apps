@@ -65,9 +65,9 @@
                  repeat="indefinite" 
                  easing="linear"></a-animation>
             <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
-              material="src: #moon;"
-              position="-1300 50 0"
-		sync-transform="components: position, geometry, scale, rotation"	
+		material="src: #moon;"
+		position="-1300 50 0"
+		sync-transform	
 		n-sphere-collider="enabled: true; type: environment; radius: 50"></a-entity>
             </a-entity>
         </a-entity>
@@ -211,7 +211,7 @@
 		scale="3 .1 3"
 		rotation='0 90 0'
 		n-mesh-collider="enabled: true; type: environment"
-		firebase-broadcast="components: position, geometry, scale, rotation">	
+		sync-transform>	
 <a-animation attribute="position"
 	direction='alternate' 
 			     from='0 0 18.5' to='0 15 18.5' 
