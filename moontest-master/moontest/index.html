@@ -128,6 +128,8 @@
         <a-asset-item id="ring-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.mtl"></a-asset-item>
 	<a-asset-item id="speaker-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.mtl"></a-asset-item>
 	<a-asset-item id="speaker-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.obj"></a-asset-item>
+	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1" material="color: #5698Af"></a-mixin>
+       	<a-mixin id="pulse" attribute="material.color" from="#fff" to="#5698Af" dur="1000" begin="pulse"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
@@ -411,8 +413,10 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	 <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 1 0' scale='4 4 4'>
-	</a-entity>
+	<a-entity position="0 1 0"  mixin="box"><a-animation mixin="pulse"></a-animation></a-entity>   
+	    
+	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 1 0' scale='4 4 4'>
+	</a-entity> -->
 	    
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
@@ -422,4 +426,20 @@
     </a-scene>
  
   </body>
+	
+<script>
+     window.onload = function() {
+       var interval = setInterval(function() {
+         var pulses = document.querySelectorAll('[mixin="box"]');
+         var index = 0;
+ 
+         var loop = setInterval(function() {
+           pulses[index].emit('pulse')
+           pulses[pulses.length - 1 - index].emit('pulse')
+           index++;
+           if (index >= pulses.length/2) { clearInterval(loop); }
+         }, 100)
+       }, 1000);
+     }
+   </script>
 </html>
