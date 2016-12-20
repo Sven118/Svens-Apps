@@ -45,7 +45,7 @@
         </a-assets>
 
       <!-- Add Planets -->
-     <a-sphere position='1000 0 500' radius='250' material='src: #earth;'>
+     <a-sphere id='earth' position='1000 0 500' radius='250' material='src: #earth;' sync-transform>
         <a-animation to='0 360 0' 
 		     easing='linear' 
 		     dur='400000' 
@@ -53,7 +53,7 @@
     </a-sphere>
 	    
       <!--Add Moon Orbit -->          
-      <a-entity id="earth" geometry="primitive: sphere; radius: 5" sync-transform 
+      <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
 	material="color: #FFC107"
 	position="1000 0 500">
        <a-entity id="moonOrbit" sync-transform>
@@ -62,7 +62,7 @@
                  to="0 360 0"
                  repeat="indefinite" 
                  easing="linear"></a-animation>
-            <a-entity id="moon" geometry="primitive: sphere; radius: 50" sync-transform 
+            <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
 		material="src: #moon;"
 		position="-1300 50 0"
 		n-sphere-collider="enabled: true; type: environment; radius: 50"></a-entity>
@@ -70,7 +70,7 @@
         </a-entity>
 	    
      <!-- Add Cloud Layer to Earth -->
-     <a-sphere position='1000 0 500' 
+     <a-sphere id='clouds' position='1000 0 500' sync-transform 
 	radius='259' 
 	transparent='true' 
 	opacity="0.7" material='src: #clouds;'
@@ -134,7 +134,7 @@
       <a-entity id="sun" geometry="primitive: sphere; radius: 1" 
             material="color: #FFC107"
             position='0 700 2000'>
-      <a-entity id="mercuryOrbit">
+      <a-entity id="mercuryOrbit" sync-transform>
          <a-animation attribute="rotation"
                  dur="100000"
                  to="0 360 0"
@@ -275,7 +275,7 @@
 	    
 	<a-entity class="Billboard" position="0 0 5">
 
-		<a-entity position='6 1 0' rotation='0 90 0' scale="0.3 0.3 0.3">
+		<a-entity id='billboard' position='6 1 0' rotation='0 90 0' scale="0.3 0.3 0.3" sync-transform>
 
 			<a-entity position='0 6 -0.6' rotation='0 180 0'
 				n-text='text: Welcome; fontSize: 15'></a-entity>
