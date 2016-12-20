@@ -56,8 +56,9 @@
 	    
       <!--Add Moon Orbit -->          
       <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
-            material="color: #FFC107"
-            position="1000 0 500">
+	material="color: #FFC107"
+	position="1000 0 500"
+	sync-transform>
        <a-entity id="moonOrbit">
             <a-animation attribute="rotation"
                  dur="305000"
@@ -67,7 +68,6 @@
             <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
 		material="src: #moon;"
 		position="-1300 50 0"
-		sync-transform	
 		n-sphere-collider="enabled: true; type: environment; radius: 50"></a-entity>
             </a-entity>
         </a-entity>
