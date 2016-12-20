@@ -12,7 +12,7 @@
   <body>
 
     <!-- set up the scene -->
-    <a-scene altspace= "fullspace: true" position="0 0 0" sync-system='author: sven118; app: moontest; instance: KZPZ9R3_Vsuqhgz3Ynm; refUrl: https://moontest-65076.firebaseio.com'>
+    <a-scene altspace= "fullspace: true" sync-system='author: sven118; app: moontest; refUrl: https://moontest-65076.firebaseio.com'>
 	    
 
 	    
@@ -56,7 +56,7 @@
       <a-entity id="earth" geometry="primitive: sphere; radius: 5" sync-transform 
 	material="color: #FFC107"
 	position="1000 0 500">
-       <a-entity id="moonOrbit">
+       <a-entity id="moonOrbit" sync-transform>
             <a-animation attribute="rotation"
                  dur="305000"
                  to="0 360 0"
