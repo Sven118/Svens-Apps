@@ -8,6 +8,7 @@
 	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.2.0/dist/aframe-altspace-component.min.js"></script>
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.26.3/altspace.min.js"></script>
 	<script src="https://rawgit.com/ngokevin/kframe/master/dist/kframe.min.js"></script>
+	<script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
 	<script>
 	 AFRAME.registerComponent('unfolding-path',
 	{
@@ -415,8 +416,6 @@
 	    
 	<a-entity position="0 1 0"  mixin="box">
 		<a-animation id='c1' mixin="pulse" to='#FFFD5C' on-end='begin:#c2'> </a-animation>
-		<a-animation id='c2' mixin="pulse" to='#FD43BE' on-end='begin:#c3'> </a-animation>
-		<a-animation id='c3' mixin="pulse" to='#0012FF' on-end='begin:#c1'> </a-animation>
 	</a-entity>   
 	    
 	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 1 0' scale='4 4 4'>
@@ -441,7 +440,7 @@
            pulses[index].emit('pulse')
            pulses[pulses.length - 1 - index].emit('pulse')
            index++;
-           if (index >= pulses.length/2) { clearInterval(loop); }
+           if (index >= pulses.length/2) { clearInterval(); }
          }, 100)
        }, 1000);
      }
