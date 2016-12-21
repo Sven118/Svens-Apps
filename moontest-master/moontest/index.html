@@ -414,9 +414,9 @@
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
 	<a-entity position="0 1 0"  mixin="box">
-		<a-animation id='c1' mixin="pulse" to='#FFFD5C' on-end='begin: c2'> </a-animation>
-		<a-animation id='c2' mixin="pulse" to='#FD43BE' on-end='begin: c3'> </a-animation>
-		<a-animation id='c3' mixin="pulse" to='#0012FF' on-end='begin: c1'> </a-animation>
+		<a-animation id='c1' mixin="pulse" to='#FFFD5C' on-end='begin:#c2'> </a-animation>
+		<a-animation id='c2' mixin="pulse" to='#FD43BE' on-end='begin:#c3'> </a-animation>
+		<a-animation id='c3' mixin="pulse" to='#0012FF' on-end='begin:#c1'> </a-animation>
 	</a-entity>   
 	    
 	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 1 0' scale='4 4 4'>
