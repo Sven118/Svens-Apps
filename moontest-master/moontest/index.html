@@ -418,12 +418,7 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-entity id='discofloor' position="4 1 0"  mixin="box"
-		  wire="targets:#discofloor; on: animationend; emit: #pulse2"
-		  wire__0="targets:#discofloor; on: animationend; emit: #pulse3"
-		  wire__1="targets:#discofloor; on: animationend; emit: #pulse4">
-		<a-animation mixin="pulse1"></a-animation> 
-	    </a-entity>
+	<a-entity id='discofloor' position="4 1 0"  mixin="box" color-cycle ></a-entity>
 	    
 	    
 	    
@@ -434,6 +429,26 @@
     <a-entity position='0 0 2'>
         <a-camera></a-camera>
     </a-entity>
+	    
+<script>
+
+// an example custom component, that will change the color when clicked
+AFRAME.registerComponent('color-cycle', {
+    schema: {},
+    init: function(){
+        var self = this;
+        self.el.object3D.addEventListener('cursorup', function(){
+            var rgb = [
+                Math.floor(Math.random()*256),
+                Math.floor(Math.random()*256),
+                Math.floor(Math.random()*256)
+            ];
+            self.el.setAttribute('color', 'rgb('+rgb.join(',')+')');
+        });
+    }
+});
+
+</script>
  
     </a-scene>
  
@@ -454,5 +469,6 @@
        }, 1000);
      }
    </script>
+	
 	
 </html>
