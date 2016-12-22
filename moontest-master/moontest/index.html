@@ -7,8 +7,8 @@
 	<script src="https://aframe.io/releases/0.3.1/aframe.min.js"></script>
 	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.0/dist/aframe-altspace-component.min.js"></script>
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.26.3/altspace.min.js"></script>
-	<script src="https://rawgit.com/ngokevin/kframe/master/dist/kframe.min.js"></script>
 	<script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
+	<script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
 	<script>
 	 AFRAME.registerComponent('unfolding-path',
 	{
@@ -130,7 +130,10 @@
 	<a-asset-item id="speaker-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.mtl"></a-asset-item>
 	<a-asset-item id="speaker-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.obj"></a-asset-item>
 	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1" material="color: #5698Af"></a-mixin>
-       	<a-mixin id="pulse" attribute="material.color" from="#fff" to="#FD09FF" dur="700" begin="pulse"></a-mixin>
+       	<a-mixin id="pulse1" attribute="material.color" from="#fff" to="#FD09FF" dur="700" begin="pulse"></a-mixin>
+	<a-mixin id="pulse2" attribute="material.color" from="#fff" to="#FF0000" dur="700" begin="pulse"></a-mixin>
+	<a-mixin id="pulse3" attribute="material.color" from="#fff" to="#2DFF00" dur="700" begin="pulse"></a-mixin>    
+	<a-mixin id="pulse4" attribute="material.color" from="#fff" to="#0034FF" dur="700" begin="pulse"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
@@ -414,7 +417,13 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-entity position="2 1 0"  mixin="box"><a-animation mixin="pulse"></a-animation></a-entity>   
+	<a-entity id="discofloor" geometry="primitive: box;" position="2 1 0" color="#F55" scale="2 2 2"
+                animation="property: color; dir: alternate; dur: 1000;
+                           easing: easeInSine; loop: true; to: #5F5"
+                animation__scale="property: scale; dir: alternate; dur: 200;
+                           easing: easeInSine; loop: true; to: 1.2 1 1.2"
+                animation__yoyo="property: position; dir: alternate; dur: 1000;
+                                 easing: easeInSine; loop: true; to: 0 2 0"></a-entity>
 	    
 	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 1 0' scale='4 4 4'>
 	</a-entity> -->
@@ -443,4 +452,5 @@
        }, 1000);
      }
    </script>
+	
 </html>
