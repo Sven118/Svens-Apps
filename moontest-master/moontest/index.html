@@ -418,10 +418,9 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-entity id='discofloor' position="4 1 0"  mixin="box">
-		<a-animation mixin="pulse1" loop='false'></a-animation>
-		wire="targets:#discofloor; on: animationend; emit:'mixin= pulse2'" 
-	    
+	<a-entity id='discofloor' position="4 1 0"  mixin="box"
+		  wire="targets:#discofloor; on: animationend; emit: #pulse2">
+		<a-animation mixin="pulse1"></a-animation> 
 	    </a-entity>
 	    
 	    
