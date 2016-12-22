@@ -419,11 +419,7 @@
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
 	<a-entity id='discofloor' position="4 1 0"  mixin="box" color-cycle></a-entity>
-		<a-entity id="trigger2" position="4 0 0" n-box-collider="isTrigger:true; type:environment; size: 2 2 2" n-container="capacity:1"
-			wire="targets:#discofloor; gained: container-full; emit: color-cycle"
-			wire__0="targets:#discofloor; lost: container-full; emit: color-cycle">
-	    
-	    </a-entity>
+
 	    
 	    
 	    
