@@ -9,6 +9,7 @@
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.26.3/altspace.min.js"></script>
 	<script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
 	<script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+	  
 	<script>
 	 AFRAME.registerComponent('unfolding-path',
 	{
@@ -417,7 +418,11 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-entity position="4 1 0"  mixin="box"><a-animation mixin="pulse4"></a-animation></a-entity>
+	<a-entity id='discofloor' position="4 1 0"  mixin="box">
+		<a-animation mixin="pulse1" loop='false'></a-animation>
+		wire="targets:#discofloor; on: animationend; emit:'mixin= pulse2'" 
+	    
+	    </a-entity>
 	    
 	    
 	    
