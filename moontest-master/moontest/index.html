@@ -131,10 +131,10 @@
 	<a-asset-item id="speaker-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.mtl"></a-asset-item>
 	<a-asset-item id="speaker-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.obj"></a-asset-item>
 	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1" material="color: #5698Af"></a-mixin>
-       	<a-mixin id="pulse1" attribute="material.color" from="#fff" to="#FD09FF" dur="700" begin="pulse"></a-mixin>
-	<a-mixin id="pulse2" attribute="material.color" from="#fff" to="#FF0000" dur="700" begin="pulse"></a-mixin>
-	<a-mixin id="pulse3" attribute="material.color" from="#fff" to="#2DFF00" dur="700" begin="pulse"></a-mixin>    
-	<a-mixin id="pulse4" attribute="material.color" from="#fff" to="#0034FF" dur="700" begin="pulse"></a-mixin>
+       	<a-mixin id="pulse1" attribute="material.color" from="#fff" to="#FD09FF" dur="700"></a-mixin>
+	<a-mixin id="pulse2" attribute="material.color" from="#FD09FF" to="#FF0000" dur="700"></a-mixin>
+	<a-mixin id="pulse3" attribute="material.color" from="#FF0000" to="#2DFF00" dur="700"></a-mixin>    
+	<a-mixin id="pulse4" attribute="material.color" from="#2DFF00" to="#0034FF" dur="700"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
@@ -419,7 +419,9 @@
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
 	<a-entity id='discofloor' position="4 1 0"  mixin="box"
-		  wire="targets:#discofloor; on: animationend; emit: #pulse2">
+		  wire="targets:#discofloor; on: animationend; emit: #pulse2"
+		  wire__0="targets:#discofloor; on: animationend; emit: #pulse3"
+		  wire__1="targets:#discofloor; on: animationend; emit: #pulse4">
 		<a-animation mixin="pulse1"></a-animation> 
 	    </a-entity>
 	    
