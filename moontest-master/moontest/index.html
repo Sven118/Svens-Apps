@@ -447,7 +447,7 @@
            pulses[index].emit('pulse')
            pulses[pulses.length - 1 - index].emit('pulse')
            index++;
-		 
+	if (index >= pulses.length/2) { clearInterval(loop); }	 
          }, 100)
        }, 1000);
      }
