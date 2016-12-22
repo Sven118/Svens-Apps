@@ -418,11 +418,11 @@
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
 	<a-entity id="discofloor" geometry="primitive: box;" position="2 1 0" color="#F55" scale="2 2 2"
-                animation="property: color; dir: alternate; dur: 1000;
+                animation="property: color; mixin= pulse; dir: alternate; dur: 1000;
                            easing: easeInSine; loop: false; to: #2DFF00"
-                animation__color2="property: color; dir: alternate; dur: 2000;
+                animation__color2="property: color; mixin= pulse; dir: alternate; dur: 2000;
                            easing: easeInSine; loop: false; to: #0034FF"
-                animation__color3="property: color; dir: alternate; dur: 3000;
+                animation__color3="property: color; mixin= pulse; dir: alternate; dur: 3000;
                                  easing: easeInSine; loop: true; to: #FF0000"></a-entity>
 	    
 	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 1 0' scale='4 4 4'>
