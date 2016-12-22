@@ -22,7 +22,7 @@
       });
 
       // Cone 2: Testing click, listening on the cursor.
-      var cone2El = document.querySelector('#discofloor');
+      var cone2El = document.querySelector('#discofloor1');
       var cursorEl = document.querySelector('a-cursor');
       cursorEl.addEventListener('click', function(event) {
           var el = event.detail.target;
@@ -32,11 +32,11 @@
       });
 
       // Sphere: Testing mousedown/mouseup events.
-      var sphereEl = document.querySelector('#sphere');
-      sphereEl.addEventListener('mouseenter', function(event) {
+      var discofloorEl = document.querySelector('#discofloor');
+      discofloorEl.addEventListener('mouseenter', function(event) {
           changeColorRandom(event.target);
       });
-      sphereEl.addEventListener('mouseleave', function(event) {
+      discofloorEl.addEventListener('mouseleave', function(event) {
           changeColorRandom(event.target);
           event.target.setAttribute('material', 'color', 'grey');
       });
@@ -451,7 +451,7 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-entity id='discofloor' position="4 1 0"  mixin="box" color-cycle></a-entity>
+	<a-entity id='discofloor' position="4 1 0"  mixin="box"></a-entity>
 
 	    
 	    
