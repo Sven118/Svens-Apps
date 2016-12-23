@@ -132,6 +132,7 @@
 	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1"></a-mixin>
        	<a-mixin id="pulse1" attribute="material.color" from="#fff" to="#FD09FF" dur="700"></a-mixin>
 	<a-mixin id="sphereGeo" geometry="primitive: sphere; radius: 0.5;" material="color: grey"></a-mixin>
+	<a-mixin id="yoyoAni" attribute="position" direction="alternate" dur="3000" fill="forwards" repeat="indefinite"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
@@ -417,12 +418,14 @@
 	    
 	<a-entity id='discofloor' position="4 1 0"  mixin="box"></a-entity>
 	    
-	<a-entity id="sphere" mixin="sphereGeo" position="0 0 0"></a-entity>
+	<a-entity id="sphere" mixin="sphereGeo" position="0 0 0">
+        <a-animation mixin="yoyoAni" to="0 2 0"></a-animation>
+      </a-entity>
 
 	    
 	    
 	    
-	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 1 0' scale='4 4 4'>
+	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 0 0' scale='4 4 4'>
 	</a-entity> -->
 	    
     <!-- add a view camera (2d only) -->
