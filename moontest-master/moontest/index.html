@@ -131,7 +131,7 @@
 	<a-asset-item id="speaker-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.obj"></a-asset-item>
 	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1"></a-mixin>
        	<a-mixin id="pulse1" attribute="material.color" from="#fff" to="#FD09FF" dur="700"></a-mixin>
-        <a-mixin id="sphereGeo" geometry="primitive: sphere; radius: 0.5;" material="color: grey"></a-mixin>
+        <a-mixin id="sphereGeo" geometry="primitive: sphere; radius: 0.5;" material="color: #fff"></a-mixin>
         <a-mixin id="yoyoAni" attribute="position" direction="alternate"
                  dur="3000" fill="forwards" repeat="indefinite"></a-mixin>
         </a-assets>
@@ -458,6 +458,7 @@
 <script>
 	
 	var getRandomColor = function(el) {
+	var rand = function() { 
     // creating a random number between 0 and 255
     var r = Math.floor(Math.random()*256);
     var g = Math.floor(Math.random()*256);
@@ -483,7 +484,10 @@
  
     // creating the hex value by concatenatening the string values
     var hexColor = "#" + hexR + hexG + hexB;
-    return hexColor.toUpperCase();
+    return hexColor.toUpperCase(); };
+		
+		
+	el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
 }
 
 
