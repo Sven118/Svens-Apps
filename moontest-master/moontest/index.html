@@ -422,7 +422,7 @@
 		
       <a-entity id="sphere" mixin="box" position="-8 3 0"></a-entity>
 	    <a-entity id="trigger2" geometry="primitive:box" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
-			wire="target:#sphere; gained: container-full; gain: mouse-on"
+			wire="target:#sphere; gained: container-full; gain: hovered"
 			wire__0="target:#sphere; lost: container-full; gain: mouse-off">
 	    </a-entity>
 	    
