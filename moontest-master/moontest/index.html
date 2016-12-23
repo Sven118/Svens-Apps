@@ -418,6 +418,14 @@
 	    
 	<a-entity id='discofloor' position="4 1 0"  mixin="box"></a-entity>
 	    
+	<a-entity position="0 1.8 2">
+        <a-camera look-controls>
+          <a-cursor position="0 0 -1.25"
+            geometry="primitive: ring; radiusOuter: 0.075;
+                      radiusInner: 0.05;"
+            material="color: cyan; shader: flat"
+            maxDistance="30" fuse="false"></a-cursor>
+        </a-camera>
 	<a-entity id="sphere" mixin="sphereGeo" position="0 0 0">
         <a-animation mixin="yoyoAni" to="0 2 0"></a-animation>
       </a-entity>
