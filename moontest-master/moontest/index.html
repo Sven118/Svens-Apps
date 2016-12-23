@@ -483,11 +483,11 @@
     }
  
     // creating the hex value by concatenatening the string values
-    var hexColor = hexR + hexG + hexB;
+    var hexColor = "#" + hexR + hexG + hexB;
     return hexColor.toUpperCase(); };
 		
 		
-	el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+	el.setAttribute('material', 'color', 'hexColor');
 }
 
 
