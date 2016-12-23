@@ -491,10 +491,10 @@
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
       sphereEl.addEventListener('stateadded', function(event) {
-          stepOn(event.target);
+          setRandomColor(event.target);
       });
       sphereEl.addEventListener('stateremoved', function(event) {
-          stepOn(event.target);
+          setRandomColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
 	      
       });
