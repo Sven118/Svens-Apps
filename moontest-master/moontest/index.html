@@ -458,7 +458,7 @@
    </script>
 	
 <script>
-
+function stepon(){
 	var setRandomColor = function(el) {
 	var getRandColor = function() {
 		// creating a random number between 0 and 255
@@ -470,6 +470,22 @@
 	};
 		
     el.setAttribute('material', 'color', getRandColor());
+		
+		component.onStateAdded = function(){
+				var state = event.detail.state;
+				if (state === "stepon") {
+					stepon();
+				}
+			}
+			component.onStateRemoved = function(){
+				var state = event.detail.state;
+				if (state === "stepon") {
+					stepon();
+				}
+			}
+			this.el.addEventListener('stateadded', component.onStateAdded);
+			this.el.addEventListener('stateremoved', component.onStateRemoved);
+	}
 }
 
       // Sphere: Testing mousedown/mouseup events.
@@ -480,6 +496,7 @@
       sphereEl.addEventListener('mouseleave', function(event) {
           setRandomColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
+	      
       });
 
   </script>
