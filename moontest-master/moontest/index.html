@@ -420,9 +420,11 @@
 	<a-entity id='discofloor' position="4 1 0"  mixin="box"></a-entity>
 	    
 		
-      <a-entity id="sphere" mixin="sphereGeo" position="0 0 0">
-        <a-animation mixin="yoyoAni" to="0 2 0"></a-animation>
-      </a-entity>
+      <a-entity id="sphere" mixin="sphereGeo" position="8 3 0">
+	    <a-entity id="trigger2" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size: 3 3 3" n-container="capacity:1"
+			wire="targets:#sphere; gained: container-full; gain: mouseenter"
+			wire__0="targets:#sphere; lost: container-full; lose: mouseleave">
+	    </a-entity>
 	    
 	    
 	    
