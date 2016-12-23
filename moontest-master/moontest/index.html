@@ -481,22 +481,6 @@
           setRandomColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
       });
-	
-	component.onStateAdded = function(){
-				var state = event.detail.state;
-				if (state === "stepon") {
-					setRandomColor();
-				}
-			}
-			component.onStateRemoved = function(){
-				var state = event.detail.state;
-				if (state === "stepon") {
-					setRandomColor();
-				}
-			}
-			this.el.addEventListener('stateadded', component.onStateAdded);
-			this.el.addEventListener('stateremoved', component.onStateRemoved);
-		}
 
   </script>
 	
