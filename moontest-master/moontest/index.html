@@ -420,10 +420,13 @@
 	<a-entity id='discofloor' position="4 1 0"  mixin="box"></a-entity>
 	    
 		
-      <a-entity id="sphere" mixin="sphereGeo" position="-8 3 0"></a-entity>
+      <a-entity id="discofloor1" mixin="box" position="-8 3 0">
+	    <a-animation id='sphere'/> 
+	    
+	    </a-entity>
 	    <a-entity id="trigger2" geometry="primitive:box" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size: 3 3 3" n-container="capacity:1"
-			wire="target:#sphere; gained: container-full; on: mouseenter"
-			wire__0="target:#sphere; lost: container-full; on: mouseleave">
+			wire="target:#sphere; gained: container-full; gain:'sphereEl.addEventListener:mouseenter'"
+			wire__0="target:#sphere; lost: container-full; lose:'sphereEl.addEventListener:mouseleave'">
 	    </a-entity>
 	    
 	    
