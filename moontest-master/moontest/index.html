@@ -458,7 +458,7 @@
    </script>
 	
 <script>
-function stepOn(){
+	
 	var setRandomColor = function(el) {
 	var getRandColor = function() {
 		// creating a random number between 0 and 255
@@ -474,18 +474,18 @@ function stepOn(){
 		component.onStateAdded = function(){
 				var state = event.detail.state;
 				if (state === "stepon") {
-					stepon();
+					setRandomColor();
 				}
 			}
 			component.onStateRemoved = function(){
 				var state = event.detail.state;
 				if (state === "stepon") {
-					stepon();
+					setRandomColor();
 				}
 			}
 			this.el.addEventListener('stateadded', component.onStateAdded);
 			this.el.addEventListener('stateremoved', component.onStateRemoved);
-	}
+	
 }
 
       // Sphere: Testing mousedown/mouseup events.
