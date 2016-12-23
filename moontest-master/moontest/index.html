@@ -456,8 +456,8 @@
    </script>
 	
 <script>
-
-      var changeColorRandom = function(el) {
+	
+	function getRandomColor() {
     // creating a random number between 0 and 255
     var r = Math.floor(Math.random()*256);
     var g = Math.floor(Math.random()*256);
@@ -490,10 +490,10 @@
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
       sphereEl.addEventListener('mouseenter', function(event) {
-          changeColorRandom(event.target);
+          getRandomColor(event.target);
       });
       sphereEl.addEventListener('mouseleave', function(event) {
-          changeColorRandom(event.target);
+          getRandomColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
       });
 
