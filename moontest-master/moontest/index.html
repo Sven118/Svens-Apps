@@ -470,30 +470,15 @@
 	};
 		
     el.setAttribute('material', 'color', getRandColor());
-		
-		component.onStateAdded = function(){
-				var state = event.detail.state;
-				if (state === "stepon") {
-					setRandomColor();
-				}
-			}
-			component.onStateRemoved = function(){
-				var state = event.detail.state;
-				if (state === "stepon") {
-					setRandomColor();
-				}
-			}
-			this.el.addEventListener('stateadded', component.onStateAdded);
-			this.el.addEventListener('stateremoved', component.onStateRemoved);
 	
 }
 
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
-      sphereEl.addEventListener('stateadded', function(event) {
+      sphereEl.addEventListener('mouseenter', function(event) {
           setRandomColor(event.target);
       });
-      sphereEl.addEventListener('stateremoved', function(event) {
+      sphereEl.addEventListener('mouseleave', function(event) {
           setRandomColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
 	      
