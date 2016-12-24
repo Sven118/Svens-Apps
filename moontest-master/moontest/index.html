@@ -420,9 +420,7 @@
 	<a-entity id='discofloor' position="4 1 0"  mixin="box"></a-entity>
 	    
 		
-      <a-entity id="sphere" mixin="box" material="color: #fff" position="-8 3 0">
-	    <a-animation id="sphere" begin="start"></a-animation>
-	    </a-entity>
+      <a-entity id="sphere" mixin="box" material="color: #fff" position="-8 3 0"></a-entity>
 	      <a-entity id="trigger1" geometry="primitive:box;" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size:1 1 1" n-container="capacity:1"
 	      wire__on="target:#sphere; gained: container-full; gain: start"
 	      wire__off="target:#sphere; lost: container-full; gain: stop">
@@ -444,7 +442,24 @@
   </body>
 	
 <script>
+	var bodyElement = document.querySelector("#sphere");
+	var requestAnimation = sphereEl.requestAnimation
 	
+	var delay = 0;
+ 
+function changeColor() {
+    delay++;
+     
+    if (delay > 3) {
+        bodyElement.style.setAttribute = getRandomColor();
+        delay = 0;
+    }
+ 
+    requestAnimation(changeColor);
+}
+changeColor();     
+
+function getRandomColor() {
       var changeColorRandom = function(el) {
           var rand = function() { return Math.floor(Math.random() * 255)};
           el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
@@ -452,14 +467,15 @@
 	
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
-      sphereEl.addEventListener('start', function(event) {
+      sphereEl.addEventListener('mouseenter', function(event) {
           changeColorRandom(event.target);
       });
-      sphereEl.addEventListener('stop', function(event) {
+      sphereEl.addEventListener('mouseleave', function(event) {
           changeColorRandom(event.target);
           event.target.setAttribute('material', 'color', '#fff');
 
       });
+}
 
   </script>
 	
