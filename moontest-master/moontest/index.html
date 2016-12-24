@@ -443,7 +443,7 @@
 	
 <script>
 	var bodyElement = document.querySelector("#sphere");
-	
+	var requestAnimation = bodyElement;
 	var delay = 0;
  
 function changeColor() {
@@ -459,22 +459,23 @@ function changeColor() {
 changeColor();     
 
 function getRandomColor() {
-      var changeColorRandom = function(el) {
-          var rand = function() { return Math.floor(Math.random() * 255)};
-          el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
-      }
+  // creating a random number between 0 and 255
+  var r = Math.floor(Math.random() * 256);
+  var g = Math.floor(Math.random() * 256);
+  var b = Math.floor(Math.random() * 256);
+}
 	
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
       sphereEl.addEventListener('mouseenter', function(event) {
-          changeColorRandom(event.target);
+          getRandomColor(event.target);
       });
       sphereEl.addEventListener('mouseleave', function(event) {
-          changeColorRandom(event.target);
+          getRandomColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
 
       });
-}
+
 
   </script>
 	
