@@ -100,12 +100,27 @@
         // an example custom component, that will change the color when clicked
         AFRAME.registerComponent('color-cycle', {
             schema: {},
-            init: function(){
+            init: function changeColor(){ 
                 var self = this;
-                self.el.object3D.addEventListener('start', function(){
+                self.el.object3D.addEventListener('cursorup', function(){
                     var rand = function() { return Math.floor(Math.random() * 255)};
           		self.el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
                 });
+		    
+		    	component.onStateAdded = function(){
+				var state = event.detail.state;
+				if (state === "start") {
+					changeColor();
+				}
+			}
+			component.onStateRemoved = function(){
+				var state = event.detail.state;
+				if (state === "start") {
+					changeColor();
+				}
+			}
+			this.el.addEventListener('stateadded', component.onStateAdded);
+			this.el.addEventListener('stateremoved', component.onStateRemoved);
             }
         });
     </script>
@@ -434,8 +449,8 @@
 	 </a-entity>
 	    
 	    <a-entity id="trigger2" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
-			wire="targets:#disco; gained: container-full; emit: start"
-			wire__off="targets:#disco; lost: container-full; emit: start">
+			wire="targets:#disco; gained: container-full; gain: start"
+			wire__off="targets:#disco; lost: container-full; lose: start">
 	</a-entity>
  
 	    
