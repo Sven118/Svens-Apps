@@ -407,7 +407,7 @@
 	  </a-entity>
 	    
 	<a-entity id="path1" unfolding-path="length:40" position='8 15 18.5'></a-entity>
-		<a-entity id="trigger1" geometry="primitive:box;" position="8 15 -1.5" n-box-collider="isTrigger:true; type:environment; size: 8 4 47" n-container="capacity:1"
+		<a-entity id="trigger1" position="8 15 -1.5" n-box-collider="isTrigger:true; type:environment; size: 8 4 47" n-container="capacity:1"
 			wire="targets:#path1; gained: container-full; gain: unfolded"
 			wire__0="targets:#path1; lost: container-full; lose: unfolded">
 	</a-entity>
@@ -421,7 +421,7 @@
 	    
 		
       <a-entity id="sphere" mixin="box" position="-8 3 0">
-	      <a-entity id="trigger1" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size:1 1 1" n-container="capacity:1"
+	      <a-entity id="trigger1" geometry="primitive:box;" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size:1 1 1" n-container="capacity:1"
 	      wire__on="target:#sphere; gained: container-full; gain: mouseenter"
 	      wire__off="target:#sphere; lost: container-full; lose: mouseenter">
 	    </a-entity>
