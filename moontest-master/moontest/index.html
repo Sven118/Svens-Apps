@@ -157,7 +157,7 @@
             <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
 		material="src: #moon;"
 		position="-1300 50 0"
-		n-sphere-collider="enabled: true; type: environment; radius: 50"></a-entity>
+		n-sphere-collider="type: environment; radius: 50"></a-entity>
             </a-entity>
         </a-entity>
 	    
@@ -166,7 +166,7 @@
 	radius='259' 
 	transparent='true' 
 	opacity="0.7" material='src: #clouds;'
-	n-sphere-collider="enabled: true; type: environment; radius: 260" 
+	n-sphere-collider="type: environment; radius: 260" 
 	class="not-clickable" 
 	altspace-collider="enabled: false">
         <a-animation to='0 360 0' 
@@ -179,7 +179,7 @@
     </a-sphere>
       
      <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'
-	       n-sphere-collider="enabled: true; type: environment; radius: 60">
+	       n-sphere-collider="type: environment; radius: 60">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
 		     easing='linear' 
@@ -188,7 +188,7 @@
       </a-sphere>
       
       <a-sphere position='0 700 2000' radius='50' material='src: #sun;'
-		n-sphere-collider="enabled: true; type: environment; radius: 50">
+		n-sphere-collider="type: environment; radius: 50">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
 		     easing='linear' 
@@ -197,7 +197,7 @@
       </a-sphere>
       
       <a-sphere position='400 100 -500' radius='25' material='src: #mars;'
-		n-sphere-collider="enabled: true; type: environment; radius: 25">
+		n-sphere-collider="type: environment; radius: 25">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
 		     easing='linear' 
@@ -206,7 +206,7 @@
       </a-sphere>
       
       <a-sphere position='-1000 200 -2000' radius='40' rotation='0 90 0' material='src: #saturn;'
-		n-sphere-collider="enabled: true; type: environment; radius: 40">
+		n-sphere-collider="type: environment; radius: 40">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
 		     easing='linear' 
@@ -215,7 +215,7 @@
       </a-sphere>
       
       <a-sphere position='-200 300 700' radius='30' material='src: #venus;'
-		n-sphere-collider="enabled: true; type: environment; radius: 30">
+		n-sphere-collider="type: environment; radius: 30">
         <a-animation to='0 360 0' 
 		     easing='linear' 
 		     dur='250000' 
@@ -235,12 +235,12 @@
            <a-entity id="mercury" geometry="primitive: sphere; radius: 10" 
               material="src: #mercury;"
               position="60 -30 0"
-		n-sphere-collider="enabled: true; type: environment; radius: 10"></a-entity>
+		n-sphere-collider="type: environment; radius: 10"></a-entity>
            </a-entity>
       </a-entity>
       
       <a-sphere position='2000 -100 -300' radius='20' rotation='0 90 0' material='src: #uranus;'
-		n-sphere-collider="enabled: true; type: environment; radius: 20">
+		n-sphere-collider="type: environment; radius: 20">
         <!-- add an animation to make it rotate -->
         <a-animation to='360 0 0' 
 		     easing='linear' 
@@ -249,7 +249,7 @@
       </a-sphere>
       
       <a-sphere position='-2000 50 -500' radius='15' rotation='0 90 0' material='src: #neptune;'
-		n-sphere-collider="enabled: true; type: environment; radius: 15">
+		n-sphere-collider="type: environment; radius: 15">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
 		     easing='linear' 
@@ -269,7 +269,7 @@
 	      transparent='true'
 	      side='double'
 	      rotation='90 90 45'
-	      n-box-collider="enabled: true; type: environment size: 110 .01 110"></a-ring>
+	      n-box-collider="type: environment size: 110 .01 110"></a-ring>
       <a-ring src="#uranusring"
 	      position='2000 -100 -300'
 	      radius-inner='25'
@@ -282,7 +282,7 @@
       <!-- Add Spaceship -->
       <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70'></a-entity>
       <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70'
-		n-mesh-collider="enabled: true; type: environment"
+		n-mesh-collider="type: environment"
 		class="not-clickable" altspace-cursor-collider="enabled: false">
         <a-animation to='0 0 360' 
 		     easing='linear' 
@@ -299,7 +299,7 @@
             	position='0 0 18.5'
 		scale="3 .1 3"
 		rotation='0 90 0'
-		n-mesh-collider="enabled: true; type: environment">	
+		n-mesh-collider="type: environment">	
 <a-animation attribute="position"
 	direction='alternate' 
 			     from='0 0 18.5' to='0 15 18.5' 
@@ -315,7 +315,7 @@
 			scale='40 .1 50'
 			material='src: #floor2; repeat: 20 25'
             		position='0 0 0'
-			n-mesh-collider="enabled: true; type: environment">
+			n-mesh-collider="type: environment">
 	    	</a-entity>
 		    
 		<a-entity id="rail-1" geometry="primitive:box;"
@@ -324,7 +324,7 @@
 			material='src: #rail; repeat: 13.25 1'
 			position= '13.25 .5 -20'
 			transparent='true'
-			n-mesh-collider="enabled: true; type: environment">
+			n-mesh-collider="type: environment">
 		</a-entity>
 		
 		<a-entity id="rail-2" geometry="primitive:box;"
@@ -333,7 +333,7 @@
 			material='src: #rail; repeat: 13.25 1'
 			position= '-13.25 .5 -20'
 			transparent='true'
-			n-mesh-collider="enabled: true; type: environment">
+			n-mesh-collider="type: environment">
 		</a-entity>
 		    
 		<a-entity id="rail-3" geometry="primitive:box;"
@@ -342,7 +342,7 @@
 			material='src: #rail; repeat: 40 1'
 			position= '-25 .5 0'
 			transparent='true'
-			n-mesh-collider="enabled: true; type: environment">
+			n-mesh-collider="type: environment">
 		</a-entity>
 		    
 		<a-entity id="rail-4" geometry="primitive:box;"
@@ -351,7 +351,7 @@
 			material='src: #rail; repeat: 40 1'
 			position= '25 .5 0'
 			transparent='true'
-			n-mesh-collider="enabled: true; type: environment">
+			n-mesh-collider="type: environment">
 		</a-entity>
 		    
 		<a-entity id="rail-5" geometry="primitive:box;"
@@ -360,7 +360,7 @@
 			material='src: #rail; repeat: 50 1'
 			position= '0 .5 20'
 			transparent='true'
-			n-mesh-collider="enabled: true; type: environment">
+			n-mesh-collider="type: environment">
 		</a-entity>
 	</a-entity>
 	    
@@ -450,17 +450,17 @@
 	
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
-      sphereEl.addEventListener('mouseenter', function(event) {
+      sphereEl.addEventListener('start', function(event) {
           changeColorRandom(event.target);
       });
-      sphereEl.addEventListener('mouseleave', function(event) {
+      sphereEl.addEventListener('stop', function(event) {
           changeColorRandom(event.target);
           event.target.setAttribute('material', 'color', '#fff');
 	      
 	     		component.onStateAdded = function(){
 				var state = event.detail.state;
 				if (state === "start") {
-					chageColorRandom();
+					start();
 				}
 			}
 			component.onStateRemoved = function(){
