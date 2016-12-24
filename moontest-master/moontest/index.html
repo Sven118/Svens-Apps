@@ -95,7 +95,24 @@
 			this.el.addEventListener('stateremoved', component.onStateRemoved);
 		}
 	});
-	</script>
+	</script>	  
+	<script>
+        // an example custom component, that will change the color when clicked
+        AFRAME.registerComponent('color-cycle', {
+            schema: {},
+            init: function(){
+                var self = this;
+                self.el.object3D.addEventListener('mouseenter', function(){
+                    var rgb = [
+                        Math.floor(Math.random()*256),
+                        Math.floor(Math.random()*256),
+                        Math.floor(Math.random()*256)
+                    ];
+                    self.el.setAttribute('color', 'rgb('+rgb.join(',')+')');
+                });
+            }
+        });
+    </script>
     </head>
   <body>
 
@@ -460,24 +477,6 @@
 	  event.target.setAttribute('material', 'color', '#fff');
       });
 </script>
-	  
-   <script>
-        // an example custom component, that will change the color when clicked
-        AFRAME.registerComponent('color-cycle', {
-            schema: {},
-            init: function(){
-                var self = this;
-                self.el.object3D.addEventListener('mouseenter', function(self){
-                    var rgb = [
-                        Math.floor(Math.random()*256),
-                        Math.floor(Math.random()*256),
-                        Math.floor(Math.random()*256)
-                    ];
-                    self.el.setAttribute('color', 'rgb('+rgb.join(',')+')');
-                });
-            }
-        });
-    </script>
 	  
 	  
   </body>
