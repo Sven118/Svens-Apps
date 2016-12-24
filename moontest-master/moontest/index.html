@@ -416,7 +416,8 @@
 	    
 	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
 	    
-	<a-entity id='sphere1' position="4 1 2"  mixin="box"></a-entity>
+	<a-entity position="4 1 4"  mixin="box" color-cycle></a-entity>
+ 
 	    
 		
 
@@ -450,7 +451,7 @@
 }
 	
 	      // Sphere: Testing mousedown/mouseup events.
-      var sphereEl = document.querySelector('#sphere; #sphere1');
+      var sphereEl = document.querySelector('#sphere');
       sphereEl.addEventListener('mouseenter', function(event) {
           setRandomColor(event.target);
       });
@@ -459,6 +460,24 @@
 	  event.target.setAttribute('material', 'color', '#fff');
       });
 </script>
+	  
+   <script>
+        // an example custom component, that will change the color when clicked
+        AFRAME.registerComponent('color-cycle', {
+            schema: {},
+            init: function(){
+                var self = this;
+                self.el.object3D.addEventListener('cursorup', function(){
+                    var rgb = [
+                        Math.floor(Math.random()*256),
+                        Math.floor(Math.random()*256),
+                        Math.floor(Math.random()*256)
+                    ];
+                    self.el.setAttribute('color', 'rgb('+rgb.join(',')+')');
+                });
+            }
+        });
+    </script>
 	  
 	  
   </body>
