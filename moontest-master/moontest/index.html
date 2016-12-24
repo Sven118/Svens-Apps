@@ -442,28 +442,20 @@
   </body>
 	
 <script>
-	var setRandomColor = function(el) {
-	var getRandColor = function() {
-		// creating a random number between 0 and 255
-		var r = Math.floor(Math.random()*256);
-		var g = Math.floor(Math.random()*256);
-		var b = Math.floor(Math.random()*256);
-		
-		return new THREE.Color(r, g, b);
-	};
-		
-    el.setAttribute('material', 'color', getRandColor());
 	
-}
+      var changeColorRandom = function(el) {
+          var rand = function() { return Math.floor(Math.random() * 255)};
+          el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+      }
+	
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
-      sphereEl.addEventListener('start', function(event) {
-          setRandomColor(event.target);
+      sphereEl.addEventListener('mouseenter', function(event) {
+          changeColorRandom(event.target);
       });
-      sphereEl.addEventListener('stop', function(event) {
-          setRandomColor(event.target);
+      sphereEl.addEventListener('mouseleave', function(event) {
+          changeColorRandom(event.target);
           event.target.setAttribute('material', 'color', '#fff');
-	      
       });
 
   </script>
