@@ -106,7 +106,6 @@
 		init: function(){
 			var component = this;
 			var setRandomColor = function(el) {
-			function getRandomColor() {
     					// creating a random number between 0 and 255
     				var r = Math.floor(Math.random()*256);
    				var g = Math.floor(Math.random()*256);
@@ -458,7 +457,7 @@
 	    
 	<a-entity id='disco' position="4 1 4"  mixin="box" strobe></a-entity>    
 		<a-entity id="trigger2" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
-			wire="targets:#disco; gained: container-full; gain: start"
+			wire="target:#disco; gained: container-full; gain: start"
 			wire__off="target:#disco; lost: container-full; lose: start">
 		</a-entity>
  
