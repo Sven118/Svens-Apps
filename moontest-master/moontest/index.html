@@ -442,7 +442,6 @@
   </body>
 	
 <script>
-function stepon(){
 	var setRandomColor = function(el) {
 	var getRandColor = function() {
 		// creating a random number between 0 and 255
@@ -454,18 +453,38 @@ function stepon(){
 	};
 		
     el.setAttribute('material', 'color', getRandColor());
-	}	
+	
 }
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
       sphereEl.addEventListener('mouseenter', function(event) {
-          stepon(event.target);
+          setRandomColor(event.target);
       });
       sphereEl.addEventListener('mouseleave', function(event) {
-          stepon(event.target);
+          setRandomColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
 	      
       });
+	
+				function stepoff(){
+				component.el.innerHTML = '';
+			}
+			component.onStateAdded = function(){
+				var state = event.detail.state;
+				if (state === "stepon") {
+					setRandomColor();
+				}
+			}
+			component.onStateRemoved = function(){
+				var state = event.detail.state;
+				if (state === "stepon") {
+					stepoff();
+				}
+			}
+			this.el.addEventListener('stateadded', component.onStateAdded);
+			this.el.addEventListener('stateremoved', component.onStateRemoved);
+		}
+	});
 
   </script>
 	
