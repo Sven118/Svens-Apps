@@ -442,8 +442,8 @@
   </body>
 	
 <script>
-
-	var setRandomColor = function(el) {
+function stepon(el){
+	var setRandomColor = function() {
 	var getRandColor = function() {
 		// creating a random number between 0 and 255
 		var r = Math.floor(Math.random()*256);
@@ -454,7 +454,7 @@
 	};
 		
     el.setAttribute('material', 'color', getRandColor());
-	
+	}	
 }
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
