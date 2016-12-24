@@ -107,33 +107,41 @@
    			 } else {
      		 el.addEventListener('loaded', this.setMaterial.bind(this));
     		}
- 	 },
- 	 setMaterial: function () {
-   	 this.setAttribute('material', 'color', 'changeColor()');
-	    
-	function changeColor (){
-                var self = this;{
-                   var rand = function() { return Math.floor(Math.random() * 255)};
-		   this.el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+		 },
+  setMaterial: function () {
+    this.setAttribute('material', 'color', 'getRandomColor()');
+  }
+});
+function getRandomColor() {
+    // creating a random number between 0 and 255
+    var r = Math.floor(Math.random()*256);
+    var g = Math.floor(Math.random()*256);
+    var b = Math.floor(Math.random()*256);
+		  return new THREE.Color(r, g, b);
+	};
+		this.el.setAttribute('material', 'color', 'getRandomColor()');
 
+		}
 		    function stop(){
 				this.el.innerHTML = '';
 				}
-		    	this.onStateAdded = function(){
+		    	this.el.onStateAdded = function(){
 				var state = event.detail.state;
 				if (state === "start") {
-					changeColor();
+					getRandomColor();
 				}
 			}
-			this.onStateRemoved = function(){
+			this.el.onStateRemoved = function(){
 				var state = event.detail.state;
 				if (state === "start") {
 					stop();
 				}
 			}
-			this.el.addEventListener('stateadded', self.onStateAdded);
-			this.el.addEventListener('stateremoved', self.onStateRemoved);
-		}    
+			this.el.addEventListener('stateadded', this.el.onStateAdded);
+			this.el.addEventListener('stateremoved', this.el.onStateRemoved);
+			),
+		} 
+	}
     </script>
     </head>
   <body>
