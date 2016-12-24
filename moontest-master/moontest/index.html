@@ -106,7 +106,7 @@
                 self.el.object3D.addEventListener('cursorup', function(){
                     var rand = function() { return Math.floor(Math.random() * 255)};
 		   self.el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
-	
+
 		    function stop(){
 				self.el.innerHTML = '';
 				}
@@ -122,8 +122,8 @@
 					stop();
 				}
 			}
-			this.el.addEventListener('stateadded', self.onStateAdded);
-			this.el.addEventListener('stateremoved', self.onStateRemoved);
+			self.el.addEventListener('stateadded', self.onStateAdded);
+			self.el.addEventListener('stateremoved', self.onStateRemoved);
 		}    
 	}};
     </script>
