@@ -459,7 +459,7 @@
 	    
 	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
 	    
-	<a-entity id='disco' position="4 1 4"  mixin="box"></a-entity>    
+	<a-entity id='disco' strobe position="4 1 4"  mixin="box"></a-entity>    
 		<a-entity id="trigger2" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
 			wire="targets:#disco; gained: container-full; gain: start"
 			wire__off="target:#disco; lost: container-full; lose: start">
