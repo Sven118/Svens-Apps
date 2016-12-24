@@ -105,6 +105,7 @@
 		},
 		init: function(){
 			var component = this;
+			var setRandomColor = function(el) {
 			function getRandomColor() {
     					// creating a random number between 0 and 255
     				var r = Math.floor(Math.random()*256);
@@ -112,15 +113,15 @@
     				var b = Math.floor(Math.random()*256);
 		 	 return new THREE.Color(r, g, b);
 		};
-		this.setAttribute('material', 'color', 'getRandomColor()');
-
+		this.el.setAttribute('material', 'color', 'getRandomColor()');
+				
 		    function stop(){
-				component.innerHTML = '';
+				component.el.innerHTML = '';
 				}
 		    	component.onStateAdded = function(){
 				var state = event.detail.state;
 				if (state === "start") {
-					getRandomColor();
+					setRandomColor();
 				}
 			}
 			component.onStateRemoved = function(){
@@ -129,11 +130,11 @@
 					stop();
 				}
 			}
-			component.addEventListener('stateadded', component.onStateAdded);
-			component.addEventListener('stateremoved', component.onStateRemoved);
-			),
+			this.el.addEventListener('stateadded', component.onStateAdded);
+			this.el.addEventListener('stateremoved', component.onStateRemoved);
 		} 
 	}
+});
     </script>
     </head>
   <body>
