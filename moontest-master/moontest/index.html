@@ -419,7 +419,7 @@
 	    
 		
 	<a-box id="box2" scale='1 1 1' position='-5 1 0' color='#4EFF16'>
-			<a-animation begin="start" attribute="color: #4EFF16" dur="1000" to="#fff" direction="alternate"></a-animation>
+			<a-animation begin="start" material="color: #4EFF16" dur="1000" to="#fff" direction="alternate"></a-animation>
 	    </a-box>
 	    <a-entity id="trigger2" position="0 0 0" geometry='primitive: box' n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
 			wire="targets:#box2; gained: container-full; emit: start"
