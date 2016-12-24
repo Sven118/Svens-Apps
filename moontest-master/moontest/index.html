@@ -416,7 +416,7 @@
 	    
 	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
 	    
-	<a-entity id='sphere' position="4 1 2"  mixin="box"></a-entity>
+	<a-entity id='sphere1' position="4 1 2"  mixin="box"></a-entity>
 	    
 		
 
@@ -450,7 +450,7 @@
 }
 	
 	      // Sphere: Testing mousedown/mouseup events.
-      var sphereEl = document.querySelector('#sphere');
+      var sphereEl = document.querySelector('#sphere; #sphere1');
       sphereEl.addEventListener('mouseenter', function(event) {
           setRandomColor(event.target);
       });
