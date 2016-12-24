@@ -443,8 +443,12 @@
 	
 <script>
 	var bodyElement = document.querySelector("#sphere");
-	var requestAnimation = bodyElement;
+	var requestAnimationFrame(this.render());
 	var delay = 0;
+	
+	this.animate = function (el){
+        console.log("!");
+}
  
 function changeColor() {
     delay++;
@@ -458,7 +462,7 @@ function changeColor() {
 }
 changeColor();     
 
-function getRandomColor() {
+function getRandomColor(el) {
   // creating a random number between 0 and 255
   var r = Math.floor(Math.random() * 256);
   var g = Math.floor(Math.random() * 256);
