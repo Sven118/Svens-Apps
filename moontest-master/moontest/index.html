@@ -98,9 +98,20 @@
 	</script>	  
 	<script>
         // an example custom component, that will change the color when clicked
-        AFRAME.registerComponent('color-cycle', {
-            schema: {},
-            init: function (){
+    AFRAME.registerComponent('strobe', {
+	depdendencies: ['material'],
+ 	update: function () {
+    		var el = this.el;
+    		if (el.hasLoaded) {
+      		this.setMaterial();
+   			 } else {
+     		 el.addEventListener('loaded', this.setMaterial.bind(this));
+    		}
+ 	 },
+ 	 setMaterial: function () {
+   	 this.setAttribute('material', 'color', 'changeColor()');
+ 	 }
+});    
 	function changeColor (){
                 var self = this;
                 self.el.object3D.addEventListener('cursorup', function(){
@@ -126,6 +137,7 @@
 			self.el.addEventListener('stateremoved', self.onStateRemoved);
 		}    
 	}
+});
     </script>
     </head>
   <body>
