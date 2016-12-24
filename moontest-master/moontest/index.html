@@ -422,8 +422,8 @@
 		
       <a-entity id="sphere" mixin="box" material="color: #fff" position="-8 3 0"></a-entity>
 	      <a-entity id="trigger1" geometry="primitive:box;" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size:1 1 1" n-container="capacity:1"
-	      wire__on="target:#sphere; gained: container-full; emit: stepon"
-	      wire__off="target:#sphere; lost: container-full; lose: stepon">
+	      wire__on="target:#sphere; gained: container-full; gain: start"
+	      wire__off="target:#sphere; lost: container-full; gain: stop">
 	    </a-entity>
 		
 	    
@@ -457,33 +457,14 @@
 }
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
-      sphereEl.addEventListener('mouseenter', function(event) {
+      sphereEl.addEventListener('start', function(event) {
           setRandomColor(event.target);
       });
-      sphereEl.addEventListener('mouseleave', function(event) {
+      sphereEl.addEventListener('stop', function(event) {
           setRandomColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
 	      
-      
-	
-				function stepoff(){
-				component.el.innerHTML = '';
-			}
-			component.onStateAdded = function(){
-				var state = event.detail.state;
-				if (state === "stepon") {
-					setRandomColor();
-				}
-			}
-			component.onStateRemoved = function(){
-				var state = event.detail.state;
-				if (state === "stepon") {
-					stepoff();
-				}
-			}
-			this.el.addEventListener('stateadded', component.onStateAdded);
-			this.el.addEventListener('stateremoved', component.onStateRemoved);
-	});
+      });
 
   </script>
 	
