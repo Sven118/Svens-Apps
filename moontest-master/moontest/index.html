@@ -420,10 +420,10 @@
 	<a-entity id='discofloor' position="4 1 0"  mixin="box"></a-entity>
 	    
 		
-      <a-entity id="sphere" mixin="box" position="-8 3 0"></a-entity>
+      <a-entity id="sphere" mixin="box" material="color: #fff" position="-8 3 0"></a-entity>
 	      <a-entity id="trigger1" geometry="primitive:box;" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size:1 1 1" n-container="capacity:1"
-	      wire__on="target:#sphere; gained: container-full; gain: el"
-	      wire__off="target:#sphere; lost: container-full; lose: el">
+	      wire__on="target:#sphere; gained: container-full; gain: stepon"
+	      wire__off="target:#sphere; lost: container-full; lose: stepon">
 	    </a-entity>
 		
 	    
@@ -444,7 +444,7 @@
 <script>
      window.onload = function() {
        var interval = setInterval(function() {
-         var pulses = document.querySelectorAll('[mixin="box"]');
+         var pulses = document.querySelectorAll('[mixin="1box"]');
          var index = 0;
  
          var loop = setInterval(function() {
@@ -458,7 +458,7 @@
    </script>
 	
 <script>
-	
+function stepon(){
 	var setRandomColor = function(el) {
 	var getRandColor = function() {
 		// creating a random number between 0 and 255
@@ -471,8 +471,8 @@
 		
     el.setAttribute('material', 'color', getRandColor());
 	
+	}
 }
-
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
       sphereEl.addEventListener('mouseenter', function(event) {
