@@ -131,7 +131,6 @@
 	<a-asset-item id="speaker-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.mtl"></a-asset-item>
 	<a-asset-item id="speaker-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.obj"></a-asset-item>
 	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1" material="color: #fff"></a-mixin>
-       	<a-asset-item id="pulse1" material="random-color"></a-asset-item>
         </a-assets>
 
       <!-- Add Planets -->
@@ -415,7 +414,7 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-entity id='discofloor' position="4 1 0"  mixin="box" mixin="pulse1"></a-entity>
+	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
 	    
 		
 
@@ -434,6 +433,32 @@
  
     </a-scene>
  
+<script>
+	var setRandomColor = function(el) {
+	var getRandColor = function() {
+		// creating a random number between 0 and 255
+		var r = Math.floor(Math.random()*256);
+		var g = Math.floor(Math.random()*256);
+		var b = Math.floor(Math.random()*256);
+		
+		return new THREE.Color(r, g, b);
+	};
+		
+    el.setAttribute('material', 'color', getRandColor());
+}
+	
+	      // Sphere: Testing mousedown/mouseup events.
+      var sphereEl = document.querySelector('#sphere');
+      sphereEl.addEventListener('mouseenter', function(event) {
+          setRandomColor(event.target);
+      });
+      sphereEl.addEventListener('mouseleave', function(event) {
+          setRandomColor(event.target);
+          event.target.setAttribute('material', 'color', '#fff');
+      });
+</script>
+	  
+	  
   </body>
 		
 </html>
