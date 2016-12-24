@@ -103,12 +103,9 @@
             init: function(){
                 var self = this;
                 self.el.object3D.addEventListener('cursorup', function(){
-                    var rgb = [
-                        Math.floor(Math.random()*256),
-                        Math.floor(Math.random()*256),
-                        Math.floor(Math.random()*256)
+                    var rand = function() { return Math.floor(Math.random() * 255)};
+          		self.el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
                     ];
-                    self.el.setAttribute('material', 'color', 'rgb('+rgb.join(',')+')');
                 });
             }
         });
