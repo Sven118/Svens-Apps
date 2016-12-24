@@ -98,47 +98,39 @@
 	</script>	  
 	<script>
         // Strobe Random Colors
-    AFRAME.registerComponent('strobe', {
-	depdendencies: ['material'],
- 	update: function () {
-    		var el = this.el;
-    		if (el.hasLoaded) {
-      		this.setMaterial();
-   			 } else {
-     		 el.addEventListener('loaded', this.setMaterial.bind(this));
-    		}
-		 },
-  setMaterial: function () {
-    this.setAttribute('material', 'color', 'getRandomColor()');
-  }
-});
-function getRandomColor() {
-    // creating a random number between 0 and 255
-    var r = Math.floor(Math.random()*256);
-    var g = Math.floor(Math.random()*256);
-    var b = Math.floor(Math.random()*256);
-		  return new THREE.Color(r, g, b);
-	};
-		this.el.setAttribute('material', 'color', 'getRandomColor()');
+    AFRAME.registerComponent('strobe',
+	{
+		schema: {
+			color: {default: '#fff'}
+		},
+		init: function(){
+			var component = this;
+			function getRandomColor() {
+    					// creating a random number between 0 and 255
+    				var r = Math.floor(Math.random()*256);
+   				var g = Math.floor(Math.random()*256);
+    				var b = Math.floor(Math.random()*256);
+		 	 return new THREE.Color(r, g, b);
+		};
+		this.setAttribute('material', 'color', 'getRandomColor()');
 
-		}
 		    function stop(){
-				this.el.innerHTML = '';
+				component.innerHTML = '';
 				}
-		    	this.el.onStateAdded = function(){
+		    	component.onStateAdded = function(){
 				var state = event.detail.state;
 				if (state === "start") {
 					getRandomColor();
 				}
 			}
-			this.el.onStateRemoved = function(){
+			component.onStateRemoved = function(){
 				var state = event.detail.state;
 				if (state === "start") {
 					stop();
 				}
 			}
-			this.el.addEventListener('stateadded', this.el.onStateAdded);
-			this.el.addEventListener('stateremoved', this.el.onStateRemoved);
+			component.addEventListener('stateadded', component.onStateAdded);
+			component.addEventListener('stateremoved', component.onStateRemoved);
 			),
 		} 
 	}
@@ -463,7 +455,7 @@ function getRandomColor() {
 	    
 	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
 	    
-	<a-entity id='disco' strobe position="4 1 4"  mixin="box"></a-entity>    
+	<a-entity id='disco' position="4 1 4"  mixin="box" strobe></a-entity>    
 		<a-entity id="trigger2" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
 			wire="targets:#disco; gained: container-full; gain: start"
 			wire__off="target:#disco; lost: container-full; lose: start">
