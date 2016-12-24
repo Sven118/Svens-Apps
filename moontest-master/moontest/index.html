@@ -422,7 +422,7 @@
 		
       <a-entity id="sphere" mixin="box" material="color: #fff" position="-8 3 0"></a-entity>
 	      <a-entity id="trigger1" geometry="primitive:box;" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size:1 1 1" n-container="capacity:1"
-	      wire__on="target:#sphere; gained: container-full; gain: stepon"
+	      wire__on="target:#sphere; gained: container-full; emit: stepon"
 	      wire__off="target:#sphere; lost: container-full; lose: stepon">
 	    </a-entity>
 		
