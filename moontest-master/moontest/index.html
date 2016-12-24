@@ -121,13 +121,13 @@
 		    function stop(){
 				component.el.innerHTML = '';
 				}
-		    	component.onStateAdded = function(){
+		    	component.el.onStateAdded = function(){
 				var state = event.detail.state;
 				if (state === "start") {
 					setRandomColor();
 				}
 			}
-			component.onStateRemoved = function(){
+			component.el.onStateRemoved = function(){
 				var state = event.detail.state;
 				if (state === "start") {
 					stop();
@@ -136,9 +136,8 @@
 			this.el.addEventListener('stateadded', component.onStateAdded);
 			this.el.addEventListener('stateremoved', component.onStateRemoved);
 		} 
-	}
-});
-    </script>
+	});
+	</script>
     </head>
   <body>
 
