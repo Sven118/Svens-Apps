@@ -100,27 +100,33 @@
         // an example custom component, that will change the color when clicked
         AFRAME.registerComponent('color-cycle', {
             schema: {},
-            init: function changeColor(){ 
+            init: function (){
+	function changeColor (){
                 var self = this;
                 self.el.object3D.addEventListener('cursorup', function(){
                     var rand = function() { return Math.floor(Math.random() * 255)};
-          		self.el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+		   self.el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+			}
                 });
 		    
-		    	component.onStateAdded = function(){
+		    function stop(){
+				self.el.innerHTML = '';
+			    
+		    	self.onStateAdded = function(){
 				var state = event.detail.state;
 				if (state === "start") {
 					changeColor();
 				}
 			}
-			component.onStateRemoved = function(){
+			self.onStateRemoved = function(){
 				var state = event.detail.state;
 				if (state === "start") {
-					changeColor();
+					stop();
 				}
 			}
-			this.el.addEventListener('stateadded', component.onStateAdded);
-			this.el.addEventListener('stateremoved', component.onStateRemoved);
+			this.el.addEventListener('stateadded', self.onStateAdded);
+			this.el.addEventListener('stateremoved', self.onStateRemoved);
+		    
             }
         });
     </script>
@@ -444,14 +450,11 @@
 	    
 	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
 	    
-	<a-entity id='disco' position="4 1 4"  mixin="box">
-	    <a-animation begin='start' color-cycle/>
-	 </a-entity>
-	    
-	    <a-entity id="trigger2" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
+	<a-entity id='disco' position="4 1 4"  mixin="box"></a-entity>    
+		<a-entity id="trigger2" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
 			wire="targets:#disco; gained: container-full; gain: start"
-			wire__off="targets:#disco; lost: container-full; lose: start">
-	</a-entity>
+			wire__off="target:#disco; lost: container-full; lose: start">
+		</a-entity>
  
 	    
 		
