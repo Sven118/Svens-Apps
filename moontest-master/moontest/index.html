@@ -97,13 +97,13 @@
 	});
 	</script>	  
 	<script>
-        // an example custom component, that will change the color when clicked
+        // Strobe Random Colors
     AFRAME.registerComponent('strobe', {
 	depdendencies: ['material'],
  	update: function () {
     		var el = this.el;
     		if (el.hasLoaded) {
-      		self.setMaterial();
+      		this.setMaterial();
    			 } else {
      		 el.addEventListener('loaded', this.setMaterial.bind(this));
     		}
@@ -112,9 +112,8 @@
    	 this.setAttribute('material', 'color', 'changeColor()');
 	    
 	function changeColor (){
-                var self = this;
-                self.el.object3D.addEventListener('cursorup', function(){
-                    var rand = function() { return Math.floor(Math.random() * 255)};
+                var self = this;{
+                   var rand = function() { return Math.floor(Math.random() * 255)};
 		   self.el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
 
 		    function stop(){
@@ -135,7 +134,6 @@
 			self.el.addEventListener('stateadded', self.onStateAdded);
 			self.el.addEventListener('stateremoved', self.onStateRemoved);
 		}    
-	}
 });
     </script>
     </head>
