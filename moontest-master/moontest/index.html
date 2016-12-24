@@ -465,9 +465,32 @@ function getRandColor(el) {
 	};
 		
     el.setAttribute('material', 'color', getRandColor(el));
-}	
+}
+</script>
 
-
+<script>
+AFRAME.registerComponent('strobe', {
+	schema: {
+   	 color: { default: '#fff' },
+		
+var material = new THREE.Material({
+    color: this.data.color
+  });
+		
+var setRandomColor = new THREE.Color(el); {
+	this.data.path.forEach(function (rgb)
+		// creating a random number between 0 and 255
+		var r = Math.floor(Math.random()*256);
+		var g = Math.floor(Math.random()*256);
+		var b = Math.floor(Math.random()*256);
+		
+		return new THREE.Color(r, g, b);
+	};
+		
+    el.setAttribute('material', 'color', setRandColor());
+	}
+}
+		
   </script>
 	
 	
