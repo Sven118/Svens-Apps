@@ -420,12 +420,10 @@
 	<a-entity id='discofloor' position="4 1 0"  mixin="box"></a-entity>
 	    
 		
-      <a-entity id="sphere" mixin="box" position="-8 3 0"></a-entity>
-	    <a-entity id="trigger2" geometry="primitive:box" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
-			wire="target:#sphere; gained: container-full; gain: 'sphereEl: mouseenter'"
-			wire__0="target:#sphere; lost: container-full; gain: 'sphereEl: mouseleave'">
+      <a-entity mixin="box" position="-8 3 0">
+	    <a-animation id='sphere'></a-animation>
 	    </a-entity>
-	    
+		
 	    
 	    
 	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 0 0' scale='4 4 4'>
