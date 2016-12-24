@@ -102,7 +102,7 @@
             schema: {},
             init: function(){
                 var self = this;
-                self.el.object3D.addEventListener('cursorup', function(){
+                self.el.object3D.addEventListener('mouseenter', function(){
                     var rand = function() { return Math.floor(Math.random() * 255)};
           		self.el.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
                 });
