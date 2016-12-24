@@ -430,10 +430,10 @@
 	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
 	    
 	<a-entity id='disco' position="4 1 4"  mixin="box">
-	    <a-entity begin='start' color-cycle></a-entity>
+	    <a-animation begin='start' color-cycle/>
 	 </a-entity>
 	    
-	    <a-entity id="trigger1" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
+	    <a-entity id="trigger2" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
 			wire="targets:#disco; gained: container-full; emit: start"
 			wire__off="targets:#disco; lost: container-full; emit: start">
 	</a-entity>
