@@ -442,22 +442,6 @@
   </body>
 	
 <script>
-     window.onload = function() {
-       var interval = setInterval(function() {
-         var pulses = document.querySelectorAll('[mixin="1box"]');
-         var index = 0;
- 
-         var loop = setInterval(function() {
-           pulses[index].emit('pulse')
-           pulses[pulses.length - 1 - index].emit('pulse')
-           index++;
-	if (index >= pulses.length/2) { clearInterval(loop); }	 
-         }, 100)
-       }, 1000);
-     }
-   </script>
-	
-<script>
 function stepon(){
 	var setRandomColor = function(el) {
 	var getRandColor = function() {
