@@ -416,6 +416,8 @@
 	    
 	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
 	    
+	<a-entity id='sphere' position="4 1 2"  mixin="box"></a-entity>
+	    
 		
 
 
@@ -454,6 +456,7 @@
       });
       sphereEl.addEventListener('mouseleave', function(event) {
           setRandomColor(event.target);
+	  event.target.setAttribute('material', 'color', '#fff');
       });
 </script>
 	  
