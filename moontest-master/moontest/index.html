@@ -9,6 +9,7 @@
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.26.3/altspace.min.js"></script>
 	<script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
 	<script src="https://rawgit.com/ngokevin/aframe-animation-component/master/dist/aframe-animation-component.min.js"></script>
+	<script src="https://rawgit.com/ngokevin/aframe-randomizer-components/master/dist/aframe-randomizer-components.min.js"></script>
 	<script>
 	 AFRAME.registerComponent('unfolding-path',
 	{
@@ -129,11 +130,8 @@
         <a-asset-item id="ring-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.mtl"></a-asset-item>
 	<a-asset-item id="speaker-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.mtl"></a-asset-item>
 	<a-asset-item id="speaker-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.obj"></a-asset-item>
-	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1"></a-mixin>
+	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1" material="color: #fff"></a-mixin>
        	<a-mixin id="pulse1" attribute="material.color" from="#fff" to="#FD09FF" dur="700"></a-mixin>
-        <a-mixin id="sphereGeo" geometry="primitive: sphere; radius: 0.5;" material="color: #fff"></a-mixin>
-        <a-mixin id="yoyoAni" attribute="position" direction="alternate"
-                 dur="3000" fill="forwards" repeat="indefinite"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
@@ -417,17 +415,14 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-entity id='discofloor' position="4 1 0"  mixin="box" strobe></a-entity>
+	<a-entity id='discofloor' position="4 1 0"  mixin="box" random-color></a-entity>
 	    
 		
-      <a-entity id="sphere" mixin="box" material="color: #fff" position="-8 3 0"></a-entity>
-	      <a-entity id="trigger1" geometry="primitive:box;" position="0 0 0" n-box-collider="isTrigger:true; type:environment; size:1 1 1" n-container="capacity:1"
-	      wire__on="target:#sphere; gained: container-full; gain: start"
-	      wire__off="target:#sphere; lost: container-full; gain: stop">
-	    </a-entity>
+      <a-entity id="sphere" mixin="box" random-color position="-8 3 0"></a-entity>
+
 		
 	    
-	    
+  
 	<!-- <a-entity obj-model="obj: #speaker-obj; mtl: #speaker-mtl" position='0 0 0' scale='4 4 4'>
 	</a-entity> -->
 	    
@@ -440,54 +435,5 @@
     </a-scene>
  
   </body>
-	
-<script>
-	var sphereEl = document.querySelector('#sphere');
-	var delay = 0;
-
-function changeColor() {
-    delay++;
-     
-    if (delay > 3) {
-        sphereEL.style.setAttribute = getRandColor();
-        delay = 0;
-    }
- 
-changeColor();     
-
-function getRandColor(el) {
-		// creating a random number between 0 and 255
-		var r = Math.floor(Math.random()*256);
-		var g = Math.floor(Math.random()*256);
-		var b = Math.floor(Math.random()*256);
 		
-		return new THREE.Color(r, g, b);
-	};
-		
-    el.setAttribute('material', 'color', getRandColor(el));
-}
-</script>
-
-<script>
-AFRAME.registerComponent('strobe', {
-	schema: {
-   	 color: { default: '#fff' },
-		
-var setRandomColor = new THREE.Color(el); {
-	this.data.path.forEach(function (rgb)
-		// creating a random number between 0 and 255
-		var r = Math.floor(Math.random()*256);
-		var g = Math.floor(Math.random()*256);
-		var b = Math.floor(Math.random()*256);
-		
-		return new THREE.Color(r, g, b);
-	};
-		
-    this.el.setAttribute('material', 'color', setRandColor());
-	}
-}
-		
-  </script>
-	
-	
 </html>
