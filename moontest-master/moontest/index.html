@@ -442,40 +442,37 @@
   </body>
 	
 <script>
-	var bodyElement = document.querySelector("#sphere");
-	var requestAnimationFrame = this.render();
+	var bodyElement = document.querySelector("#sphere");;
 	var delay = 0;
-	
-	this.animate = function (el){
-        console.log("!");
-}
- 
+
 function changeColor() {
     delay++;
      
     if (delay > 3) {
-        bodyElement.style.setAttribute = getRandomColor();
+        bodyElement.style.setAttribute = getRandColor();
         delay = 0;
     }
  
-    requestAnimation(changeColor);
-}
 changeColor();     
 
-function getRandomColor(el) {
-  // creating a random number between 0 and 255
-  var r = Math.floor(Math.random() * 256);
-  var g = Math.floor(Math.random() * 256);
-  var b = Math.floor(Math.random() * 256);
-}
-	
+function getRandColor() {
+		// creating a random number between 0 and 255
+		var r = Math.floor(Math.random()*256);
+		var g = Math.floor(Math.random()*256);
+		var b = Math.floor(Math.random()*256);
+		
+		return new THREE.Color(r, g, b);
+	};
+		
+    el.setAttribute('material', 'color', getRandColor());
+}	
       // Sphere: Testing mousedown/mouseup events.
       var sphereEl = document.querySelector('#sphere');
       sphereEl.addEventListener('mouseenter', function(event) {
-          getRandomColor(event.target);
+          getRandColor(event.target);
       });
       sphereEl.addEventListener('mouseleave', function(event) {
-          getRandomColor(event.target);
+          getRandColor(event.target);
           event.target.setAttribute('material', 'color', '#fff');
 
       });
