@@ -456,6 +456,21 @@
       sphereEl.addEventListener('mouseleave', function(event) {
           changeColorRandom(event.target);
           event.target.setAttribute('material', 'color', '#fff');
+	      
+	     		component.onStateAdded = function(){
+				var state = event.detail.state;
+				if (state === "start") {
+					chageColorRandom();
+				}
+			}
+			component.onStateRemoved = function(){
+				var state = event.detail.state;
+				if (state === "start") {
+					stop();
+				}
+			}
+			this.el.addEventListener('stateadded', component.onStateAdded);
+			this.el.addEventListener('stateremoved', component.onStateRemoved);
       });
 
   </script>
