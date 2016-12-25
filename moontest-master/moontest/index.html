@@ -97,21 +97,30 @@
 	});
 	</script>	  
 	<script>
-		var setRandomColor = function(el) {
-			var getRandColor = function() {
-				// creating a random number between 0 and 255
-				var r = Math.random();
-				var g = Math.random();
-				var b = Math.random();
-				return new THREE.Color(r, g, b);
-			};
-			el.setAttribute('material', 'color', getRandColor().getStyle());
-		}
-		var boxEl = document.querySelector('#box');
-		boxEl.addEventListener('change-color', function(event) {
-			setRandomColor(event.target);
-		});
-	</script>
+	var setRandomColor = function(el) {
+	var getRandColor = function() {
+		// creating a random number between 0 and 255
+		var r = Math.floor(Math.random()*256);
+		var g = Math.floor(Math.random()*256);
+		var b = Math.floor(Math.random()*256);
+		
+		return new THREE.Color(r, g, b);
+	};
+		
+    el.setAttribute('material', 'color', getRandColor());
+}
+	
+	      // Sphere: Testing mousedown/mouseup events.
+      var boxEl = document.querySelector('#box');
+      boxEl.addEventListener('change-color', function(event) {
+          setRandomColor(event.target);
+      });
+      boxEl.addEventListener('change-color-off', function(event) {
+          setRandomColor(event.target);
+	  event.target.setAttribute('material', 'color', '#fff');
+      });
+</script>
+	  
     </head>
   <body>
 
@@ -431,10 +440,10 @@
 	    
 	<a-box id="box" position="4 1 4"></a-box>
 	<a-box id="trigger2" position="0 0 4"
-		n-box-collider="isTrigger: true; type: environment; size: 1 1 1"
-		n-container="capacity: 1"
-		wire="targets: #box; gained: container-full; emit: change-color"
-		wire__0="targets: #box; lost: container-full; emit: change-color">
+		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-container="capacity:1"
+		wire__on="target:#box; gained: container-full; emit: change-color"
+		wire__off="target:#box; lost: container-full; emit: change-color-off">
 	</a-box>
  
 	    
@@ -451,7 +460,6 @@
     <a-entity position='0 0 2'>
         <a-camera></a-camera>
     </a-entity>
-
  
     </a-scene>
 	  
