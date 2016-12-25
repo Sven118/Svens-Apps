@@ -289,7 +289,7 @@
 	<!-- Add Collider Objects -->
 	<a-entity id="lift" geometry="primitive: box;" sync-transform 
            	material='src: #floor2;'
-            	position='0 0 18.5'
+            	position='0 0 28.5'
 		scale="3 .1 3"
 		rotation='0 90 0'
 		n-mesh-collider="type: environment">	
@@ -316,7 +316,7 @@
 			rotation='0 90 0'
 			scale='.05 .5 13.5'
 			material='src: #rail; repeat: 13.5 1'
-			position= '6.75 .5 -10'
+			position= '8.75 .5 -10'
 			n-mesh-collider="type: environment">
 		</a-entity>
 		
@@ -325,7 +325,7 @@
 			rotation='0 90 0'
 			scale='.05 .5 13.5'
 			material='src: #rail; repeat: 13.5 1'
-			position= '-6.75 .5 -10'
+			position= '-8.75 .5 -10'
 			n-mesh-collider="type: environment">
 		</a-entity>
 		    
@@ -414,140 +414,140 @@
 <a-entity class="discofloor" position= "0 15 40">
 	<a-box id="box" position="0 0 0" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="0 0 0"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box; gained: container-full; emit: change-color"
 		wire_0="targets:#box; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box2" position="0 0 1" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="0 0 1"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box2; gained: container-full; emit: change-color"
 		wire_0="targets:#box2; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box3" position="0 0 2" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="0 0 2"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box3; gained: container-full; emit: change-color"
 		wire_0="targets:#box3; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box4" position="0 0 3" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="0 0 3"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box4; gained: container-full; emit: change-color"
 		wire_0="targets:#box4; lost: container-full; emit: color-default">
 	</a-entity>
 	 <a-box id="box5" position="0 0 4" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="0 0 4"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box5; gained: container-full; emit: change-color"
 		wire_0="targets:#box5; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box6" position="0 0 5" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="0 0 5"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box6; gained: container-full; emit: change-color"
 		wire_0="targets:#box6; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box7" position="1 0 0" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="1 0 0"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box7; gained: container-full; emit: change-color"
 		wire_0="targets:#box7; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box8" position="1 0 1" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="1 0 1"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box8; gained: container-full; emit: change-color"
 		wire_0="targets:#box8; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box9" position="1 0 2" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="1 0 2"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box9; gained: container-full; emit: change-color"
 		wire_0="targets:#box9; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box10" position="1 0 3" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="1 0 3"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box10; gained: container-full; emit: change-color"
 		wire_0="targets:#box10; lost: container-full; emit: color-default">
 	</a-entity>
 	 <a-box id="box11" position="1 0 4" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="1 0 4"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box11; gained: container-full; emit: change-color"
 		wire_0="targets:#box11; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box12" position="1 0 5" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="1 0 5"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box12; gained: container-full; emit: change-color"
 		wire_0="targets:#box12; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box13" position="2 0 0" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="2 0 0"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box13; gained: container-full; emit: change-color"
 		wire_0="targets:#box13; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box14" position="2 0 1" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="2 0 1"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box14; gained: container-full; emit: change-color"
 		wire_0="targets:#box14; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box15" position="2 0 2" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="2 0 2"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box15; gained: container-full; emit: change-color"
 		wire_0="targets:#box15; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box16" position="2 0 3" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="2 0 3"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box16; gained: container-full; emit: change-color"
 		wire_0="targets:#box16; lost: container-full; emit: color-default">
 	</a-entity>
 	 <a-box id="box17" position="2 0 4" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="2 0 4"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box17; gained: container-full; emit: change-color"
 		wire_0="targets:#box17; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box18" position="2 0 5" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="2 0 5"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box18; gained: container-full; emit: change-color"
 		wire_0="targets:#box18; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box19" position="3 0 0" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="3 0 0"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box19; gained: container-full; emit: change-color"
 		wire_0="targets:#box19; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box20" position="3 0 1" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger" position="3 0 1"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
+		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
 		n-container="capacity:1"
 		wire="targets:#box20; gained: container-full; emit: change-color"
 		wire_0="targets:#box20; lost: container-full; emit: color-default">
