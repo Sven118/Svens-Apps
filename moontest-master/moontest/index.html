@@ -410,12 +410,12 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-box id="box" position="4 1 4" sync-color></a-box>
+	<a-box id="box" position="4 1 4"></a-box>
 	<a-box id="trigger2" position="0 0 4"
 		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
 		n-container="capacity:1"
 		wire="targets:#box; gained: container-full; emit: change-color"
-		wire_0="targets:#box; lost: container-full; emit: change-color">
+		wire_0="targets:#box; lost: container-full; emit: color-default">
 	</a-box>
  
 	    
@@ -448,8 +448,12 @@
 		}
 		var boxEl = document.querySelector('#box');
 		boxEl.addEventListener('change-color', function(event) {
-			setRandomColor(event.target);
+			setRandomColor(event.target);	
 		});
+		boxEl.addEventListener('color-default', function(event) {
+		setRandomColor(event.target);
+		event.target.setAttribute('material', 'color', '#fff');
+      });
 	</script>
 	  
   </body>
