@@ -288,6 +288,14 @@
 <a-entity class='tractorbeam' position='0 0 28.5'>  
 	<a-cylinder position='0 15 0' material='color: #3A6AE1' side="double" opacity="0.25" width='8' height='30' class="not-clickable" 
             altspace-cursor-collider="enabled: false"></a-cylinder>
+	<a-cylinder id='gate' position='0 0 0' material='src: #floor2' open-ended="true" side="double" width='10' height='6' n-mesh-collider="type: environment">
+		<a-animation begin='gate' attribute="position"
+			direction='alternate'
+			from='0 6 0' to='0 3 0' 
+			ease='linear' 
+			dur='200' 
+			repeat='0'/>
+	</a-cylinder>
 	<a-box id="lift"
 	       	material="visible: false"
 		depth="3" height=".1" width="3"
@@ -307,6 +315,10 @@
 	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 6 1" n-container="capacity:1"
 			wire="targets:#lift; gained: container-full; emit: liftup"
 			wire__0="targets:#lift; lost: container-full; lose: liftup">
+		</a-entity>
+	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 6 1" n-container="capacity:1"
+			wire="targets:#gate; gained: container-full; emit: gate"
+			wire__0="targets:#gate; lost: container-full; lose: gate">
 		</a-entity> 
 	    
 	    
