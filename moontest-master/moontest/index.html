@@ -97,46 +97,20 @@
 	});
 	</script>	  
 	<script>
-        // Strobe Random Colors
-    AFRAME.registerComponent('strobe',
-	{
-		schema: {
-			color: {default: '#fff'}
-		},
-		init: function(){
-			var component = this;
-			var setRandomColor = function(el) {
+		var setRandomColor = function(el) {
 			var getRandColor = function() {
 				// creating a random number between 0 and 255
-				var r = Math.floor(Math.random()*256);
-				var g = Math.floor(Math.random()*256);
-				var b = Math.floor(Math.random()*256);
-		
+				var r = Math.random();
+				var g = Math.random();
+				var b = Math.random();
 				return new THREE.Color(r, g, b);
 			};
-		
-    		el.setAttribute('material', 'color', getRandColor());
-	}
-				
-		    function stop(){
-				component.el.innerHTML = '';
-				}
-		    	component.el.onStateAdded = function(){
-				var state = event.detail.state;
-				if (state === "start") {
-					setRandomColor();
-				}
-			}
-			component.el.onStateRemoved = function(){
-				var state = event.detail.state;
-				if (state === "start") {
-					stop();
-				}
-			}
-			this.el.addEventListener('stateadded', component.onStateAdded);
-			this.el.addEventListener('stateremoved', component.onStateRemoved);
-		} 
-	});
+			el.setAttribute('material', 'color', getRandColor().getStyle());
+		}
+		var boxEl = document.querySelector('#box');
+		boxEl.addEventListener('change-color', function(event) {
+			setRandomColor(event.target);
+		});
 	</script>
     </head>
   <body>
@@ -172,7 +146,7 @@
         <a-asset-item id="ring-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.mtl"></a-asset-item>
 	<a-asset-item id="speaker-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.mtl"></a-asset-item>
 	<a-asset-item id="speaker-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/speaker/speaker.obj"></a-asset-item>
-	<a-mixin id="box" geometry="primitive: box; depth: 1; height: 1; width: 1" material="color: #FF0066"></a-mixin>
+	<a-mixin id="box1" geometry="primitive: box; depth: 1; height: 1; width: 1" material="color: #FF0066"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
@@ -456,13 +430,15 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-entity id='sphere' position="4 1 0"  mixin="box"></a-entity>
+	<a-entity id='sphere' position="4 1 0"  mixin="box1"></a-entity>
 	    
-	<a-entity id='disco' position="4 1 4"  mixin="box" strobe></a-entity>    
-		<a-entity id="trigger2" position="0 0 0" geometry="primitive: box" n-box-collider="isTrigger:true; type:environment; size: 1 1 1" n-container="capacity:1"
-			wire="target:#disco; gained: container-full; gain: start"
-			wire__off="target:#disco; lost: container-full; lose: start">
-		</a-entity>
+	<a-box id="box" position="3 0 0"></a-box>
+	<a-box id="trigger1" position="0 0 0"
+		n-box-collider="isTrigger: true; type: environment; size: 1 1 1"
+		n-container="capacity: 1"
+		wire="targets: #box; gained: container-full; emit: change-color"
+		wire__0="targets: #box; lost: container-full; emit: change-color">
+	</a-box>
  
 	    
 		
