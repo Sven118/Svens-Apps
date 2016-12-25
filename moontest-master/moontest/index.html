@@ -580,15 +580,16 @@
 				var b = Math.random();
 				return new THREE.Color(r, g, b);
 			};
-			el.setAttribute('material', 'color', getRandColor().getStyle());
+			el.setAttribute('material', 'color', getRandColor());
 		}
 		var boxEl = document.querySelector('.discofloor');
 		boxEl.addEventListener('change-color', function(event) {
 		setRandomColor(event.target);	
 		});
 		boxEl.addEventListener('color-default', function(event) {
+		setRandomColor(event.target);
 		event.target.setAttribute('material', 'color', '#fff');
-      });
+		});
 	</script>
 	  
   </body>
