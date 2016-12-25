@@ -410,13 +410,13 @@
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	    
-	<a-box id="box" position="0 -.5 4"></a-box>
-	<a-box id="trigger2" position="0 0 4"
-		n-box-collider="isTrigger:true; type:environment; size: .5 .1 .5"
+	<a-box id="box" position="0 -1 4"></a-box>
+	<a-entity id="trigger2" position="0 0 4"
+		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
 		n-container="capacity:1"
 		wire="targets:#box; gained: container-full; emit: change-color"
 		wire_0="targets:#box; lost: container-full; emit: color-default">
-	</a-box>
+	</a-entity>
  
 	    
 		
