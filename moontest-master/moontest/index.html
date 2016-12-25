@@ -409,7 +409,9 @@
 	<a-entity position='-25 15 20' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='25 15 40' rotation="0 30 30" n-object='res:effects/fireworks'></a-entity>
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
+	 
 	    
+<a-entity class="discofloor" position= "0 0 0">
 	<a-box id="box" position="0 0 4" size='1 .1 1'></a-box>
 	<a-entity id="trigger2" position="0 0 4"
 		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
@@ -452,6 +454,7 @@
 		wire="targets:#box6; gained: container-full; emit: change-color"
 		wire_0="targets:#box6; lost: container-full; emit: color-default">
 	</a-entity>
+</a-entity>
  
 	    
 		
@@ -481,7 +484,7 @@
 			};
 			el.setAttribute('material', 'color', getRandColor().getStyle());
 		}
-		var boxEl = document.querySelector('#box');
+		var boxEl = document.querySelector('.discofloor');
 		boxEl.addEventListener('change-color', function(event) {
 		setRandomColor(event.target);	
 		});
