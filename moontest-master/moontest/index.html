@@ -286,13 +286,12 @@
 	 
 	<!-- Add Collider Objects -->
 <a-entity class='tractorbeam' position='0 0 28.5'>  
-	<a-cylinder position='0 15 0' material='color: #3A6AE1' side="double" opacity="0.25" width='8' height='30'></a-cylinder>
-	<a-entity id="lift" geometry='primitive: box'
-		visible="false"
-		size="3 .1 3"
+	<a-cylinder position='0 15 0' material='color: #3A6AE1' side="double" opacity="0.25" width='8' height='30' class="not-clickable" 
+            altspace-cursor-collider="enabled: false"></a-cylinder>
+	<a-entity id="lift" geometry="primitive: box; visible: false; size: 3 .1 3"
 		sync-transform 
             	position='0 0 0'
-		n-box-collider="type: environment; size= 3 .1 3">	
+		n-mesh-collider="type: environment">	
 	<a-animation begin='liftup' attribute="position"
 			direction='normal'
 		     	fill='none'
