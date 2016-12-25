@@ -457,32 +457,6 @@
 
  
     </a-scene>
- 
-<script>
-	var setRandomColor = function(el) {
-	var getRandColor = function() {
-		// creating a random number between 0 and 255
-		var r = Math.floor(Math.random()*256);
-		var g = Math.floor(Math.random()*256);
-		var b = Math.floor(Math.random()*256);
-		
-		return new THREE.Color(r, g, b);
-	};
-		
-    el.setAttribute('material', 'color', getRandColor());
-}
-	
-	      // Sphere: Testing mousedown/mouseup events.
-      var sphereEl = document.querySelector('#sphere');
-      sphereEl.addEventListener('mouseenter', function(event) {
-          setRandomColor(event.target);
-      });
-      sphereEl.addEventListener('mouseleave', function(event) {
-          setRandomColor(event.target);
-	  event.target.setAttribute('material', 'color', '#ff');
-      });
-</script>
-	  
 	  
   </body>
 		
