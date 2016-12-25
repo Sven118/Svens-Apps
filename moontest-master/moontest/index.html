@@ -414,16 +414,14 @@
 	<a-entity id="trigger2" position="0 0 4"
 		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
 		n-container="capacity:1"
-		wire="targets:#box; gained: container-full; emit: change-color"
+		wire="targets:#box, #box2, #box3, #box4, #box5, #box6; gained: container-full; emit: change-color"
 		wire_0="targets:#box; lost: container-full; emit: color-default">
 	</a-entity>
 		<a-box id="box2" position="0 0 5" size='1 .1 1'></a-box>
-	<a-entity id="trigger2" position="0 0 4"
-		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
-		n-container="capacity:1"
-		wire="targets:#box2; gained: container-full; emit: change-color"
-		wire_0="targets:#box2; lost: container-full; emit: color-default">
-	</a-entity>
+		<a-box id="box3" position="0 0 6" size='1 .1 1'></a-box>
+	    	<a-box id="box4" position="1 0 4" size='1 .1 1'></a-box>
+	    	<a-box id="box5" position="1 0 5" size='1 .1 1'></a-box>
+		<a-box id="box6" position="1 0 6" size='1 .1 1'></a-box>
  
 	    
 		
