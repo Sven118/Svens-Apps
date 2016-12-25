@@ -775,23 +775,6 @@
 		setRandomColor(event.target);	
 		});
 	</script>
-	 <script>
-		var setRandomColor = function(el) {
-			var getRandColor = function() {
-				// creating a random number between 0 and 255
-				var r = Math.random();
-				var g = Math.random();
-				var b = Math.random();
-				return new THREE.Color(r, g, b);
-			};
-			el.setAttribute('material', 'color', getRandColor());
-		}
-		var boxEl = document.querySelector('.discofloor');
-		boxEl.addEventListener('color-default', function(event) {
-		setRandomColor(event.target);
-		event.target.setAttribute('material', 'color', '#fff');
-		});
-	</script>
 	  
   </body>
 		
