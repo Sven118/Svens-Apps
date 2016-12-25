@@ -411,7 +411,7 @@
 	<a-entity position='-25 15 40' rotation="0 -30 -30" n-object='res:effects/fireworks'></a-entity>
 	 
 	    
-<a-entity class="discofloor" position= "0 0 0">
+<a-entity class="discofloor" position= "0 15 40">
 	<a-box id="box" position="0 0 0" size='1 .1 1'></a-box>
 	<a-entity id="trigger" position="0 0 0"
 		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
@@ -479,8 +479,8 @@
 	<a-entity id="trigger" position="1 0 3"
 		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
 		n-container="capacity:1"
-		wire="targets:#box11; gained: container-full; emit: change-color"
-		wire_0="targets:#box11; lost: container-full; emit: color-default">
+		wire="targets:#box10; gained: container-full; emit: change-color"
+		wire_0="targets:#box10; lost: container-full; emit: color-default">
 	</a-entity>
 	 <a-box id="box11" position="1 0 4" size='1 .1 1'></a-box>
 	<a-entity id="trigger" position="1 0 4"
@@ -542,8 +542,8 @@
 	<a-entity id="trigger" position="3 0 0"
 		n-box-collider="isTrigger:true; type:environment; size: 1 1 1"
 		n-container="capacity:1"
-		wire="targets:#box20; gained: container-full; emit: change-color"
-		wire_0="targets:#box20; lost: container-full; emit: color-default">
+		wire="targets:#box19; gained: container-full; emit: change-color"
+		wire_0="targets:#box19; lost: container-full; emit: color-default">
 	</a-entity>
 	<a-box id="box20" position="3 0 1" size='1 .1 1'></a-box>
 	<a-entity id="trigger" position="3 0 1"
