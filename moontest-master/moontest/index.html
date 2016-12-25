@@ -432,8 +432,8 @@
 	    
 	<a-entity id='sphere' position="4 1 0"  mixin="box1"></a-entity>
 	    
-	<a-box id="box" position="3 0 0"></a-box>
-	<a-box id="trigger1" position="0 0 0"
+	<a-box id="box" position="4 1 4"></a-box>
+	<a-box id="trigger1" position="0 0 4"
 		n-box-collider="isTrigger: true; type: environment; size: 1 1 1"
 		n-container="capacity: 1"
 		wire="targets: #box; gained: container-full; emit: change-color"
