@@ -286,7 +286,7 @@
 	 
 	<!-- Add Collider Objects -->
 <a-entity class='tractorbeam' position='0 0 28.5'>  
-	<a-cylinder position='0 15 0' material='color: #3A6AE1' side="double" opacity="0.25" width='8' height='30' class="not-clickable" 
+	<a-cylinder position='0 15 0' material='color: #3A6AE1' side="double" opacity="0.25" radius='3' height='30' class="not-clickable" 
             altspace-cursor-collider="enabled: false"></a-cylinder>
 	<a-box id="lift"
 	       	material="visible: false"
@@ -304,12 +304,12 @@
 			repeat='0'/>
 	</a-box>
 </a-entity>
-	    	<a-cylinder id='gate1' position='0 5 28.5' material='src: #floor2' open-ended="true" side="double" width='12' height='3' rotate='180 0 0' n-mesh-collider="type: environment">
+	    	<a-cylinder id='gate1' position='0 5 28.5' material='src: #floor2' open-ended="true" side="double" radius='4' height='3' rotate='45 0 0' n-mesh-collider="type: environment">
 		<a-animation begin='gate' attribute="position"
 			direction='alternate'
 			from='0 5 28.5' to='0 1.5 28.5' 
 			ease='linear' 
-			dur='200' 
+			dur='700' 
 			repeat='0'/>
 	</a-cylinder>
 	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 6 1" n-container="capacity:1"
