@@ -315,7 +315,7 @@
 			ease-out='linear' 
 			dur='1000' 
 			repeat='0'
-			fill='backwards'/>
+			end='gateoff'/>
 	</a-cylinder>
 	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 6 1" n-container="capacity:1"
 			wire="targets:#lift; gained: container-full; emit: liftup"
@@ -323,7 +323,7 @@
 		</a-entity>
 	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 6 1" n-container="capacity:1"
 			wire="targets:#gate1; gained: container-full; emit: gate"
-			wire__0="targets:#gate1; lost: container-full; lose: gate">
+			wire__0="targets:#gate1; lost: container-full; emit: gateoff">
 		</a-entity> 
 	    
 	    
