@@ -308,12 +308,13 @@
 			    open-ended="true"
 			    side="double"
 			    radius='2' height='3'
-			    rotation='180 0 0'>
+			    rotation='180 0 0'
+			    n-sound="res: foley/metal-clack; volume: 0.7; oneshot: true; on: animationstart; delay:200">
 		<a-animation begin='gate' attribute="position"
 			direction='alternate'
 			from='0 5 28.5' to='0 1.5 28.5' 
-			ease-out='linear' 
-			dur='1000' 
+			ease-in-out='linear' 
+			dur='800' 
 			repeat='1'
 			end='gateoff'/>
 	</a-cylinder>
