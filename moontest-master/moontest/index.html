@@ -306,9 +306,11 @@
 	</a-box>
 </a-entity>
 	    	<a-entity id='gate1' position='0 5 28.5' geometry="primitive: cylinder;"
-			    radius='4' height='3'
-			    rotation='180 0 0'
-			    n-sound="src: #gate; volume: 0.7; oneshot: true; on: animationstart;">
+			material='src= #floor2'
+			open-ended="true"
+			radius='1.5' height='3'
+			rotation='180 0 0'
+			n-sound="src: #gate; volume: 0.7; oneshot: true; on: animationstart;">
 		<a-animation begin='gate' attribute="position"
 			direction='alternate'
 			from='0 5 28.5' to='0 1.5 28.5' 
