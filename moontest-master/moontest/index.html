@@ -311,21 +311,21 @@
 			open-ended="true"
 			radius='1.2' height='3'
 			rotation='180 0 0'
-			n-sound="src: https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/sounds/gate.wav; volume: 0.7; oneshot: true; on: animationstart;">
+			n-sound="src: https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/sounds/gate.wav; volume: 0.7; oneshot: true; on: animationend;">
 		<a-animation begin='gate' attribute="position"
 			direction='alternate'
 			from='0 5 28.5' to='0 1.5 28.5' 
 			ease-out='linear' 
 			dur='9000' 
-			repeat='1'/>
+			repeat='0'/>
 	</a-cylinder>
 	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 6 1" n-container="capacity:1"
 			wire="targets:#lift; gained: container-full; emit: liftup"
 			wire__0="targets:#lift; lost: container-full; lose: liftup">
 		</a-entity>
-	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 6 1" n-container="capacity:1"
+	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 10 1" n-container="capacity:1"
 			wire="targets:#gate1; gained: container-full; emit: gate"
-			wire__0="targets:#gate1; lost: container-full; emit: gateoff">
+			wire__0="targets:#gate1; lost: container-full; emit: gate">
 		</a-entity>
 	    
 	    
