@@ -305,7 +305,7 @@
 			repeat='0'/>
 	</a-box>
 </a-entity>
-	    	<a-entity id='gate1' position='0 5 28.5' geometry="primitive: cylinder;"
+	    	<a-cylinder id='gate1' position='0 5 28.5'
 			material='src= #floor2'
 			open-ended="true"
 			radius='1.5' height='3'
@@ -315,9 +315,9 @@
 			direction='alternate'
 			from='0 5 28.5' to='0 1.5 28.5' 
 			ease-out='linear' 
-			dur='10000' 
+			dur='8000' 
 			repeat='1'/>
-	</a-entity>
+	</a-cylinder>
 	    	<a-entity id="trigger" position="0 0 28.5" n-box-collider="isTrigger:true; type:environment; size: 1 6 1" n-container="capacity:1"
 			wire="targets:#lift; gained: container-full; emit: liftup"
 			wire__0="targets:#lift; lost: container-full; lose: liftup">
