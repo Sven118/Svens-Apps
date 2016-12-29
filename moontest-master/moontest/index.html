@@ -348,11 +348,13 @@
 			radius='1.1' height='4'>
 	</a-cylinder>
 	    
-	    <a-entity geometry='primitive: sphere; segmentsWidth: 8; segmentsHeight: 0'
+	    <a-entity geometry='primitive: circle'
 		      material='src: #floor2' 
-		      side='both' 
-		      position='0 2 0' 
-		      radius="2"></a-entity>
+		      side='double' 
+		      position='0 2 0'
+		      rotation="90 0 0"
+		      radius="2"
+		      n-mesh-collider="type: environment"></a-entity>
 	    
 
 	    <a-entity class='platform' position='0 15 40' transparent='true'>    
