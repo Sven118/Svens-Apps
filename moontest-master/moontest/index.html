@@ -146,7 +146,7 @@
                  to="0 360 0"
                  repeat="indefinite" 
                  easing="linear"></a-animation>
-            <a-entity id="moon" geometry="primitive: sphere; radius: 50" 
+            <a-entity id="moon" geometry="primitive: sphere; radius: 50; segmentsWidth: 8; segmentsHeight: 8" 
 		material="src: #moon;"
 		position="-1300 50 0"
 		n-sphere-collider="type: environment; radius: 50"></a-entity>
@@ -181,6 +181,7 @@
       </a-sphere>
       
       <a-sphere position='0 700 2000' radius='50' material='src: #sun;'
+		geometry="segmentsWidth: 8; segmentsHeight: 8"
 		n-sphere-collider="type: environment; radius: 50">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
@@ -190,6 +191,7 @@
       </a-sphere>
       
       <a-sphere position='400 100 -500' radius='25' material='src: #mars;'
+		geometry="segmentsWidth: 8; segmentsHeight: 8"
 		n-sphere-collider="type: environment; radius: 25">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
@@ -199,6 +201,7 @@
       </a-sphere>
       
       <a-sphere position='-1000 200 -2000' radius='40' rotation='0 90 0' material='src: #saturn;'
+		geometry="segmentsWidth: 8; segmentsHeight: 8"
 		n-sphere-collider="type: environment; radius: 40">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
@@ -208,6 +211,7 @@
       </a-sphere>
       
       <a-sphere position='-200 300 700' radius='30' material='src: #venus;'
+		geometry="segmentsWidth: 8; segmentsHeight: 8"
 		n-sphere-collider="type: environment; radius: 30">
         <a-animation to='0 360 0' 
 		     easing='linear' 
@@ -225,7 +229,7 @@
                  to="0 360 0"
                  repeat="indefinite" 
                  easing="linear"></a-animation>
-           <a-entity id="mercury" geometry="primitive: sphere; radius: 10" 
+           <a-entity id="mercury" geometry="primitive: sphere; radius: 10 segmentsWidth: 8; segmentsHeight: 8" 
               material="src: #mercury;"
               position="60 -30 0"
 		n-sphere-collider="type: environment; radius: 10"></a-entity>
@@ -233,6 +237,7 @@
       </a-entity>
       
       <a-sphere position='2000 -100 -300' radius='20' rotation='0 90 0' material='src: #uranus;'
+		geometry="segmentsWidth: 8; segmentsHeight: 8"
 		n-sphere-collider="type: environment; radius: 20">
         <!-- add an animation to make it rotate -->
         <a-animation to='360 0 0' 
@@ -242,6 +247,7 @@
       </a-sphere>
       
       <a-sphere position='-2000 50 -500' radius='15' rotation='0 90 0' material='src: #neptune;'
+		geometry="segmentsWidth: 8; segmentsHeight: 8"
 		n-sphere-collider="type: environment; radius: 15">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
@@ -284,7 +290,7 @@
       </a-entity>
       
 	<!-- Add Skybox -->    
-	<a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false"></a-sky>
+	<a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false" geometry="segmentsWidth: 8; segmentsHeight: 8"></a-sky>
 	 
 	<!-- Add Collider Objects -->
 <a-entity class='tractorbeam' position='0 0 28.5'>  
