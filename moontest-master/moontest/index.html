@@ -348,15 +348,7 @@
 			radius='1.1' height='4'>
 	</a-cylinder>
 	    
-	     <a-sphere position='0 4 -6'
-			geometry="segmentsWidth: 8; segmentsHeight: 8"
-			radius='2'
-			n-sphere-collider="type: environment; radius: 2">
-	    </a-sphere>
 
-	    
-	    
-	    
 	    <a-entity class='platform' position='0 15 40' transparent='true'>    
 		<a-entity id="platform1" geometry="primitive: box;"
 			rotation='0 90 0'
@@ -454,7 +446,7 @@
 			     repeat='indefinite'/>
 	  </a-entity>
 	    
-	<a-entity id="path1" unfolding-path="length:40" position='8 15 28.5'></a-entity>
+	<a-entity id="path1" unfolding-path="length:40" position='8 15 2.5'></a-entity>
 		<a-entity id="trigger1" position="8 15 -1.5" n-box-collider="isTrigger:true; type:environment; size: 8 4 47" n-container="capacity:1"
 			wire="targets:#path1; gained: container-full; gain: unfolded"
 			wire__0="targets:#path1; lost: container-full; lose: unfolded">
