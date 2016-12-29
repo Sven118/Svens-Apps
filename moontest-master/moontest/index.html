@@ -353,12 +353,11 @@
 	    <a-circle id='earthground'
 		      material='color: #32BC2A; side: double'
 		      position='1000 0 500' radius='250'
-		      rotation="-90 0 0"
-		      n-mesh-collider="type: environment"></a-circle>
-	    <a-box material='trasnparent: true'
+		      rotation="-90 0 0"></a-circle>
+	    <a-box material='transparent: true'
 			position='1000 -.5 500'
 		   	scale='250 1 250'
-			n-mesh-collider="type: environment">		     
+			n-box-collider="type: environment; scale: 250 1 250">		     
 	    </a-box>
 					     
 	    <a-sphere material='color: white' 
