@@ -158,7 +158,6 @@
 	radius='259' 
 	transparent='true' 
 	opacity="0.7" material='src: #clouds;'
-	n-sphere-collider="type: environment; radius: 260" 
 	class="not-clickable" 
 	altspace-collider="enabled: false">
         <a-animation to='0 360 0' 
@@ -348,12 +347,16 @@
 			radius='1.1' height='4'>
 	</a-cylinder>
 	    
-	    <a-entity geometry='primitive: circle'
+	    <a-entity id='earthground' geometry='primitive: circle'
+		      material='color: green' 
+		      side="double" 
+		      position='1000 0 500' radius='250'
+		      rotation="-90 0 0"
+		      n-mesh-collider="type: environment"></a-entity>
+	    <a-entity id='skydive' geometry='primitive: sphere'
 		      material='src: #floor2' 
 		      side="double" 
-		      position='0 1 0'
-		      rotation="-90 0 0"
-		      radius="2"
+		      position='1000 350 500' radius='25'
 		      n-mesh-collider="type: environment"></a-entity>
 	    
 
