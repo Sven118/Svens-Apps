@@ -2734,7 +2734,7 @@
 			};
 			el.setAttribute('material', 'color', getRandColor());
 		}
-		var boxEl = document.querySelector('.discofloor.discofloor2.discofloor3');
+		var boxEl = document.querySelectorAll('.discofloor, .discofloor2, .discofloor3');
 		boxEl.addEventListener('change-color', function(event) {
 		setRandomColor(event.target);	
 		});
