@@ -146,7 +146,7 @@
                  to="0 360 0"
                  repeat="indefinite" 
                  easing="linear"></a-animation>
-            <a-entity id="moon" geometry="primitive: sphere; radius: 50; segmentsWidth: 10; segmentsHeight: 10" 
+            <a-entity id="moon" geometry="primitive: sphere; radius: 50; segmentsWidth: 10; segmentsHeight: 20" 
 		material="src: #moon;"
 		position="-1300 50 0"
 		n-sphere-collider="type: environment; radius: 50"></a-entity>
@@ -347,6 +347,8 @@
 			open-ended="true"
 			radius='1.1' height='4'>
 	</a-cylinder>
+	    
+	    <a-circle src="#floor2" position='0 2 0' radius="5" rotation="-90 0 0" n-mesh-collider="type: environment"></a-circle>
 	    
 
 	    <a-entity class='platform' position='0 15 40' transparent='true'>    
