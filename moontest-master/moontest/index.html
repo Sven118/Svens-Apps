@@ -347,12 +347,20 @@
 			radius='1.1' height='4'>
 	</a-cylinder>
 	    
+	    <a-sphere id='earthsky'
+		      material='color: #51A9E6; side: double'
+		      position='1000 0 500' radius='225'></a-sphere>
 	    <a-circle id='earthground'
 		      material='color: #32BC2A; side: double'
 		      position='1000 0 500' radius='250'
 		      rotation="-90 0 0"
-		      n-mesh-collider="type: environment; position:0 -50 0;"></a-circle>
-	    
+		      n-mesh-collider="type: environment"></a-circle>
+	    <a-box material='trasnparent: true'
+			position='1000 -.5 500'
+		   	scale='250 1 250'
+			n-mesh-collider="type: environment">		     
+	    </a-box>
+					     
 	    <a-sphere material='color: white' 
 		      position='1000 350 500'
 		      radius='25'
