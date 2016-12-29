@@ -155,9 +155,9 @@
 	    
      <!-- Add Cloud Layer to Earth -->
      <a-sphere id='clouds' position='1000 0 500' sync-transform 
-	radius='259' 
+	radius='259'
 	transparent='true' 
-	opacity="0.7" material='src: #clouds;'
+	opacity="0.7" material='src: #clouds; side: double'
 	class="not-clickable" 
 	altspace-collider="enabled: false">
         <a-animation to='0 360 0' 
@@ -166,7 +166,7 @@
 		     repeat='indefinite'/>
     </a-sphere>
 	    
-      <a-sphere position='1000 0 500' radius='256' color="#0095FF" opacity="0.25" class="not-clickable" altspace-cursor-collider="enabled: false">
+      <a-sphere position='1000 0 500' side='double' radius='256' color="#0095FF" opacity="0.25" class="not-clickable" altspace-cursor-collider="enabled: false">
     </a-sphere>
       
      <a-sphere position='0 500 -1500' radius='60' material='src: #jupiter;'
@@ -347,9 +347,8 @@
 			radius='1.1' height='4'>
 	</a-cylinder>
 	    
-	    <a-entity id='earthground' geometry='primitive: circle'
-		      material='color: green' 
-		      side="double" 
+	    <a-entity id='earthground' geometry='primitive: circle; side: double'
+		      material='color: green'
 		      position='1000 0 500' radius='250'
 		      rotation="-90 0 0"
 		      n-mesh-collider="type: environment"></a-entity>
