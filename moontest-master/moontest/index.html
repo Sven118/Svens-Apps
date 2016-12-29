@@ -2734,7 +2734,15 @@
 			};
 			el.setAttribute('material', 'color', getRandColor());
 		}
-		var boxEl = document.querySelectorAll('.discofloor, .discofloor2, .discofloor3');
+		var boxEl = document.querySelectorAll('.discofloor');
+		boxEl.addEventListener('change-color', function(event) {
+		setRandomColor(event.target);	
+		});
+			var boxEl = document.querySelectorAll('.discofloor2');
+		boxEl.addEventListener('change-color', function(event) {
+		setRandomColor(event.target);	
+		});
+		var boxEl = document.querySelectorAll('.discofloor3');
 		boxEl.addEventListener('change-color', function(event) {
 		setRandomColor(event.target);	
 		});
