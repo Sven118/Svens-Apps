@@ -122,6 +122,7 @@
         <img id="clouds" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/clouds1.png"/>
 	<img id="rail" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/rail.png"/>
 	<img id="ground" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/ground.jpg"/>
+	<img id="horizon" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/horizon.jpg"/>
 	<audio id="gate" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/sounds/gate.wav"/>
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
@@ -139,7 +140,7 @@
 	    
       <!--Add Moon Orbit -->          
       <a-entity id="earth" geometry="primitive: sphere; radius: 5" 
-	material="color: #FFC107"
+	material="visible: false"
 	position="1000 0 500">
        <a-entity id="moonOrbit" sync-transform>
             <a-animation attribute="rotation"
@@ -348,13 +349,15 @@
 			radius='1.1' height='4'>
 	</a-cylinder>
 	    
-	    <a-sphere id='earthsky'
-		      material='color: #51A9E6; side: double'
-		      position='1000 0 500' radius='225'></a-sphere>
 	    <a-sphere id='earthclouds'
-		      material='src: #clouds; side: double'
+		      material='src: #horizon; side: double'
 		      transparent='true'
-		      position='1000 0 500' radius='220'></a-sphere>
+		      position='1000 0 500' radius='220'>
+		<a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='500000' 
+		     repeat='indefinite'/>
+	    </a-sphere>
 	    <a-circle id='earthground'
 		      material='src: #ground; side: double; repeat: 210 210'
 		      position='1000 0 500' radius='210'
