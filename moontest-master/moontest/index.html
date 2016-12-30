@@ -121,6 +121,7 @@
 	<img id="disco" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/disco2.jpg"/>
         <img id="clouds" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/clouds1.png"/>
 	<img id="rail" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/rail.png"/>
+	<img id="ground" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/ground.jpg"/>
 	<audio id="gate" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/sounds/gate.wav"/>
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
@@ -350,14 +351,17 @@
 	    <a-sphere id='earthsky'
 		      material='color: #51A9E6; side: double'
 		      position='1000 0 500' radius='225'></a-sphere>
+	    <a-sphere id='earthclouds'
+		      material='src: #clouds; side: double'
+		      position='1000 0 500' radius='220'></a-sphere>
 	    <a-circle id='earthground'
-		      material='color: #32BC2A; side: double'
-		      position='1000 0 500' radius='250'
+		      material='src: #ground; side: double; repeat: 210 210'
+		      position='1000 0 500' radius='210'
 		      rotation="-90 0 0"></a-circle>
 	    <a-box material="visible: false"
 			position='1000 -.5 500'
-		   	scale='500 1 500'
-			n-box-collider="type: environment; scale: 250 1 250">		     
+		   	scale='420 1 420'
+			n-box-collider="type: environment; scale: 210 1 210">		     
 	    </a-box>
 					     
 	    <a-sphere material='color: white' 
