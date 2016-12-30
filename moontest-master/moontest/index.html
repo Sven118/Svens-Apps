@@ -355,13 +355,14 @@
 		      position='1000 0 500' radius='220'>
 		<a-animation to='0 360 0' 
 		     easing='linear' 
-		     dur='500000' 
+		     dur='800000' 
 		     repeat='indefinite'/>
 	    </a-sphere>
 	    <a-circle id='earthground'
 		      material='src: #ground; side: double; repeat: 210 210'
 		      position='1000 0 500' radius='210'
-		      rotation="-90 0 0"></a-circle>
+		      rotation="-90 0 0"
+		      altspace-cursor-collider="enabled: false"></a-circle>
 	    <a-box material="visible: false"
 			position='1000 -.5 500'
 		   	scale='420 1 420'
