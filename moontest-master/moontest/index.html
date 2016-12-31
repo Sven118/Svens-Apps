@@ -322,11 +322,12 @@
 		wire="on: click; emit: up; targets: #lift"
 		wire__0="on: click; emit: buttonchange; targets: #upbutton">
 		<a-animation begin='buttonchange' attribute="material.color" 
-			     from='#1EDB00' 
-			     to='#FF0000' 
-			     dur='20000' 
-			     repeat='1' 
-			     direction='alternate'/>
+			     from='#FF0000' 
+			     to='#1EDB00' 
+			     dur='20000'
+			     fill='none'
+			     repeat='0' 
+			     direction='normal'/>
 	</a-entity>
 	<a-entity n-billboard n-text="fontSize: 2; text: up" position="0 .2 0"></a-entity>
 </a-entity>
