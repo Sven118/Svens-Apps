@@ -304,14 +304,14 @@
 	<a-cylinder position='0 15 0' material='color: #3A6AE1' side="double" opacity="0.25" rotation='0 45 0' radius='1' height='30' class="not-clickable" 
             altspace-cursor-collider="enabled: false"></a-cylinder>
 	<a-box id="lift"
-	       	material="visible: true"
-	       	n-sound="res: ui/complete; volume: 1; oneshot: true; on: animationstart"
+	       	material="visible: false"
+	       	n-sound="res: ui/notify; volume: 1; oneshot: true; on: animationstart"
 		depth="3" height=".1" width="3"
             	position='0 0 0'
 		n-mesh-collider="type: environment">
 		<a-animation begin='up' attribute="position"
 			direction='normal'
-			from='0 0 0' to='0 15 0' 
+			from='0 -.2 0' to='0 15 0' 
 			ease-out='linear'
 			fill='both'
 			dur='20000' 
