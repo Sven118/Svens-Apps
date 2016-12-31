@@ -308,6 +308,19 @@
 			from='0 0 0' to='0 15 0' 
 			ease='linear' 
 			dur='20000' 
+		     	repeat='indefinite'/>
+	</a-box>
+	<a-box id="lift2"
+	       	material="visible: true"
+		depth="3" height=".1" width="3"
+            	position='0 0 0'
+		n-mesh-collider="type: environment">
+	<a-animation 	attribute="position"
+			direction='normal'
+			from='0 0 0' to='0 15 0'
+		     	delay='10000'
+			ease='linear' 
+			dur='20000' 
 			repeat='indefinite'/>
 	</a-box>
 </a-entity>
