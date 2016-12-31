@@ -130,7 +130,7 @@
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
         <a-asset-item id="ring-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.obj"></a-asset-item>
         <a-asset-item id="ring-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.mtl"></a-asset-item>
-	<a-mixin id="option" geometry="primitive: plane; width: 2" material="color: #333" event-proxy="listen: click; target: a-box"></a-mixin>
+	<a-mixin id="option" geometry="primitive: plane; width: 2" material="color: #333" sides='double' event-proxy="listen: click; target: lift"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
@@ -312,16 +312,17 @@
             	position='0 0 0'
 		n-mesh-collider="type: environment"
 	       
-	       animation__yoyo="property: position; dir: alternate; dur: 20000;
+	       animation__yoyo="property: position; dir: normal; dur: 20000;
                                 easing: easeInSine; to: 0 15 0;
                                 startEvents: position; pauseEvents: animation-pause"
 			position="0 0 0">
 
 	</a-box>
-	<a-entity layout="type: line; margin: 2.5" position="-1 1 0">
-          	<a-entity mixin="option" event-proxy="emit: position">
-            	<a-entity bmfont-text="text: up; color: #FFF" position="-0.2 0 0.1"></a-entity>
-	</a-entity>
+	
+	<a-entity layout="type: line; margin: 2.5" position="0 0 0">
+		<a-entity mixin="option" event-proxy="emit: position">
+			<a-entity bmfont-text="text: Position; color: #FFF" position="-0.45 0 0.1"></a-entity>
+		</a-entity>
 	</a-entity>
 </a-entity>
 	    
