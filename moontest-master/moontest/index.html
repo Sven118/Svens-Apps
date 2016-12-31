@@ -320,8 +320,8 @@
 	
 	<a-entity
 		geometry="primitive: sphere; radius: .1" material="color: green" position="1 1 -1"
-		n-sound="res: ui/select; volume: 1; oneshot: true; on: click"
 		wire="on: click; emit: up; targets: #lift">
+		n-sound="res: ui/error; volume: 0.5; loop: true; on: click"
 		<a-entity n-billboard n-text="fontSize: 2; text: up" position="0 .2 0"></a-entity>
 	</a-entity>
 </a-entity>
