@@ -305,8 +305,7 @@
             altspace-cursor-collider="enabled: false"></a-cylinder>
 	<a-box id="lift"
 	       	material="visible: true"
-		n-sound="res: ui/select; volume: 0.7; oneshot: true; on: animationstart"
-	       	n-sound="res: ui/complete; volume: 0.7; oneshot: true; on: animationend"
+	       	n-sound="res: ui/complete; volume: 1; oneshot: true; on: animationend"
 		depth="3" height=".1" width="3"
             	position='0 0 0'
 		n-mesh-collider="type: environment">
@@ -321,6 +320,7 @@
 	
 	<a-entity
 		geometry="primitive: sphere; radius: .1" material="color: green" position="1 1 -1"
+		n-sound="res: ui/select; volume: 1; oneshot: true; on: click"
 		wire="on: click; emit: up; targets: #lift">
 		<a-entity n-billboard n-text="fontSize: 2; text: up" position="0 .2 0"></a-entity>
 	</a-entity>
