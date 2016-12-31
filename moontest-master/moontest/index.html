@@ -308,11 +308,6 @@
 		depth="3" height=".1" width="3"
             	position='0 0 0'
 		n-mesh-collider="type: environment">
-	</a-box>
-	
-	<a-entity
-		geometry="primitive: box" depth=".3" height=".3" width=".3" material="color: green" position="1 1 -1"
-		wire="on: click; emit: up; targets: #lift">
 		<a-animation begin='up' attribute="position"
 			direction='normal'
 			from='0 0 0' to='0 15 0' 
@@ -320,19 +315,17 @@
 			fill='both'
 			dur='20000' 
 			repeat='0'/>
-		<a-entity n-billboard n-text="fontSize: 3; text: UP" position="0 1 0"></a-entity>
+	</a-box>
+	
+	<a-entity
+		geometry="primitive: box" depth=".3" height=".3" width=".3" material="color: green" position="1 1 -1"
+		wire="on: click; emit: up; targets: #lift">
+		<a-entity n-billboard n-text="fontSize: 2; text: Call Elevator" position="0 1 0"></a-entity>
 	</a-entity>
 	<a-entity
-		geometry="primitive: box" depth=".3" height=".3" width=".3" material="color: blue" position="-1 1 -1"
-		wire="on: click; emit: down; targets: #lift">
-		<a-animation begin='down' attribute="position"
-			direction='normal'
-			from='0 15 0' to='0 0 0' 
-			ease-out='linear'
-			fill='both'
-			dur='20000' 
-			repeat='0'/>
-		<a-entity n-billboard n-text="fontSize: 3; text: DOWN" position="0 1 0"></a-entity>
+		geometry="primitive: box" depth=".3" height=".3" width=".3" material="color: green" position="1 15 2"
+		wire="on: click; emit: up; targets: #lift">
+		<a-entity n-billboard n-text="fontSize: 2; text: Call Elevator" position="0 1 0"></a-entity>
 	</a-entity>
 </a-entity>
 	
