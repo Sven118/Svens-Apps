@@ -130,7 +130,10 @@
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
         <a-asset-item id="ring-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.obj"></a-asset-item>
         <a-asset-item id="ring-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.mtl"></a-asset-item>
-	<a-mixin id="option" geometry="primitive: plane; width: 2" material="color: #333" sides='double' event-proxy="listen: click; target: lift"></a-mixin>
+	<a-mixin id="option"
+                 geometry="primitive: plane; width: 2"
+                 material="color: #333"
+                 event-proxy="listen: click; target: a-box"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
