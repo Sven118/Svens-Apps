@@ -308,22 +308,30 @@
 		depth="3" height=".1" width="3"
             	position='0 0 0'
 		n-mesh-collider="type: environment">
-	<a-animation begin='up' attribute="position"
-			direction='alternate'
-			from='0 0 0' to='0 15 0' 
-			ease-out='linear' 
-			dur='20000' 
-			repeat='0'/>
 	</a-box>
 	
 	<a-entity
-		geometry="primitive: box" depth=".5" height=".5" width=".5" material="color: green" position="1 1 -1"
+		geometry="primitive: box" depth=".3" height=".3" width=".3" material="color: green" position="1 1 -1"
 		wire="on: click; emit: up; targets: #lift">
+		<a-animation begin='up' attribute="position"
+			direction='normal'
+			from='0 0 0' to='0 15 0' 
+			ease-out='linear'
+			fill='both'
+			dur='20000' 
+			repeat='0'/>
 		<a-entity n-billboard n-text="fontSize: 3; text: UP" position="0 1 0"></a-entity>
 	</a-entity>
 	<a-entity
-		geometry="primitive: box" depth=".5" height=".5" width=".5" material="color: blue" position="-1 1 -1"
+		geometry="primitive: box" depth=".3" height=".3" width=".3" material="color: blue" position="-1 1 -1"
 		wire="on: click; emit: down; targets: #lift">
+		<a-animation begin='down' attribute="position"
+			direction='normal'
+			from='0 15 0' to='0 0 0' 
+			ease-out='linear'
+			fill='both'
+			dur='20000' 
+			repeat='0'/>
 		<a-entity n-billboard n-text="fontSize: 3; text: DOWN" position="0 1 0"></a-entity>
 	</a-entity>
 </a-entity>
