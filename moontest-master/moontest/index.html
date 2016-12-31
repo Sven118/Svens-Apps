@@ -323,12 +323,12 @@
 			repeat='0'/>
 	
 	<a-entity
-		geometry="primitive: box" scale='.3 .3 .3' material="color: green" position="1 1 -1"
+		geometry="primitive: box" depth=".5" height=".5" width=".5" material="color: green" position="1 1 -1"
 		wire="on: click; emit: up; targets: #lift">
 		<a-entity n-billboard n-text="fontSize: 3; text: UP" position="0 1 0"></a-entity>
 	</a-entity>
 	<a-entity
-		geometry="primitive: box" scale='.3 .3 .3' material="color: blue" position="-1 1 -1"
+		geometry="primitive: box" depth=".5" height=".5" width=".5" material="color: blue" position="-1 1 -1"
 		wire="on: click; emit: down; targets: #lift">
 		<a-entity n-billboard n-text="fontSize: 3; text: DOWN" position="0 1 0"></a-entity>
 	</a-entity>
