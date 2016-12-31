@@ -133,7 +133,7 @@
 	<a-mixin id="option"
                  geometry="primitive: plane; width: 2"
                  material="color: #333"
-                 event-proxy="listen: click; target: a-box"></a-mixin>
+                 event-proxy="listen: click; target: boxx"></a-mixin>
         </a-assets>
 
       <!-- Add Planets -->
@@ -351,7 +351,7 @@
 	</a-cylinder>
 	    
 	     <a-entity id="container" position="0 2 -2">
-        <a-box color="#F55" height="3"
+        <a-box id='boxx' color="#F55" height="3"
                animation__scale="property: scale; dir: alternate; dur: 200;
                                  easing: easeInSine; loop: true; to: 1.2 1 1.2;
                                  startEvents: scale; pauseEvents: animation-pause"
