@@ -123,6 +123,7 @@
 	<img id="rail" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/rail.png"/>
 	<img id="ground" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/ground.jpg"/>
 	<img id="horizon" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/Sky2.jpg"/>
+	<img id="night" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/night.png"/>
 	<audio id="gate" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/sounds/gate.wav"/>
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
@@ -167,6 +168,12 @@
 		     dur='550000'
 		     repeat='indefinite'/>
     </a-sphere>
+	<a-sphere id='nightearth' position='1000 0 500' 
+	radius='260'
+	transparent='true' 
+	opacity='.75'material='src: #night; side: double'
+	class="not-clickable" 
+	altspace-collider="enabled: false">
 
 	    
       <a-sphere position='1000 0 500' side='double' radius='256' color="#0095FF" opacity="0.25" class="not-clickable" altspace-cursor-collider="enabled: false">
