@@ -129,7 +129,9 @@
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/spaceshiptest1.mtl"></a-asset-item>
         <a-asset-item id="ring-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.obj"></a-asset-item>
         <a-asset-item id="ring-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ring.mtl"></a-asset-item>
-        </a-assets>
+	<a-asset-item id="rocket-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ship/rocket/rocket.obj"></a-asset-item>
+        <a-asset-item id="rocket-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ship/rocket/rocket.mtl"></a-asset-item>
+	</a-assets>
 
       <!-- Add Planets -->
      <a-sphere id='earth' position='1000 0 500' radius='250' material='src: #earth;' sync-transform>
@@ -300,7 +302,9 @@
       
 	<!-- Add Skybox -->    
 	<a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false" geometry="segmentsWidth: 8; segmentsHeight: 8"></a-sky>
-	 
+	
+	<a-entity obj-model="obj: #rocket-obj; mtl: #rocket-mtl" position='0 0 0' scale='3 3 3'></a-entity>
+	    
 	    
 	    
 	    
