@@ -1,7 +1,7 @@
 # Blender MTL File: 'spacestation.blend'
 # Material Count: 1
 
-newmtl spaceshipbaked
+newmtl spaceshipbaked.001
 Ns 96.078431
 Ka 1.000000 1.000000 1.000000
 Kd 0.640000 0.640000 0.640000
@@ -10,4 +10,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd spaceshipbakedimg.png
+map_Kd E:\Users\Stephen\Documents\spacestationbakedimg.png
