@@ -4122,8 +4122,8 @@
 </a-entity>
 	    
 	
-	    <a-entity class="room" position="0 -0.01 -60">
-		<a-entity class="floor-half">
+
+		<a-entity class="floor-half" position='0 0 -60'>
 			<a-entity n-object="architecture/floor-4w-4l" position="-6, 0, 2"></a-entity>
 			<a-entity n-object="architecture/floor-4w-4l" position="-6, 0, -2"></a-entity>
 			<a-entity n-object="architecture/floor-4w-4l" position="-6, 0, -6"></a-entity>
@@ -4152,7 +4152,6 @@
 			<a-entity n-object="architecture/floor-slice-concave-4r" position="-6, 0, 10" rotation="0 -90 0"></a-entity>
 			<a-entity n-object="architecture/floor-slice-concave-4r" position="10, 0, 6"></a-entity>
 		</a-entity>
-	</a-entity>
 
 
 
@@ -4164,6 +4163,8 @@
  
     </a-scene>
 	  
+	  
+	<!-- Random Color Generator -->  
 <script>
 		var setRandomColor = function(el) {
 			var getRandColor = function() {
@@ -4187,7 +4188,8 @@
 		boxEl.addEventListener('change-color', function(event) {
 		setRandomColor(event.target);	
 		});
-	</script>
+</script>
+	 
 	  
   </body>
 		
