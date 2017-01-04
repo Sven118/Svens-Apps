@@ -237,25 +237,7 @@
 		}
 	});
 	</script>
-	<script id='array' type='text/x-nunjucks-template'>
-	{% for x in range(0, -width, -4) %}
-		{% for y in range(0, height, 4) %}
-			{% for z in range(0, depth, 4) %}
-				<a-entity position='{{x}} {{y}} {{z}}' n-object='res: {{model}}'></a-entity>
-			{% endfor %}
-		{% endfor %}
-	{% endfor %}
-</script>
-	  <script>
-	  AFRAME.registerComponent('array-data', {
-	schema: {
-		depth: {type: 'number', default: '1'},
-		width: {type: 'number', default: '1'},
-		height: {type: 'number', default: '1'},
-		model: {type: 'string', default: 'effects/fire'}
-	}
-});
-</script>
+
 	  
     </head>
   <body>
@@ -4144,58 +4126,323 @@
 	
 	    
 <!-- architecture -->
-	<a-entity position='0 -0.25 -40'>
+	<a-entity class='building' position='0 -0.25 -40'>
+		<a-entity class="room" position="0 -0.01 0">
+		<a-entity class="floor-half">
+			<a-entity n-object="res: resarchitecture/floor-4w-4l" position="-6, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-6, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-6, 0, -6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-6, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="10, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="10, 0, -6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="10, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="10, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, 6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, 6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, 6"></a-entity>
 
-		<!-- floor -->
-		<a-entity position='12 0 -4'
-			template='src: #array; data: array-data;' array-data='depth: 16; width: 32; model: architecture/floor-4w-4l'></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, -6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, -6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, -6"></a-entity>
 
-		<!-- ceiling -->
-		<a-entity position='12 2 -4'
-			template='src: #array; data: array-data;' array-data='depth: 16; width: 32; model: architecture/ceiling-4w-4l'>
+			<a-entity n-object="res: architecture/floor-slice-concave-4r" position="-6, 0, 10" rotation="0 -90 0"></a-entity>
+			<a-entity n-object="res: architecture/floor-slice-concave-4r" position="10, 0, 6"></a-entity>
+		</a-entity>
+		<a-entity class="floor-half" position="0, 0, -20" rotation="0 180 0">
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-6, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-6, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-6, 0, -6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-6, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="10, 0, -10"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="10, 0, -6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="10, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="10, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, 6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, 6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, 6"></a-entity>
+
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="-2, 0, -6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="2, 0, -6"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, 2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, -2"></a-entity>
+			<a-entity n-object="res: architecture/floor-4w-4l" position="6, 0, -6"></a-entity>
+
+			<a-entity n-object="res: architecture/floor-slice-concave-4r" position="-6, 0, 10" rotation="0 -90 0"></a-entity>
+			<a-entity n-object="res: architecture/floor-slice-concave-4r" position="10, 0, 6"></a-entity>
+		</a-entity>
+		<a-entity class="ceiling-half">
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-6, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-6, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-6, 4, -6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-6, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="10, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="10, 4, -6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="10, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="10, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, 6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, 6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, 6"></a-entity>
+
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, -6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, -6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, -6"></a-entity>
+
+			<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="-6, 4, 10" rotation="0 -90 0"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="10, 4, 6"></a-entity>
+		</a-entity>
+		<a-entity class="ceiling-half" position="0, 0, -20" rotation="0 180 0">
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-6, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-6, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-6, 4, -6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-6, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="10, 4, -10"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="10, 4, -6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="10, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="10, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, 6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, 6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, 6"></a-entity>
+
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="-2, 4, -6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="2, 4, -6"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, 2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, -2"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-4w-4l" position="6, 4, -6"></a-entity>
+
+			<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="-6, 4, 10" rotation="0 -90 0"></a-entity>
+			<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="10, 4, 6"></a-entity>
+		</a-entity>
+		<a-entity class="walls-half">
+			<a-entity n-object="res: architecture/wall-4w-4h" position="10, 4, -26" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="10, 4, -18" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="10, 4, -22" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="10, 4, -14" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="-10, 4, -26"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="-10, 4, -18"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="-10, 4, -22"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="-10, 4, -14"></a-entity>
+
+			<a-entity n-object="res: architecture/wall-curve-convex-4r-4h" position="-6, 0, -30"></a-entity>
+			<a-entity n-object="res: architecture/wall-curve-convex-4r-4h" position="-6, 4, -30"></a-entity>
+
+			<a-entity n-object="res: architecture/wall-curve-convex-4r-4h" position="10, 0, -26" rotation="0 -90 0"></a-entity>
+			<a-entity n-object="res: architecture/wall-curve-convex-4r-4h" position="10, 4, -26" rotation="0 -90 0"></a-entity>
+
+			<a-entity n-object="res: architecture/wall-window-gap-end-l-4w-4h" position="10, 0, -26" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="10, 0, -22" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="10, 0, -18" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="10, 0, -14w" scale="-1 1 1"></a-entity>
+
+			<a-entity n-object="res: architecture/wall-window-gap-end-l-4w-4h" position="-10, 0, -26"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="-10, 0, -22"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="-10, 0, -18"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="-10, 0, -14w"></a-entity>
+
+			<a-entity class="railings" position="0, 0, -30">
+				<a-entity class="res: railing-bottom" position="0, 0, 0">
+					<a-entity n-object="res: architecture/railing-4l" position="-6, 0, 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/railing-4l" position="-2, 0, 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/railing-4l" position="2, 0, 0" rotation="0 90 0"></a-entity>
+				</a-entity>
+				<a-entity class="railing-bottom" position="0, 8, 0" rotation="0 0 180">
+					<a-entity n-object="res: architecture/railing-4l" position="-6, 0, 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/railing-4l" position="-2, 0, 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/railing-4l" position="2, 0, 0" rotation="0 90 0"></a-entity>
+				</a-entity>
+			</a-entity>
+		</a-entity>
+		<a-entity class="walls-half" position="0, 0, -20" rotation="0 180 0">
+			<a-entity n-object="res: architecture/wall-4w-4h" position="10, 4, -26" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="10, 4, -18" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="10, 4, -22" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="10, 4, -14" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="-10, 4, -26"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="-10, 4, -18"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="-10, 4, -22"></a-entity>
+			<a-entity n-object="res: architecture/wall-4w-4h" position="-10, 4, -14"></a-entity>
+
+			<a-entity n-object="res: architecture/wall-curve-convex-4r-4h" position="-6, 0, -30"></a-entity>
+			<a-entity n-object="res: architecture/wall-curve-convex-4r-4h" position="-6, 4, -30"></a-entity>
+
+			<a-entity n-object="res: architecture/wall-curve-convex-4r-4h" position="10, 0, -26" rotation="0 -90 0"></a-entity>
+			<a-entity n-object="res: architecture/wall-curve-convex-4r-4h" position="10, 4, -26" rotation="0 -90 0"></a-entity>
+
+			<a-entity n-object="res: architecture/wall-window-gap-end-l-4w-4h" position="10, 0, -26" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="10, 0, -22" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="10, 0, -18" scale="-1 1 1"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="10, 0, -14w" scale="-1 1 1"></a-entity>
+
+			<a-entity n-object="res: architecture/wall-window-gap-end-l-4w-4h" position="-10, 0, -26"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="-10, 0, -22"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="-10, 0, -18"></a-entity>
+			<a-entity n-object="res: architecture/wall-window-gap-4w-4h" position="-10, 0, -14w"></a-entity>
+
+			<a-entity class="railings" position="0, 0, -30">
+				<a-entity class="railing-bottom" position="0, 0, 0">
+					<a-entity n-object="res: architecture/railing-4l" position="-6, 0, 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/railing-4l" position="-2, 0, 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/railing-4l" position="2, 0, 0" rotation="0 90 0"></a-entity>
+				</a-entity>
+				<a-entity class="railing-bottom" position="0, 8, 0" rotation="0 0 180">
+					<a-entity n-object="res: architecture/railing-4l" position="-6, 0, 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/railing-4l" position="-2, 0, 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/railing-4l" position="2, 0, 0" rotation="0 90 0"></a-entity>
+				</a-entity>
+			</a-entity>
 		</a-entity>
 
-		<!-- walls level 1 -->
-		<a-entity position='12 0 -4' rotation='0 0 0'
-			template='src:  #array; data: array-data; ' array-data='depth: 16; model: architecture/wall-4w-4h'></a-entity>
-		<a-entity position='12 0 12' rotation='0 270 0'
-			template='src:  #array; data: array-data; ' array-data='depth: 32; model: architecture/wall-4w-4h'></a-entity>
-		<a-entity position='4 0 -4' rotation='0 270 0'
-			template='src:  #array; data: array-data; ' array-data='depth: 24; model: architecture/wall-base-4w'></a-entity>
-		<a-entity position='4 0 -4' rotation='0 270 0'
-			template='src:  #array; data: array-data; ' array-data='depth: 24; model: architecture/wall-bulkhead-4w'></a-entity>
-		<a-entity position='-20.5 0 -4' rotation='0 0 0'
-			template='src:  #array; data: array-data; ' array-data='depth: 16; model: architecture/wall-4w-4h'></a-entity>
+		<a-entity class="display-case" position="0 0 -20">
+			<a-entity class="geometry" position="0 0 0">
+				<a-entity class="ceiling" position="0 -0.25 0">
+					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="4 4 0"></a-entity>
+					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="0 4 -4" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="-4 4 0" rotation="0 180 0"></a-entity>
+					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="0 4 4" rotation="0 270 0"></a-entity>
+				</a-entity>
+				<a-entity class="floor" position="0 0.25 0">
+					<a-entity scale="1.5 1 1.5">
+						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="4 0 0"></a-entity>
+						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="0 0 -4" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="-4 0 0" rotation="0 180 0"></a-entity>
+						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="0 0 4" rotation="0 270 0"></a-entity>
+					</a-entity>
 
-		<a-entity position='4 0 -4' rotation='0 90 0'
-			n-object='res: architecture/door-4w-4h'>
-		</a-entity>
-		<a-entity position='12 0 -4' rotation='0 270 0'
-			n-object='res: architecture/wall-base-4w'>
-		</a-entity>
-		<a-entity position='12 0 -4' rotation='0 270 0'
-			n-object='res: architecture/wall-bulkhead-4w'>
+					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="2 0.25 0"></a-entity>
+					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="0 0.25 -2" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="-2 0.25 0" rotation="0 180 0"></a-entity>
+					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="0 0.25 2" rotation="0 270 0"></a-entity>
+				</a-entity>
+				<a-entity class="rings">
+					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="4 0 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="0 0 -4" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="-4 0 0" rotation="0 180 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="0 0 4" rotation="0 270 0"></a-entity>
+
+					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="4 0 0" rotation="0 270 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="0 0 -4"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="-4 0 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="0 0 4" rotation="0 180 0"></a-entity>
+
+					<a-entity class="inner">
+
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="2 0.25 0" rotation="0 270 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 -2"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="-2 0.25 0" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 2" rotation="0 180 0"></a-entity>
+
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="2 0.25 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 -2" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="-2 0.25 0" rotation="0 180 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 2" rotation="0 270 0"></a-entity>
+					</a-entity>
+
+					<a-entity class="inner-upper" position="0 8 0" rotation="180 0 0">
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="2 0.25 0" rotation="0 270 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 -2"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="-2 0.25 0" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 2" rotation="0 180 0"></a-entity>
+
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="2 0.25 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 -2" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="-2 0.25 0" rotation="0 180 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 2" rotation="0 270 0"></a-entity>
+					</a-entity>
+				</a-entity>
+			</a-entity>
 		</a-entity>
 
-		<!-- walls level 2 -->
-		<a-entity position='12 4 12' rotation='270 0 0'
-			template='src: #array; data: array-data;' array-data='height: 16; model: architecture/wall-2w-4h'></a-entity>
-		<a-entity position='12 4 -4' rotation='270 90 0'
-			template='src: #array; data: array-data;' array-data='height: 32; model: architecture/wall-2w-4h'></a-entity>
-		<a-entity position='-20 4 12' rotation='270 270 0'
-			template='src: #array; data: array-data;' array-data='height: 32; model: architecture/wall-2w-4h'></a-entity>
-		<a-entity position='-20 4 -4' rotation='270 180 0'
-			template='src: #array; data: array-data;' array-data='height: 16; model: architecture/wall-2w-4h'></a-entity>
+		<a-entity class="display-case" position="0 0 0">
+			<a-entity class="geometry" position="0 0 0">
+				<a-entity class="ceiling" position="0 -0.25 0">
+					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="4 4 0"></a-entity>
+					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="0 4 -4" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="-4 4 0" rotation="0 180 0"></a-entity>
+					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="0 4 4" rotation="0 270 0"></a-entity>
+				</a-entity>
+				<a-entity class="floor" position="0 0.25 0">
+					<a-entity scale="1.5 1 1.5">
+						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="4 0 0"></a-entity>
+						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="0 0 -4" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="-4 0 0" rotation="0 180 0"></a-entity>
+						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="0 0 4" rotation="0 270 0"></a-entity>
+					</a-entity>
 
-		<!-- dividers -->
-		<a-entity position='0 0 12' rotation='0 180 0'
-			template='src:  #array; data: array-data; ' array-data='depth: 8; model: architecture/wall-window-4w-4h'></a-entity>
-		<a-entity position='-0.5 6 4' rotation='90 0 0'
-			template='src: #array; data: array-data;' array-data='height: 8; model: architecture/wall-2w-4h'></a-entity>
-		<a-entity position='-9 0 12' rotation='0 180 0'
-			template='src:  #array; data: array-data; ' array-data='depth: 8; model: architecture/wall-window-4w-4h'></a-entity>
-		<a-entity position='-9.5 6 4' rotation='90 0 0'
-			template='src: #array; data: array-data;' array-data='height: 8; model: architecture/wall-2w-4h'></a-entity>
+					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="2 0.25 0"></a-entity>
+					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="0 0.25 -2" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="-2 0.25 0" rotation="0 180 0"></a-entity>
+					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="0 0.25 2" rotation="0 270 0"></a-entity>
+				</a-entity>
+				<a-entity class="rings">
+					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="4 0 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="0 0 -4" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="-4 0 0" rotation="0 180 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="0 0 4" rotation="0 270 0"></a-entity>
+
+					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="4 0 0" rotation="0 270 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="0 0 -4"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="-4 0 0" rotation="0 90 0"></a-entity>
+					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="0 0 4" rotation="0 180 0"></a-entity>
+
+					<a-entity class="inner">
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="2 0.25 0" rotation="0 270 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 -2"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="-2 0.25 0" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 2" rotation="0 180 0"></a-entity>
+
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="2 0.25 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 -2" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="-2 0.25 0" rotation="0 180 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 2" rotation="0 270 0"></a-entity>
+					</a-entity>
+
+					<a-entity class="inner-upper" position="0 8 0" rotation="180 0 0">
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="2 0.25 0" rotation="0 270 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 -2"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="-2 0.25 0" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 2" rotation="0 180 0"></a-entity>
+
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="2 0.25 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 -2" rotation="0 90 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="-2 0.25 0" rotation="0 180 0"></a-entity>
+						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 2" rotation="0 270 0"></a-entity>
+					</a-entity>
+				</a-entity>
+			</a-entity>
+		</a-entity>
+
+	</a-entity>
 
 	</a-entity>
 
