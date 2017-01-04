@@ -246,6 +246,17 @@
 		{% endfor %}
 	{% endfor %}
 </script>
+	  <script>
+	  AFRAME.registerComponent('array-data', {
+	schema: {
+		depth: {type: 'number', default: '1'},
+		width: {type: 'number', default: '1'},
+		height: {type: 'number', default: '1'},
+		model: {type: 'string', default: 'effects/fire'}
+	}
+});
+</script>
+	  
     </head>
   <body>
 
