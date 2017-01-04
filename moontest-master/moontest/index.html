@@ -4121,8 +4121,63 @@
 	</a-entity>
 </a-entity>
 	    
+	
 	    
-	<a-entity n-object="architecture/floor-4w-4l" position="0 0 2"></a-entity>
+<!-- architecture -->
+	<a-entity position='0 -0.25 -60'>
+
+		<!-- floor -->
+		<a-entity position='12 0 -4'
+			template='src: #array; data: array-data;' array-data='depth: 16; width: 32; model: architecture/floor-4w-4l'></a-entity>
+
+		<!-- ceiling -->
+		<a-entity position='12 2 -4'
+			template='src: #array; data: array-data;' array-data='depth: 16; width: 32; model: architecture/ceiling-4w-4l'>
+		</a-entity>
+
+		<!-- walls level 1 -->
+		<a-entity position='12 0 -4' rotation='0 0 0'
+			template='src:  #array; data: array-data; ' array-data='depth: 16; model: architecture/wall-4w-4h'></a-entity>
+		<a-entity position='12 0 12' rotation='0 270 0'
+			template='src:  #array; data: array-data; ' array-data='depth: 32; model: architecture/wall-4w-4h'></a-entity>
+		<a-entity position='4 0 -4' rotation='0 270 0'
+			template='src:  #array; data: array-data; ' array-data='depth: 24; model: architecture/wall-base-4w'></a-entity>
+		<a-entity position='4 0 -4' rotation='0 270 0'
+			template='src:  #array; data: array-data; ' array-data='depth: 24; model: architecture/wall-bulkhead-4w'></a-entity>
+		<a-entity position='-20.5 0 -4' rotation='0 0 0'
+			template='src:  #array; data: array-data; ' array-data='depth: 16; model: architecture/wall-4w-4h'></a-entity>
+
+		<a-entity position='4 0 -4' rotation='0 90 0'
+			n-object='res: architecture/door-4w-4h'>
+		</a-entity>
+		<a-entity position='12 0 -4' rotation='0 270 0'
+			n-object='res: architecture/wall-base-4w'>
+		</a-entity>
+		<a-entity position='12 0 -4' rotation='0 270 0'
+			n-object='res: architecture/wall-bulkhead-4w'>
+		</a-entity>
+
+		<!-- walls level 2 -->
+		<a-entity position='12 4 12' rotation='270 0 0'
+			template='src: #array; data: array-data;' array-data='height: 16; model: architecture/wall-2w-4h'></a-entity>
+		<a-entity position='12 4 -4' rotation='270 90 0'
+			template='src: #array; data: array-data;' array-data='height: 32; model: architecture/wall-2w-4h'></a-entity>
+		<a-entity position='-20 4 12' rotation='270 270 0'
+			template='src: #array; data: array-data;' array-data='height: 32; model: architecture/wall-2w-4h'></a-entity>
+		<a-entity position='-20 4 -4' rotation='270 180 0'
+			template='src: #array; data: array-data;' array-data='height: 16; model: architecture/wall-2w-4h'></a-entity>
+
+		<!-- dividers -->
+		<a-entity position='0 0 12' rotation='0 180 0'
+			template='src:  #array; data: array-data; ' array-data='depth: 8; model: architecture/wall-window-4w-4h'></a-entity>
+		<a-entity position='-0.5 6 4' rotation='90 0 0'
+			template='src: #array; data: array-data;' array-data='height: 8; model: architecture/wall-2w-4h'></a-entity>
+		<a-entity position='-9 0 12' rotation='0 180 0'
+			template='src:  #array; data: array-data; ' array-data='depth: 8; model: architecture/wall-window-4w-4h'></a-entity>
+		<a-entity position='-9.5 6 4' rotation='90 0 0'
+			template='src: #array; data: array-data;' array-data='height: 8; model: architecture/wall-2w-4h'></a-entity>
+
+	</a-entity>
 
 
 
