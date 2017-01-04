@@ -236,7 +236,16 @@
 			this.el.addEventListener('stateremoved', component.onStateRemoved);
 		}
 	});
-	</script>	  	  
+	</script>
+	<script id='array' type='text/x-nunjucks-template'>
+	{% for x in range(0, -width, -4) %}
+		{% for y in range(0, height, 4) %}
+			{% for z in range(0, depth, 4) %}
+				<a-entity position='{{x}} {{y}} {{z}}' n-object='res: {{model}}'></a-entity>
+			{% endfor %}
+		{% endfor %}
+	{% endfor %}
+</script>
     </head>
   <body>
 
