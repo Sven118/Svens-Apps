@@ -270,6 +270,8 @@
 	<audio id="gate" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/sounds/gate.wav"/>
         <a-asset-item id="ship-obj" crossorigin src="https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacestation12.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacestation12.mtl"></a-asset-item>
+	<a-asset-item id="shiphalf-obj" crossorigin src="https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacestation12half.obj"></a-asset-item>
+        <a-asset-item id="shiphalf-mtl" crossorigin src="https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacestation12half.mtl"></a-asset-item>
         <a-asset-item id="ring-obj" crossorigin src="https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacering.obj"></a-asset-item>
         <a-asset-item id="ring-mtl" crossorigin src="https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacering.mtl"></a-asset-item>
 	<a-asset-item id="rocket-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ship/rocket/rocket.obj"></a-asset-item>
@@ -417,8 +419,9 @@
       </a-ring>
       
       <!-- Add Spaceship -->
-      <a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70'></a-entity>
-      <a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70'
+	<a-entity obj-model="obj: #ship-obj; mtl: #ship-mtl" position='0 -35 0' scale='70 70 70'></a-entity>
+	<a-entity obj-model="obj: #shiphalf-obj; mtl: #shiphalf-mtl" position='0 -35 0' scale='70 70 70'></a-entity>
+	<a-entity obj-model="obj: #ring-obj; mtl: #ring-mtl" position='0 -35 0' scale='70 70 70'
 		n-mesh-collider="type: environment"
 		class="not-clickable" altspace-cursor-collider="enabled: false">
         <a-animation to='0 0 360' 
