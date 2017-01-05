@@ -158,7 +158,7 @@
 		var countdownInterval;
 		var clockTime = TimeLimit;
 
-		var basket2 = document.querySelector('#basket-container2');
+		var basket = document.querySelector('#basket-container2');
 		var scoreText = document.querySelector('#score-text2');
 		var highscoreScoreText = document.querySelector('#highscore-score-text2');
 		var highscoreNameText = document.querySelector('#highscore-name-text2');
@@ -167,7 +167,7 @@
 		var scoreEffect1 = document.querySelector('#score-effect12');
 
 		window.game2 = {
-			basket2: basket2,
+			basket: basket,
 			scoreText: scoreText,
 			clockText: clockText,
 			highscoreScoreText: highscoreScoreText,
@@ -180,7 +180,7 @@
 			game2.username = user.displayName;
 		});
 
-		basket2.addEventListener('container-count-changed2', function(event){
+		basket.addEventListener('container-count-changed2', function(event){
 			if(event.detail.count > event.detail.oldCount && event.detail.count > 0){
 				console.log('score changing from ' + event.detail.oldCount + ' to ' + event.detail.count);
 				scoreGoal();
