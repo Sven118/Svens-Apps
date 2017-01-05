@@ -4427,42 +4427,6 @@
 					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="-4 4 0" rotation="0 180 0"></a-entity>
 					<a-entity n-object="res: architecture/ceiling-slice-concave-4r" position="0 4 4" rotation="0 270 0"></a-entity>
 				</a-entity>
-				<a-entity class="floor" position="0 0.25 0">
-					<a-entity scale="1.5 1 1.5">
-						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="4 0 0"></a-entity>
-						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="0 0 -4" rotation="0 90 0"></a-entity>
-						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="-4 0 0" rotation="0 180 0"></a-entity>
-						<a-entity n-object="res: architecture/floor-slice-concave-4r" position="0 0 4" rotation="0 270 0"></a-entity>
-					</a-entity>
-
-					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="2 0.25 0"></a-entity>
-					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="0 0.25 -2" rotation="0 90 0"></a-entity>
-					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="-2 0.25 0" rotation="0 180 0"></a-entity>
-					<a-entity n-object="res: architecture/floor-slice-concave-2r" position="0 0.25 2" rotation="0 270 0"></a-entity>
-				</a-entity>
-				<a-entity class="rings">
-					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="4 0 0"></a-entity>
-					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="0 0 -4" rotation="0 90 0"></a-entity>
-					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="-4 0 0" rotation="0 180 0"></a-entity>
-					<a-entity n-object="res: architecture/wall-base-curve-concave-4r" position="0 0 4" rotation="0 270 0"></a-entity>
-
-					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="4 0 0" rotation="0 270 0"></a-entity>
-					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="0 0 -4"></a-entity>
-					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="-4 0 0" rotation="0 90 0"></a-entity>
-					<a-entity n-object="res: architecture/wall-base-curve-convex-4r" position="0 0 4" rotation="0 180 0"></a-entity>
-
-					<a-entity class="inner">
-						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="2 0.25 0" rotation="0 270 0"></a-entity>
-						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 -2"></a-entity>
-						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="-2 0.25 0" rotation="0 90 0"></a-entity>
-						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 2" rotation="0 180 0"></a-entity>
-
-						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="2 0.25 0"></a-entity>
-						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 -2" rotation="0 90 0"></a-entity>
-						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="-2 0.25 0" rotation="0 180 0"></a-entity>
-						<a-entity n-object="res: architecture/wall-base-curve-concave-2r" position="0 0.25 2" rotation="0 270 0"></a-entity>
-					</a-entity>
-
 					<a-entity class="inner-upper" position="0 8 0" rotation="180 0 0">
 						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="2 0.25 0" rotation="0 270 0"></a-entity>
 						<a-entity n-object="res: architecture/wall-base-curve-convex-2r" position="0 0.25 -2"></a-entity>
@@ -4479,17 +4443,16 @@
 		</a-entity>
 
 	</a-entity>
-		
-		<a-entity n-spawner="res:interactables/box" position="1 2 -18"></a-entity>
-
-		<a-entity n-spawner="res:interactables/soccerball" position="0 2 -16"></a-entity>
-		<a-entity n-spawner="res:interactables/bowling-pin" position="1 2 -16"></a-entity>
-		<a-entity n-spawner="res:interactables/gem" position="2 2 -16"></a-entity>
-
-		<a-entity n-object="res:objects/basketball-hoop" position="-9 3 -14"></a-entity>
-		<a-entity n-spawner="res:interactables/basketball" position="-6 1 -14"></a-entity>
-
-		<a-entity n-object="res:objects/target-archery" position="-2 3 -14"></a-entity>
+		<!-- Interactable Spawners -->
+		<a-entity n-spawner="res:interactables/box" position="8 2 -1"></a-entity>
+		<a-entity n-spawner="res:interactables/soccerball" position="8 2 -2"></a-entity>
+		<a-entity n-spawner="res:interactables/bowling-pin" position="8 2 -3"></a-entity>
+		<a-entity n-spawner="res:interactables/gem" position="8 2 -4"></a-entity>
+		<a-entity n-spawner="res:interactables/basketball" position="8 2 -5"></a-entity>
+		<a-entity n-spawner="res:interactables/bowlingball" position="8 2 -6"></a-entity>
+		<a-entity n-spawner="res:interactables/coin" position="8 2 -7"></a-entity>
+		<a-entity n-spawner="res:interactables/ring" position="8 2 -8"></a-entity>
+		<a-entity n-object="res:objects/target-archery" position="-2 2 -14"></a-entity>
 		
 		<!-- Basketball Game 1-->
 	    <a-entity id="game" position="8.5 -0.25 -9" rotation="0 -90 0">
