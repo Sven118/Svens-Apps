@@ -180,7 +180,7 @@
 			game2.username = user.displayName;
 		});
 
-		basket.addEventListener('container-count-changed2', function(event){
+		basket.addEventListener('container-count-changed', function(event){
 			if(event.detail.count > event.detail.oldCount && event.detail.count > 0){
 				console.log('score changing from ' + event.detail.oldCount + ' to ' + event.detail.count);
 				scoreGoal();
