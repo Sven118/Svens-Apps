@@ -158,7 +158,7 @@
 		var countdownInterval;
 		var clockTime = TimeLimit;
 
-		var basket = document.querySelector('#basket-container2');
+		var basket2 = document.querySelector('#basket-container2');
 		var scoreText = document.querySelector('#score-text2');
 		var highscoreScoreText = document.querySelector('#highscore-score-text2');
 		var highscoreNameText = document.querySelector('#highscore-name-text2');
@@ -167,7 +167,7 @@
 		var scoreEffect1 = document.querySelector('#score-effect12');
 
 		window.game2 = {
-			basket: basket,
+			basket2: basket2,
 			scoreText: scoreText,
 			clockText: clockText,
 			highscoreScoreText: highscoreScoreText,
@@ -180,7 +180,7 @@
 			game2.username = user.displayName;
 		});
 
-		basket.addEventListener('container-count-changed2', function(event){
+		basket2.addEventListener('container-count-changed2', function(event){
 			if(event.detail.count > event.detail.oldCount && event.detail.count > 0){
 				console.log('score changing from ' + event.detail.oldCount + ' to ' + event.detail.count);
 				scoreGoal();
@@ -193,7 +193,7 @@
 				var syncSys = scene.systems['sync-system'];
 				runAfterConnected(syncSys, function(){
 					var highscoreRef = syncSys.connection.app.child('highscore');
-					window.game.highscoreRef = highscoreRef;
+					window.game2.highscoreRef = highscoreRef;
 					refreshHighscoreboard();
 				});
 			}, 500);
@@ -204,8 +204,8 @@
 				var val = data.val();
 				console.dir('refreshed highscoreboard to: ');
 				console.dir(val);
-				window.game.highscoreScoreText.setAttribute('n-text', 'text:' + val.score);
-				window.game.highscoreNameText.setAttribute('n-text', 'text:' + val.name);
+				window.game2.highscoreScoreText.setAttribute('n-text', 'text:' + val.score);
+				window.game2.highscoreNameText.setAttribute('n-text', 'text:' + val.name);
 			});
 		}
 
@@ -254,7 +254,7 @@
 			function scoreHighscore(){//right now everyone in the space is going to do this at the same time
 				console.log('scoring highscore' + game2.score);
 				game2.highscoreRef.set({
-					score: this.game.score,
+					score: this.game2.score,
 					name: game2.username//race condition
 				})
 				refreshHighscoreboard();
@@ -4600,10 +4600,10 @@
 		<!-- Basketball Game 2 -->
 	    <a-entity id="game2" position="-8.5 -0.25 -11" rotation="0 90 0">
 
-			<a-entity id="scoring-area">
+			<a-entity id="scoring-area2">
 				<a-box color="black" scale="3 0.1 2.5" opacity="0" id="trigger-0" rotation="90 0 0" n-box-collider position="-1 1.2 1.1"></a-box>
 
-				<a-box id="basket-container" color="yellowgreen" rotation="0 0 0" scale="1 0.25 1" material="visible:false" n-box-collider="isTrigger:true;" n-container="capacity:3" position="-1 2.1 0.5"></a-box>
+				<a-box id="basket-container2" color="yellowgreen" rotation="0 0 0" scale="1 0.25 1" material="visible:false" n-box-collider="isTrigger:true;" n-container="capacity:3" position="-1 2.1 0.5"></a-box>
 
 				<a-entity n-object="res:objects/basketball-hoop" position="-1 2.5 0.5" rotation="0 90 0" scale="2.5 2.5 2.5">
 					<a-entity  id="score-effect02" position="0 0 0">
@@ -4633,7 +4633,7 @@
 				<a-entity position="0 0.5 0" n-object="res:effects/fire"></a-entity>
 			</a-entity>
 
-			<a-entity id="info-area" position="0.5 0.5 0">
+			<a-entity id="info-area2" position="0.5 0.5 0">
 				<a-entity rotation="0 90 15" position="-2.5 4.5 -0.5">
 					<a-entity n-object="res:architecture/wall-4w-4h" scale="1 0.5 0.5"></a-entity>
 					<a-entity rotation="0 -90 0">
