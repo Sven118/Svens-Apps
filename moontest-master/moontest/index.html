@@ -4443,7 +4443,12 @@
 
 	</a-entity>
 		<!-- Interactable Spawners -->
-		<a-entity n-spawner="res:interactables/box" position="8 2 4"></a-entity>
+		<a-entity n-spawner="res:interactables/box" position="8 2 4">
+			<a-animation to='0 360 0' 
+				easing='linear' 
+				dur='4000' 
+				repeat='indefinite'/>
+		</a-entity>
 		<a-entity n-spawner="res:interactables/soccerball" position="8 2 3"></a-entity>
 		<a-entity n-spawner="res:interactables/bowling-pin" position="8 2 2"></a-entity>
 		<a-entity n-spawner="res:interactables/gem" position="8 2 1"></a-entity>
