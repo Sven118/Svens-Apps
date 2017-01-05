@@ -219,8 +219,8 @@
 
 		function scoreGoal(){
 			game2.score++;
-			game2.scoreEffect02.emit('score');
-			game2.scoreEffect12.emit('score');
+			game2.scoreEffect02.emit('score2');
+			game2.scoreEffect12.emit('score2');
 			refreshScoreboard();
 		}
 
@@ -4607,11 +4607,11 @@
 
 				<a-entity n-object="res:objects/basketball-hoop" position="-1 2.5 0.5" rotation="0 90 0" scale="2.5 2.5 2.5">
 					<a-entity  id="score-effect02" position="0 0 0">
-						<a-animation attribute="rotation" dur="1500" to="0 360 0" begin="score" easing="ease" repeat="0"></a-animation>
+						<a-animation attribute="rotation" dur="1500" to="0 360 0" begin="score2" easing="ease" repeat="0"></a-animation>
 						<a-entity position="0.25 0 0" n-object="res:effects/fire-trail"></a-entity>
 					</a-entity>
 					<a-entity id="score-effect12" position="0 0 0">
-						<a-animation attribute="rotation" dur="1500" to="0 360 0" begin="score" direction="reverse" easing="ease" repeat="0"></a-animation>
+						<a-animation attribute="rotation" dur="1500" to="0 360 0" begin="score2" direction="reverse" easing="ease" repeat="0"></a-animation>
 						<a-entity position="0.25 0 0" n-object="res:effects/fire-trail"></a-entity>
 					</a-entity>
 				</a-entity>
