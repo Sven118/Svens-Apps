@@ -192,7 +192,7 @@
 			setTimeout(function(){
 				var syncSys = scene.systems['sync-system'];
 				runAfterConnected(syncSys, function(){
-					var highscoreRef = syncSys.connection.app.child('highscore');
+					var highscoreRef = syncSys.connection.app.child('highscore2');
 					window.game2.highscoreRef = highscoreRef;
 					refreshHighscoreboard();
 				});
