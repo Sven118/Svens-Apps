@@ -151,13 +151,12 @@
 })();
 		</script>
 	  
-	  	<script> 
+<script> 
 		(function(){
 	document.addEventListener('DOMContentLoaded', function(){
 		var TimeLimit = 60;
 		var countdownInterval;
 		var clockTime = TimeLimit;
-
 		var basket = document.querySelector('#basket-container2');
 		var scoreText = document.querySelector('#score-text2');
 		var highscoreScoreText = document.querySelector('#highscore-score-text2');
@@ -165,7 +164,6 @@
 		var clockText = document.querySelector('#clock-text2');
 		var scoreEffect02 = document.querySelector('#score-effect02');
 		var scoreEffect12 = document.querySelector('#score-effect12');
-
 		window.game2 = {
 			basket: basket,
 			scoreText: scoreText,
@@ -175,18 +173,15 @@
 			scoreEffect02: scoreEffect02,
 			scoreEffect12: scoreEffect12,
 		};
-
 		altspace.getUser().then(function(user){
 			game2.username = user.displayName;
 		});
-
 		basket.addEventListener('container-count-changed', function(event){
 			if(event.detail.count > event.detail.oldCount && event.detail.count > 0){
 				console.log('score changing from ' + event.detail.oldCount + ' to ' + event.detail.count);
 				scoreGoal();
 			}
 		});
-
 		function initHighscore(){
 			var scene = document.querySelector('a-scene');
 			setTimeout(function(){
@@ -198,85 +193,68 @@
 				});
 			}, 500);
 		}
-
 		function refreshHighscoreboard(){
 			game2.highscoreRef.once('value', function(data){
 				var val = data.val();
 				console.dir('refreshed highscoreboard to: ');
 				console.dir(val);
-				window.game2.highscoreScoreText.setAttribute('n-text', 'text:' + val.score2);
-				window.game2.highscoreNameText.setAttribute('n-text', 'text:' + val.name2);
+				window.game2.highscoreScoreText.setAttribute('n-text', 'text:' + val.score);
+				window.game2.highscoreNameText.setAttribute('n-text', 'text:' + val.name);
 			});
 		}
-
 		function refreshScoreboard(){
-			game2.scoreText.setAttribute('n-text', 'text:' + game2.score2);
+			game2.scoreText.setAttribute('n-text', 'text:' + game2.score);
 		}
-
 		function refreshClock(){
 			game2.clockText.setAttribute('n-text', 'text:' + clockTime);
 		}
-
 		function scoreGoal(){
-			game2.score2++;
+			game2.score++;
 			game2.scoreEffect02.emit('score2');
 			game2.scoreEffect12.emit('score2');
 			refreshScoreboard();
 		}
-
 		function newGame(){
 			game2.score = 0;
 			refreshScoreboard();
 			newCountdown();
 		}
-
 		function newCountdown(){
 			clockTime = TimeLimit;
 			countdownInterval = setInterval(function(){
 				clockTime--;
-
 				if(clockTime < 0){
 					endGame();
 				}
-
 				refreshClock();
 			}, 1000);
 		}
-
 		function endGame(){
-
 			clockTime = 0;
 			clearInterval(countdownInterval)
 			setTimeout(function(){
 				newGame();
 			}, 5000);
-
 			function scoreHighscore(){//right now everyone in the space is going to do this at the same time
-				console.log('scoring highscore' + game2.score2);
+				console.log('scoring highscore' + game2.score);
 				game2.highscoreRef.set({
-					score2: this.game2.score2,
+					score: this.game2.score,
 					name: game2.username//race condition
 				})
 				refreshHighscoreboard();
 			}
-
-
 			game2.highscoreRef.once('value', function(data){
 				var val = data.val();
-
 				console.dir('checking highscore: ');
 				console.dir(val);
-
-				if(!val || !val.score2){
+				if(!val || !val.score){
 					scoreHighscore();
 				}
-
-				if(val.score2 <= game2.score2){
+				if(val.score <= game2.score){
 					scoreHighscore();
 				}
 			});
 		}
-
 		function runAfterConnected(syncSys, callback){
 			if(syncSys.connection){
 				callback();
@@ -286,9 +264,7 @@
 				});
 			}
 		}
-
 		//main
-
 		initHighscore();
 		newGame();
 	});
