@@ -166,7 +166,7 @@
 		var scoreEffect0 = document.querySelector('#score-effect02');
 		var scoreEffect1 = document.querySelector('#score-effect12');
 
-		window.game = {
+		window.game2 = {
 			basket: basket,
 			scoreText: scoreText,
 			clockText: clockText,
@@ -177,10 +177,10 @@
 		};
 
 		altspace.getUser().then(function(user){
-			game.username = user.displayName;
+			game2.username = user.displayName;
 		});
 
-		basket.addEventListener('container-count-changed', function(event){
+		basket.addEventListener('container-count-changed2', function(event){
 			if(event.detail.count > event.detail.oldCount && event.detail.count > 0){
 				console.log('score changing from ' + event.detail.oldCount + ' to ' + event.detail.count);
 				scoreGoal();
@@ -200,7 +200,7 @@
 		}
 
 		function refreshHighscoreboard(){
-			game.highscoreRef.once('value', function(data){
+			game2.highscoreRef.once('value', function(data){
 				var val = data.val();
 				console.dir('refreshed highscoreboard to: ');
 				console.dir(val);
@@ -210,22 +210,22 @@
 		}
 
 		function refreshScoreboard(){
-			game.scoreText.setAttribute('n-text', 'text:' + game.score);
+			game2.scoreText.setAttribute('n-text', 'text:' + game.score);
 		}
 
 		function refreshClock(){
-			game.clockText.setAttribute('n-text', 'text:' + clockTime);
+			game2.clockText.setAttribute('n-text', 'text:' + clockTime);
 		}
 
 		function scoreGoal(){
-			game.score++;
-			game.scoreEffect0.emit('score');
-			game.scoreEffect1.emit('score');
+			game2.score++;
+			game2.scoreEffect0.emit('score');
+			game2.scoreEffect1.emit('score');
 			refreshScoreboard();
 		}
 
 		function newGame(){
-			game.score = 0;
+			game2.score = 0;
 			refreshScoreboard();
 			newCountdown();
 		}
@@ -252,16 +252,16 @@
 			}, 5000);
 
 			function scoreHighscore(){//right now everyone in the space is going to do this at the same time
-				console.log('scoring highscore' + game.score);
-				game.highscoreRef.set({
+				console.log('scoring highscore' + game2.score);
+				game2.highscoreRef.set({
 					score: this.game.score,
-					name: game.username//race condition
+					name: game2.username//race condition
 				})
 				refreshHighscoreboard();
 			}
 
 
-			game.highscoreRef.once('value', function(data){
+			game2.highscoreRef.once('value', function(data){
 				var val = data.val();
 
 				console.dir('checking highscore: ');
@@ -271,7 +271,7 @@
 					scoreHighscore();
 				}
 
-				if(val.score <= game.score){
+				if(val.score <= game2.score){
 					scoreHighscore();
 				}
 			});
@@ -4598,7 +4598,7 @@
 		
 		
 		<!-- Basketball Game 2 -->
-	    <a-entity id="game" position="-8.5 -0.25 -11" rotation="0 90 0">
+	    <a-entity id="game2" position="-8.5 -0.25 -11" rotation="0 90 0">
 
 			<a-entity id="scoring-area">
 				<a-box color="black" scale="3 0.1 2.5" opacity="0" id="trigger-0" rotation="90 0 0" n-box-collider position="-1 1.2 1.1"></a-box>
