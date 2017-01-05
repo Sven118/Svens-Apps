@@ -151,6 +151,150 @@
 })();
 		</script>
 	  
+	  	<script> 
+		(function(){
+	document.addEventListener('DOMContentLoaded', function(){
+		var TimeLimit = 60;
+		var countdownInterval;
+		var clockTime = TimeLimit;
+
+		var basket = document.querySelector('#basket-container2');
+		var scoreText = document.querySelector('#score-text2');
+		var highscoreScoreText = document.querySelector('#highscore-score-text2');
+		var highscoreNameText = document.querySelector('#highscore-name-text2');
+		var clockText = document.querySelector('#clock-text2');
+		var scoreEffect0 = document.querySelector('#score-effect02');
+		var scoreEffect1 = document.querySelector('#score-effect12');
+
+		window.game = {
+			basket: basket,
+			scoreText: scoreText,
+			clockText: clockText,
+			highscoreScoreText: highscoreScoreText,
+			highscoreNameText: highscoreNameText,
+			scoreEffect0: scoreEffect0,
+			scoreEffect1: scoreEffect1,
+		};
+
+		altspace.getUser().then(function(user){
+			game.username = user.displayName;
+		});
+
+		basket.addEventListener('container-count-changed', function(event){
+			if(event.detail.count > event.detail.oldCount && event.detail.count > 0){
+				console.log('score changing from ' + event.detail.oldCount + ' to ' + event.detail.count);
+				scoreGoal();
+			}
+		});
+
+		function initHighscore(){
+			var scene = document.querySelector('a-scene');
+			setTimeout(function(){
+				var syncSys = scene.systems['sync-system'];
+				runAfterConnected(syncSys, function(){
+					var highscoreRef = syncSys.connection.app.child('highscore');
+					window.game.highscoreRef = highscoreRef;
+					refreshHighscoreboard();
+				});
+			}, 500);
+		}
+
+		function refreshHighscoreboard(){
+			game.highscoreRef.once('value', function(data){
+				var val = data.val();
+				console.dir('refreshed highscoreboard to: ');
+				console.dir(val);
+				window.game.highscoreScoreText.setAttribute('n-text', 'text:' + val.score);
+				window.game.highscoreNameText.setAttribute('n-text', 'text:' + val.name);
+			});
+		}
+
+		function refreshScoreboard(){
+			game.scoreText.setAttribute('n-text', 'text:' + game.score);
+		}
+
+		function refreshClock(){
+			game.clockText.setAttribute('n-text', 'text:' + clockTime);
+		}
+
+		function scoreGoal(){
+			game.score++;
+			game.scoreEffect0.emit('score');
+			game.scoreEffect1.emit('score');
+			refreshScoreboard();
+		}
+
+		function newGame(){
+			game.score = 0;
+			refreshScoreboard();
+			newCountdown();
+		}
+
+		function newCountdown(){
+			clockTime = TimeLimit;
+			countdownInterval = setInterval(function(){
+				clockTime--;
+
+				if(clockTime < 0){
+					endGame();
+				}
+
+				refreshClock();
+			}, 1000);
+		}
+
+		function endGame(){
+
+			clockTime = 0;
+			clearInterval(countdownInterval)
+			setTimeout(function(){
+				newGame();
+			}, 5000);
+
+			function scoreHighscore(){//right now everyone in the space is going to do this at the same time
+				console.log('scoring highscore' + game.score);
+				game.highscoreRef.set({
+					score: this.game.score,
+					name: game.username//race condition
+				})
+				refreshHighscoreboard();
+			}
+
+
+			game.highscoreRef.once('value', function(data){
+				var val = data.val();
+
+				console.dir('checking highscore: ');
+				console.dir(val);
+
+				if(!val || !val.score){
+					scoreHighscore();
+				}
+
+				if(val.score <= game.score){
+					scoreHighscore();
+				}
+			});
+		}
+
+		function runAfterConnected(syncSys, callback){
+			if(syncSys.connection){
+				callback();
+			} else {
+				syncSys.sceneEl.addEventListener('connected', function(){
+					callback();
+				});
+			}
+		}
+
+		//main
+
+		initHighscore();
+		newGame();
+	});
+})();
+	</script>
+	  
 	<script>
 	 AFRAME.registerComponent('unfolding-path',
 	{
@@ -4371,7 +4515,7 @@
 
 		<a-entity n-object="res:objects/target-archery" position="-2 3 -14"></a-entity>
 		
-		<!-- Basketball Game -->
+		<!-- Basketball Game 1-->
 	    <a-entity id="game" position="8.5 -0.25 -9" rotation="0 -90 0">
 
 			<a-entity id="scoring-area">
@@ -4433,6 +4577,7 @@
 					</a-entity>
 				</a-entity>
 			</a-entity>
+		    
 			<a-entity class="wall" position="0.5 0.5 0">
 				<a-entity n-object="res:architecture/railing-4l" position="-0.125 2.5 -0.25" rotation="45 0 0" scale="1 0.5 1"></a-entity>
 				<a-entity n-object="res:architecture/wall-2w-4h" position="0 0 -0.5" rotation="0 0 0" scale="1 1 0.25"></a-entity>
@@ -4451,8 +4596,9 @@
 			</a-entity>
 		</a-entity>
 		
-		<!-- Basketball Game -->
-	    <a-entity id="game" position="-8.5 -0.25 -9" rotation="0 90 0">
+		
+		<!-- Basketball Game 2 -->
+	    <a-entity id="game" position="-8.5 -0.25 -11" rotation="0 90 0">
 
 			<a-entity id="scoring-area">
 				<a-box color="black" scale="3 0.1 2.5" opacity="0" id="trigger-0" rotation="90 0 0" n-box-collider position="-1 1.2 1.1"></a-box>
@@ -4460,11 +4606,11 @@
 				<a-box id="basket-container" color="yellowgreen" rotation="0 0 0" scale="1 0.25 1" material="visible:false" n-box-collider="isTrigger:true;" n-container="capacity:3" position="-1 2.1 0.5"></a-box>
 
 				<a-entity n-object="res:objects/basketball-hoop" position="-1 2.5 0.5" rotation="0 90 0" scale="2.5 2.5 2.5">
-					<a-entity  id="score-effect0" position="0 0 0">
+					<a-entity  id="score-effect02" position="0 0 0">
 						<a-animation attribute="rotation" dur="1500" to="0 360 0" begin="score" easing="ease" repeat="0"></a-animation>
 						<a-entity position="0.25 0 0" n-object="res:effects/fire-trail"></a-entity>
 					</a-entity>
-					<a-entity id="score-effect1" position="0 0 0">
+					<a-entity id="score-effect12" position="0 0 0">
 						<a-animation attribute="rotation" dur="1500" to="0 360 0" begin="score" direction="reverse" easing="ease" repeat="0"></a-animation>
 						<a-entity position="0.25 0 0" n-object="res:effects/fire-trail"></a-entity>
 					</a-entity>
@@ -4492,7 +4638,7 @@
 					<a-entity n-object="res:architecture/wall-4w-4h" scale="1 0.5 0.5"></a-entity>
 					<a-entity rotation="0 -90 0">
 						<a-entity n-text="text:SCORE;" scale="0.65 0.65 0.65" position="1 1.5 0.1"></a-entity>
-						<a-entity id="score-text" n-text="text:0" position="1 0.65 0.1"></a-entity>
+						<a-entity id="score-text2" n-text="text:0" position="1 0.65 0.1"></a-entity>
 					</a-entity>
 				</a-entity>
 
@@ -4500,8 +4646,8 @@
 					<a-entity n-object="res:architecture/wall-4w-4h" scale="1 0.5 0.5"></a-entity>
 					<a-entity rotation="0 -90 0">
 						<a-entity n-text="text:HIGHSCORE;" scale="0.3 0.5 0.5" position="1 1.55 0.1"></a-entity>
-						<a-entity id="highscore-score-text"  n-text="" position="1 0.85 0.1" scale="0.75 0.75 0.75"></a-entity>
-						<a-entity id="highscore-name-text" n-text="" scale="0.5 0.5 0.5" position="1 0.25 0.1"></a-entity>
+						<a-entity id="highscore-score-text2"  n-text="" position="1 0.85 0.1" scale="0.75 0.75 0.75"></a-entity>
+						<a-entity id="highscore-name-text2" n-text="" scale="0.5 0.5 0.5" position="1 0.25 0.1"></a-entity>
 					</a-entity>
 				</a-entity>
 
@@ -4509,7 +4655,7 @@
 					<a-entity n-object="res:architecture/wall-4w-4h" scale="1 0.5 0.5"></a-entity>
 					<a-entity rotation="0 -90 0">
 						<a-entity n-text="text:CLOCK;" scale="0.5 0.5 0.5" position="1 1.5 0.1"></a-entity>
-						<a-entity id="clock-text" n-text="" position="1 0.65 0.1"></a-entity>
+						<a-entity id="clock-text2" n-text="" position="1 0.65 0.1"></a-entity>
 					</a-entity>
 				</a-entity>
 			</a-entity>
