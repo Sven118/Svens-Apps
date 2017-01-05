@@ -204,13 +204,13 @@
 				var val = data.val();
 				console.dir('refreshed highscoreboard to: ');
 				console.dir(val);
-				window.game2.highscoreScoreText.setAttribute('n-text', 'text:' + val.score);
-				window.game2.highscoreNameText.setAttribute('n-text', 'text:' + val.name);
+				window.game2.highscoreScoreText.setAttribute('n-text', 'text:' + val.score2);
+				window.game2.highscoreNameText.setAttribute('n-text', 'text:' + val.name2);
 			});
 		}
 
 		function refreshScoreboard(){
-			game2.scoreText.setAttribute('n-text', 'text:' + game2.score);
+			game2.scoreText.setAttribute('n-text', 'text:' + game2.score2);
 		}
 
 		function refreshClock(){
@@ -218,7 +218,7 @@
 		}
 
 		function scoreGoal(){
-			game2.score++;
+			game2.score2++;
 			game2.scoreEffect02.emit('score2');
 			game2.scoreEffect12.emit('score2');
 			refreshScoreboard();
@@ -252,9 +252,9 @@
 			}, 5000);
 
 			function scoreHighscore(){//right now everyone in the space is going to do this at the same time
-				console.log('scoring highscore' + game2.score);
+				console.log('scoring highscore' + game2.score2);
 				game2.highscoreRef.set({
-					score: this.game2.score,
+					score2: this.game2.score2,
 					name: game2.username//race condition
 				})
 				refreshHighscoreboard();
@@ -267,11 +267,11 @@
 				console.dir('checking highscore: ');
 				console.dir(val);
 
-				if(!val || !val.score){
+				if(!val || !val.score2){
 					scoreHighscore();
 				}
 
-				if(val.score <= game2.score){
+				if(val.score2 <= game2.score2){
 					scoreHighscore();
 				}
 			});
