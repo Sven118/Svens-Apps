@@ -554,7 +554,8 @@
 	<a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false" geometry="segmentsWidth: 8; segmentsHeight: 8"></a-sky>
 	
 	<a-entity obj-model="obj: #rocket-obj; mtl: #rocket-mtl" position='-15 3 0' scale='4 4 4' rotation='45 0 0'></a-entity>
-	<a-entity obj-model="obj: #statue-obj; mtl: #statue-mtl" position='-15 0 15' scale='.5 .5 .5' rotation='0 0 0'></a-entity>
+	<a-entity obj-model="obj: #statue-obj; mtl: #statue-mtl" position='-15 0 15' scale='.5 .5 .5' rotation='0 0 0'
+		  n-mesh-collider="type: environment"></a-entity>
 	    
 <a-entity id='spawn-spot' position="0 .3 0">
 	<a-entity n-object="res: architecture/floor-slice-concave-4r" position="4 0 0"></a-entity>
