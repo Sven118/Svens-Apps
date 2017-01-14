@@ -398,6 +398,7 @@
         <a-asset-item id="rocket-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ship/rocket/rocket.mtl"></a-asset-item>
 	<a-asset-item id="statue-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/b8d25840/moontest-master/moontest/models/statue/goldstatue3.obj"></a-asset-item>
         <a-asset-item id="statue-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/e1ad38b9/moontest-master/moontest/models/statue/goldstatue3.mtl"></a-asset-item>
+	<a id="zeriportal" href="https://account.altvr.com/events/587280503816585742"></a>
 	</a-assets>
 
       <!-- Add Planets -->
@@ -4727,6 +4728,23 @@
 		setRandomColor(event.target);	
 		});
 </script>
+	  
+<script>
+	//Zerithax's Relatively Shit Portal
+UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
+{
+    // Object has finished loading, add it to the scene
+   object.scale.set(4.5, 5, 4.5);
+   object.position.set(0,0,0);
+   object.rotation.set(0,0,0);
+   object.addEventListener("cursorup", function()
+   {
+       document.getElementById("zeriportal").click();
+   });
+  scene.add(object);
+});
+</script>
+	
 	 
 	  
   </body>
