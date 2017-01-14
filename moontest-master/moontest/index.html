@@ -554,7 +554,7 @@
 	<!-- Add Skybox -->    
 	<a-sky src='#stars' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false" geometry="segmentsWidth: 8; segmentsHeight: 8"></a-sky>
 	
-	<a-entity obj-model="obj: #rocket-obj; mtl: #rocket-mtl" position='-15 3 0' scale='4 4 4' rotation='45 0 0'></a-entity>
+	<a-entity id='rocket' obj-model="obj: #rocket-obj; mtl: #rocket-mtl" position='-15 3 0' scale='4 4 4' rotation='45 0 0'></a-entity>
 	    
 	<a-entity obj-model="obj: #statue-obj; mtl: #statue-mtl" position='-4.5 0 0' scale='.45 .45 .45' rotation='0 90 0'
 		  n-mesh-collider="type: environment"></a-entity>
@@ -4734,6 +4734,7 @@
 UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
 {
     // Object has finished loading, add it to the scene
+var objectEL = document.querySelector('rocket');
    object.scale.set(4.5, 5, 4.5);
    object.position.set(0,0,0);
    object.rotation.set(0,0,0);
