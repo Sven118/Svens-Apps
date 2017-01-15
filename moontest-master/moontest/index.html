@@ -4729,12 +4729,13 @@
 </script>
 	  
 <script>
-	(function(){
 		var object = document.querySelector('#rocket');
-		object.addEventListener("cursorup", function()
-   {
+	function(){
+                var self = this;
+                self.el.object3D.addEventListener('cursorup', function(){
+			
        document.getElementById("zeriportal").click();
-}});
+}};
 
 </script>
 	
