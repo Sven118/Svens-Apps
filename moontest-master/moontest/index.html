@@ -7,6 +7,7 @@
 	<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
 	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.1/dist/aframe-altspace-component.min.js"></script>
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
+	<script src="https://cdn.rawgit.com/norybiak/UltimateLoader/master/dist/UltimateLoader.min.js"></script>
 	<script> 
 		(function(){
 	document.addEventListener('DOMContentLoaded', function(){
@@ -399,6 +400,7 @@
 	<a-asset-item id="statue-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/b8d25840/moontest-master/moontest/models/statue/goldstatue3.obj"></a-asset-item>
         <a-asset-item id="statue-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/e1ad38b9/moontest-master/moontest/models/statue/goldstatue3.mtl"></a-asset-item>
 	</a-assets>
+	<a id="zeriportal" href="https://account.altvr.com/events/587280503816585742"></a>
 
       <!-- Add Planets -->
      <a-sphere id='earth' position='1000 0 500' radius='250' material='src: #earth;'>
@@ -4729,14 +4731,19 @@
 </script>
 	  
 <script>
-		var object = document.querySelector('#rocket');
-	function(){
-                var self = this;
-                self.el.object3D.addEventListener('cursorup', function(){
-			
+		//Zerithax's Relatively Shit Portal
+UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
+{
+    // Object has finished loading, add it to the scene
+   object.scale.set(4.5, 5, 4.5);
+   object.position.set(0,0,0);
+   object.rotation.set(0,0,0);
+   object.addEventListener("cursorup", function()
+   {
        document.getElementById("zeriportal").click();
-}};
-
+   });
+  scene.add(object);
+});
 </script>
 	
 	 
