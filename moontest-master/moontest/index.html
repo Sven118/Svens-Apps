@@ -4731,9 +4731,10 @@
 </script>
 	  
 <script>
-		//Zerithax's Relatively Shit Portal
+//Zerithax's Relatively Shit Portal
 UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
 {
+var scene = new THREE.Scene();
     // Object has finished loading, add it to the scene
    object.scale.set(4.5, 5, 4.5);
    object.position.set(0,0,0);
@@ -4742,6 +4743,8 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
    {
        document.getElementById("zeriportal").click();
    });
+  scene.add(object);
+});
 </script>
 	
 	 
