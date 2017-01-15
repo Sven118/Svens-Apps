@@ -558,8 +558,9 @@
 	<a-entity obj-model="obj: #statue-obj; mtl: #statue-mtl" position='-4.5 0 0' scale='.45 .45 .45' rotation='0 90 0'
 		  n-mesh-collider="type: environment"></a-entity>
 	    
-	    <a-entity obj-model="obj: #rocket-obj; mtl: #rocket-mtl" position='0 0 -6' scale='2 2 2'
-		      n-mesh-collider="type: environment"></a-entity>
+	    <a-entity id='rocket' obj-model="obj: #rocket-obj; mtl: #rocket-mtl" position='0 0 -6' scale='2 2 2'
+		      n-mesh-collider="type: environment"
+		      wire="on: click; emit: zeriportal; targets: #rocket"></a-entity>
 	    
 <a-entity id='spawn-spot' position="0 .2 0">
 	<a-entity n-object="res: architecture/floor-slice-concave-4r" position="4 0 0"></a-entity>
@@ -4729,22 +4730,6 @@
 		boxEl.addEventListener('change-color', function(event) {
 		setRandomColor(event.target);	
 		});
-</script>
-
-<script>
-//Zerithax's Relatively Shit Portal
-UltimateLoader.load('ship/rocket/rocket.obj', function(object)
-{
-    // Object has finished loading, add it to the scene
-   object.scale.set(4.5, 5, 4.5);
-   object.position.set(0,0,0);
-   object.rotation.set(0,0,0);
-   object.addEventListener("cursorup", function()
-   {
-       document.getElementById("zeriportal").click();
-   });
-  scene.add(object);
-});
 </script>
 	
 	 
