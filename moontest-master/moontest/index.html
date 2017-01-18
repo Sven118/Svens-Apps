@@ -4732,9 +4732,10 @@
 	  
 <script>
 //Zerithax's Relatively Shit Portal
-UltimateLoader.load('https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/ship/rocket/rocket.obj', function(object)
+UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
 {
-var scene = new THREE.Scene();
+	var scene = new THREE.Scene();
+	var renderer = altspace.getThreeJSRenderer();
     // Object has finished loading, add it to the scene
    object.scale.set(4.5, 5, 4.5);
    object.position.set(0,0,0);
@@ -4744,6 +4745,14 @@ var scene = new THREE.Scene();
        document.getElementById("zeriportal").click();
    });
   scene.add(object);
+  
+  render();
+  function render() 
+  {
+	  //this part renders everything
+	  requestAnimationFrame(render);
+	  renderer.render(scene);
+  }
 });
 </script>
 	
