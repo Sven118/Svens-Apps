@@ -4732,14 +4732,20 @@
 <script id="zeriportal" href="https://account.altvr.com/events/587280503816585742"></script>
 	  
 <script>
-function(){
-	var scene = document.querySelector('a-scene');
-	var portal = document.querySelector('#rocket');
-	portal.addEventListener("cursorup", function()
+//Zerithax's Relatively Shit Portal
+UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
 {
+	var scene = document.querySelector('a-scene');
+    // Object has finished loading, add it to the scene
+   object.scale.set(4.5, 5, 4.5);
+   object.position.set(0,0,0);
+   object.rotation.set(0,0,0);
+   object.addEventListener("cursorup", function()
+   {
        document.getElementById("zeriportal").click();
    });
-}
+  scene.add(object);
+});
 </script>
 	
 	 
