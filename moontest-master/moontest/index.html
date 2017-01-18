@@ -4733,21 +4733,28 @@
 	  
 <script>
 //Zerithax's Relatively Shit Portal
-function portal(el) {	
-	UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
-	{
+UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
+{
 	var scene = document.querySelector('a-scene');
+	var renderer = altspace.getThreeJSRenderer();
     // Object has finished loading, add it to the scene
-   el.object.scale.set(4.5, 5, 4.5);
-   el.object.position.set(0,0,0);
-   el.object.rotation.set(0,0,0);
-   el.object.addEventListener("cursorup", function()
+   object.scale.set(4.5, 5, 4.5);
+   object.position.set(0,0,0);
+   object.rotation.set(0,0,0);
+   object.addEventListener("cursorup", function()
    {
        document.getElementById("zeriportal").click();
    });
   scene.add(object);
-	});
-}
+  
+  render();
+  function render() 
+  {
+	  //this part renders everything
+	  requestAnimationFrame(render);
+	  renderer.render(scene);
+  }
+});
 </script>
 	
 	 
