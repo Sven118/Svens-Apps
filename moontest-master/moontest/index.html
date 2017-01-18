@@ -519,9 +519,9 @@
 		     repeat='indefinite'/>
       </a-sphere>
             
-      <a-box material='src: #floortile; repeat: 32 32' position='0 .005 0' depth="128" height="0" width="128" class="not-clickable" 
+      <a-circle material='src: #floortile; repeat: 32 32' position='0 .005 0' radius="64" class="not-clickable" 
             altspace-cursor-collider="enabled: false">
-      </a-box>
+      </a-circle>
        
 	<!-- Add Planet Rings -->
 	<a-ring src="#ring"
@@ -4733,27 +4733,17 @@
 	  
 <script>
 //Zerithax's Relatively Shit Portal
-UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object3D)
+UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/Doors/Portal.obj', function(object)
 {
-	var scene = document.querySelector('a-scene');
-	var renderer = altspace.getThreeJSRenderer();
     // Object has finished loading, add it to the scene
-   object3D.scale.set(4.5, 5, 4.5);
-   object3D.position.set(0,0,0);
-   object3D.rotation.set(0,0,0);
-   object3D.addEventListener("cursorup", function()
+   object.scale.set(4.5, 5, 4.5);
+   object.position.set(0,0,0);
+   object.rotation.set(0,0,0);
+   object.addEventListener("cursorup", function()
    {
        document.getElementById("zeriportal").click();
    });
-  scene.add(object3D);
-  
-  render();
-  function render() 
-  {
-	  //this part renders everything
-	  requestAnimationFrame(render);
-	  renderer.render(scene);
-  }
+  scene.add(object);
 });
 </script>
 	
