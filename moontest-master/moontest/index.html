@@ -8,7 +8,6 @@
 	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.1/dist/aframe-altspace-component.min.js"></script>
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
 	<script src="https://cdn.rawgit.com/norybiak/UltimateLoader/master/dist/UltimateLoader.min.js"></script>
-	<script id="zeriportal" href="https://account.altvr.com/events/587280503816585742"></script>
 	<script> 
 		(function(){
 	document.addEventListener('DOMContentLoaded', function(){
@@ -4729,11 +4728,14 @@
 		setRandomColor(event.target);	
 		});
 </script>
+	 
+<script id="zeriportal" href="https://account.altvr.com/events/587280503816585742"></script>
 	  
 <script>
-var portal = function(el) {	
-	var portalEl = document.querySelector('#rocket');
-	portalEl.addEventListener("cursorup", function()
+function(){
+	var scene = document.querySelector('a-scene');
+	var portal = document.querySelector('#rocket');
+	portal.addEventListener("cursorup", function()
 {
        document.getElementById("zeriportal").click();
    });
