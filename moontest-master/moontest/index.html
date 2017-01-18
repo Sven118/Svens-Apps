@@ -4731,9 +4731,9 @@
 </script>
 	  
 <script>
-function portal(object) {	
-	var object = document.querySelector('#rocket');
-	object.addEventListener("cursorup", function()
+var portal = function(el) {	
+	var portalEl = document.querySelector('#rocket');
+	portalEl.addEventListener("cursorup", function()
 {
        document.getElementById("zeriportal").click();
    });
