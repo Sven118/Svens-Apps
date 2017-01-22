@@ -1281,7 +1281,7 @@
 <script id="dancefloor" type="text/x-nunjucks-template">
           {% for x in range(0, 10) %}
             {% for z in range(0, 10) %}
-              <a-entity template="src: dancetile.template"
+              <a-entity template="src: dancetile.template; type: handlebars"
                         data-position="{{ x * 10 }} 0 {{ z * 10 }}"></a-entity>
             {% endfor %}
           {% endfor %}
