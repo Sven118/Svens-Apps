@@ -49,7 +49,7 @@
 	<a-asset-item id="statue-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/b8d25840/moontest-master/moontest/models/statue/goldstatue3.obj"></a-asset-item>
         <a-asset-item id="statue-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/e1ad38b9/moontest-master/moontest/models/statue/goldstatue3.mtl"></a-asset-item>
 	<script id="dancefloor" type="text/x-nunjucks-template">
-          {% for x in range(0, 10) %}
+          {% for x in range(0, 20) %}
             {% for z in range(0, 10) %}
               <a-entity template="src: dancetile.template; type: handlebars"
                         data-position="{{ x }} 0 {{ z }}"></a-entity>
