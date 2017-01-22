@@ -1,5 +1,3 @@
-<a-mixin id="tile" geometry="primitive: box; depth: 1; height: .3; width: 1" n-mesh-collider="type: environment"></a-mixin>
-
-<a-entity position="{{ position }}">
-	<a-entity id="dtile mixin="tile">
+<a-entity class="discofloor" position="{{ position }}">
+	<a-box id="dtile" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 </a-entity>
