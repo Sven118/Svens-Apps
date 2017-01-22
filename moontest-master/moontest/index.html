@@ -1277,12 +1277,13 @@
 
 	</a-entity>
 	    
-<script id="dancefloor" type="text/x-jade-template">
-          - for (var x = 0; x < 5; x++) {
-          - for (var z = 0; z < 5; z++) {
-              a-entity(geometry="primitive: box; depth: 1; height: .3; width: 1", position="#{x} 0 #{z}")
-            - }
-          - }
+<script id="dancefloor" type="text/x-nunjucks-template">
+          {% for x in range(0, 10) %}
+            {% for z in range(0, 10) %}
+              <a-entity template="src: dancetile.template"
+                        data-position="{{ x * 10 }} 0 {{ z * 10 }}"></a-entity>
+            {% endfor %}
+          {% endfor %}
         </script>
 	        
     <!-- add a view camera (2d only) -->
