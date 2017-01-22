@@ -1,10 +1,13 @@
-<a-entity class="dtile" position="{{ position }}">
-<a-box size='1 .1 1' n-mesh-collider="type: environment"></a-box>
+<a-mixin id="tile" geometry="primitive: box; depth: 1; height: .3; width: 1" n-mesh-collider="type: environment"></a-mixin>
+
+<a-entity position="{{ position }}">
+	<a-entity id="dtile mixin="tile">
 </a-entity>
+
 <script>
     var changeColorRandom = function() {
           var rand = function() { return Math.floor(Math.random() * 255)};
-          document.querySelector('.dtile').setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+          document.querySelector('#dtile').setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
       }
 	setInterval(changeColorRandom, 1000);
 </script>  
