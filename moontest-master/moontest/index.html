@@ -4696,10 +4696,14 @@
 	</a-entity>
 	   
 	<script id="tiles" type="text/x-nunjucks-template">
+	{% for x in range(0, 1) %}
+            {% for z in range(0, 1) %}
               <a-entity template="src: discotile.template"
                         data-position="{{ x * 10 }} .5 {{ z * 10 }}"></a-entity>
+		{% endfor %}
+          {% endfor %}
         </script>
-	<a-entity template="src: #tiles" position="0 0 0"></a-entity>    
+	<a-entity template="src: #tiles" position="0 0 0"></a-entity>
 	        
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
