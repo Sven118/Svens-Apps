@@ -1,3 +1,1 @@
-<a-entity position="{{ position }}">
-	<a-box id="dtile" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
-</a-entity>
+<a-box position="{{ position }} id="dtile" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
