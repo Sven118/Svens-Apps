@@ -1300,10 +1300,12 @@
     </a-scene>
 	  
 <script>
-var boxes = document.getElementsByClassName("dtile");
-for (var i = 0; i < boxes.length; i++) {
-    var box = boxes[i];
-	box.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+var changeColorRandom = function(){
+    var boxes = document.getElementsByClassName("dtile");
+    for (var i = 0; i < boxes.length; i++) {
+        var box = boxes[i];
+	    box.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+    }
 }
 setInterval(changeColorRandom, 1000);
 </script>	  
