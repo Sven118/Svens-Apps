@@ -1,0 +1,3 @@
+<a-entity class="dtile" position="{{ position }}">
+<a-box size='1 .1 1' n-mesh-collider="type: environment"></a-box>
+</a-entity>
