@@ -49,7 +49,7 @@
 	<a-asset-item id="statue-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/b8d25840/moontest-master/moontest/models/statue/goldstatue3.obj"></a-asset-item>
         <a-asset-item id="statue-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/e1ad38b9/moontest-master/moontest/models/statue/goldstatue3.mtl"></a-asset-item>
 	<script id="dancefloor" type="text/x-nunjucks-template">
-          {% for x in range(0, 26) %}
+          {% for x in range(0, 30) %}
             {% for z in range(0, 20) %}
               <a-entity template="src: dancetile.template; type: handlebars"
                         data-position="{{ x }} 0 {{ z }}"></a-entity>
@@ -366,7 +366,7 @@
 			n-mesh-collider="type: environment">
 		</a-entity>
 	
-		<a-entity class="discofloor" position="-12.5 -.5 -9.5">   
+		<a-entity class="discofloor" position="-14.5 -.5 -9.5">   
 			<a-entity id="discof" template="src: #dancefloor"></a-entity>
 		</a-entity>
 </a-entity>
