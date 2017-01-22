@@ -1,4 +1,4 @@
-<a-entity class="tile" position="{{ position }}">
+<a-entity class="dtile" position="{{ position }}">
 <a-box id="box" size='1 .1 1' n-mesh-collider="type: environment"></a-box>
 	<a-entity id="trigger"
 		n-box-collider="isTrigger:true; type:environment; size: 1 3 1"
