@@ -8,7 +8,6 @@
 	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.1/dist/aframe-altspace-component.min.js"></script>
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
 	<script src="https://cdn.rawgit.com/norybiak/UltimateLoader/master/dist/UltimateLoader.min.js"></script>
-	<script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script>
 	<script> 
 		(function(){
 	document.addEventListener('DOMContentLoaded', function(){
@@ -4692,16 +4691,6 @@
 		</a-entity>
 
 	</a-entity>
-	   
-	<script id="tiles" type="text/x-nunjucks-template">
-	{% for x in range(0, 5) %}
-            {% for z in range(0, 5) %}
-              <a-entity template="src: discotile.template"
-                        data-position="{{ x * 5 }} .5 {{ z * 5 }}"></a-entity>
-		{% endfor %}
-          {% endfor %}
-        </script>
-	<a-entity template="src: #tiles" position="0 1 0"></a-entity>
 	        
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
