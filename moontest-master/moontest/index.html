@@ -4696,10 +4696,10 @@
 	</a-entity>
 	   
 	<script id="tiles" type="text/x-nunjucks-template">
-	{% for x in range(0, 1) %}
-            {% for z in range(0, 1) %}
+	{% for x in range(0, 5) %}
+            {% for z in range(0, 5) %}
               <a-entity template="src: discotile.template"
-                        data-position="{{ x * 10 }} .5 {{ z * 10 }}"></a-entity>
+                        data-position="{{ x * 1 }} .5 {{ z * 1 }}"></a-entity>
 		{% endfor %}
           {% endfor %}
         </script>
