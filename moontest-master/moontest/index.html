@@ -1285,9 +1285,9 @@
 		</a-entity>
 	</a-entity>
 	       
-	    
-<a-entity id="discofloor" template="src: #dancefloor" position="0 1 0"></a-entity>
-
+<a-entity class="discofloor" position="0 1 0">   
+	<a-entity id="discof" template="src: #dancefloor"></a-entity>
+</a-entity>
 	      
 	    
 	    
@@ -1302,7 +1302,7 @@
 <script>
     var changeColorRandom = function() {
           var rand = function() { return Math.floor(Math.random() * 255)};
-          document.querySelector('#disofloor').setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+          document.querySelector('.disofloor').setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
       }
 setInterval(changeColorRandom, 1000);
 </script>	  
