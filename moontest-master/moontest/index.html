@@ -9,7 +9,7 @@
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
 	<script src="https://cdn.rawgit.com/norybiak/UltimateLoader/master/dist/UltimateLoader.min.js"></script>
 	<script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script>
-	<script src="https://unpkg.com/aframe-sun-sky-component@3.0.1/dist/aframe-sun-sky-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-mountain-component@^0.3.2/aframe-mountain-component.min.js"></script>
     </head>
   <body>
 
@@ -939,7 +939,7 @@
 	</a-entity>
 
 	      
-	    
+	  <a-mountain></a-mountain>  
 	    
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
@@ -1356,42 +1356,7 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
 		}
 	});
 	</script>
-	  
-<script>
-      AFRAME.registerComponent('sun-position-setter', {
-        init: function () {
-          var skyEl = this.el;
-          var orbitEl = this.el.sceneEl.querySelector('#orbit');
-          orbitEl.addEventListener('componentchanged', function changeSun (evt) {
-            var sunPosition;
-            var phi;
-            var theta;
-            if (evt.detail.name !== 'rotation') { return; }
-            sunPosition = orbitEl.getComputedAttribute('rotation');
-            if(sunPosition === null) { return; }
-            theta = Math.PI * (- 0.5);
-            phi = 2 * Math.PI * (sunPosition.y / 360 - 0.5);
-            skyEl.setAttribute('material', 'sunPosition', {
-              x: Math.cos(phi),
-              y: Math.sin(phi) * Math.sin(theta),
-              z: -1
-            });
-          });
-        }
-      });
-    </script>
 
-
-      <a-sun-sky position='0 5 0' radius='2' sun-position-setter>
-        <a-entity id="orbit">
-          <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="5000"
-                       repeat="indefinite" easing="linear"></a-animation>
-        </a-entity>
-      </a-sun-sky>
-
-	
-	 
-	  
   </body>
 		
 </html>
