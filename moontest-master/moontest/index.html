@@ -1301,8 +1301,9 @@
 	  
 <script>
 var changeColorRandom = function(){
-    var boxes = document.getElementsByClassName("discotile");
-    for (var i = 0; i < boxes.length; i++) {
+	var rand = function() { return Math.floor(Math.random() * 255)};
+	var boxes = document.getElementsByClassName("discotile");
+		for (var i = 0; i < boxes.length; i++) {
         var box = boxes[i];
 	    box.setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
     }
