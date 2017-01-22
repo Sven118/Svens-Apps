@@ -1295,6 +1295,15 @@
  
 	   
     </a-scene>
+	  
+<script>
+    var changeColorRandom = function() {
+          var rand = function() { return Math.floor(Math.random() * 255)};
+          document.querySelector('#dtile').setAttribute('material', 'color', 'rgb('+rand()+','+rand()+','+rand()+')');
+      }
+setInterval(changeColorRandom, 1000);
+</script>	  
+	  
 	    
 	<!-- Random Color Generator -->  
 <!-- <script>
