@@ -295,7 +295,7 @@
 			repeat='indefinite'/>
 	</a-cylinder>
 	    
-	    
+	    <!-- Inner Earth -->
 	    <a-sphere id='earthclouds'
 		      material='src: #horizon; side: double'
 		      transparent='true'
@@ -320,19 +320,14 @@
 			ease-in-out='linear' 
 			dur='30000'
 			repeat='indefinite'/>
-	    </a-circle>
-	    <a-box material="visible: false"
-			position='1000 -.5 500'
-		   	scale='420 1 420'
-			n-box-collider="type: environment; scale: 210 1 210">		     
-	    </a-box>
+	    </a-circle>	     
 					     
 	    <a-sphere material='color: white' 
 		      position='1000 350 500'
 		      radius='10'
 		      n-sphere-collider="type: environment; radius: 10"></a-sphere>
-	    
-
+	   
+<!-- Dancefloor Platform -->
 <a-entity class='platform' position='0 15 40'>    
 		<!-- <a-entity id="platform1" geometry="primitive: box;"
 			rotation='0 90 0'
