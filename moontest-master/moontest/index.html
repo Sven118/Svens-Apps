@@ -39,6 +39,7 @@
 	<img id="ground" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/ground.jpg"/>
 	<img id="horizon" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/Sky2.jpg"/>
 	<img id="night" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/night.png"/>
+	<img id="water" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/d10ad020/moontest-master/moontest/models/water.jpg"/>
 	<audio id="gate" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/sounds/gate.wav"/>
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacestation15.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacestation15.mtl"></a-asset-item>
@@ -307,8 +308,8 @@
 	    
 	    <a-entity obj-model="obj: #landscape-obj; mtl: #landscape-mtl" position='1000 0 500' scale='3 3 3'></a-entity>
 	    
-	    <a-circle id='earthground'
-		      material='src: #ground; side: double; repeat: 210 210'
+	    <a-circle id='river'
+		      material='src: #water; side: double; repeat: 210 210'
 		      position='1000 -3 500' radius='210'
 		      rotation="-90 0 0"
 		      altspace-cursor-collider="enabled: false"></a-circle>
