@@ -312,7 +312,14 @@
 		      material='src: #water; side: double; repeat: 210 210'
 		      position='1000 -3 500' radius='210'
 		      rotation="-90 0 0"
-		      altspace-cursor-collider="enabled: false"></a-circle>
+		      altspace-cursor-collider="enabled: false">
+	    <a-animation attribute="position" 
+			from='1000 -2 500' to='1000 -3 500'
+			direction='alternate'
+			easing='linear'
+			dur='1500'
+			repeat='indefinite'/>
+	    </a-circle>
 	    <a-box material="visible: false"
 			position='1000 -.5 500'
 		   	scale='420 1 420'
