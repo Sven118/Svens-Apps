@@ -957,9 +957,12 @@
 <!-- Loading Bubble -->
 <a-sphere id='loadingbubble' position='0 2 0'
 		radius='1'
-		color='#7F7FFF'  
+		color='#7F7FFF'
+		side='double'
 		class="not-clickable" 
 		altspace-collider="enabled: false">
+	<a-entity position='0 0 0' rotation='0 180 0'
+		n-text='text: Welcome! Hold Still while everything loads.; fontSize: 2'></a-entity>
 </a-sphere>
         
 
