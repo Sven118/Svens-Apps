@@ -60,6 +60,18 @@
           {% endfor %}
 	</script>
 	</a-assets>
+	    <!-- Loading Bubble -->
+<a-sphere id='loadingbubble' position='0 2 0'
+		radius='1'
+		color='#7F7FFF'
+		side='double'
+		class="not-clickable" 
+		altspace-collider="enabled: false">
+	<a-entity position='-.5 0 0'
+		n-text='text: Welcome! Hold Still; fontSize: 1'></a-entity>
+	<a-entity position='-.5 -.1 0'
+		n-text='text: while everything loads.; fontSize: 1'></a-entity>
+</a-sphere>
 
       <!-- Add Planets -->
      <a-sphere id='earth' position='1000 0 500' radius='250' material='src: #earth;'>
@@ -953,22 +965,7 @@
 			</a-entity>
 		</a-entity>
 	</a-entity>
-	    
-<!-- Loading Bubble -->
-<a-sphere id='loadingbubble' position='0 2 0'
-		radius='1'
-		color='#7F7FFF'
-		side='double'
-		class="not-clickable" 
-		altspace-collider="enabled: false">
-	<a-entity position='0 0 0'
-		n-text='text: Welcome! Hold Still; fontSize: 1'></a-entity>
-	<a-entity position='0 -.1 0'
-		n-text='text: while everything loads.; fontSize: 1'></a-entity>
-</a-sphere>
-        
-
-	      
+      
 	    
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
