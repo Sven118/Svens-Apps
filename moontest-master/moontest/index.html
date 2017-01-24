@@ -1371,6 +1371,135 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
 		}
 	});
 	</script>
+	  
+<script>
+	//Pretty text functions from HaH (https://github.com/AltspaceVR/HaH)
+     var fontScale;
+     if (mobile) {
+         fontScale = 0.85;
+     } else {
+         fontScale = 1.0;
+     }
+
+     function makeSafeFont(g, text, maxWidth) {
+         // get pixel width of longest line
+         var textWidth = Math.max.apply(null, text.map(function(s) {
+             return g.measureText(s).width;
+         }));
+         // if longest line is longer than specified max width
+         if (textWidth > maxWidth) {
+             // scale down font to bring width down to maxWidth
+             var font = g.font;
+             var fontSize = /[0-9.]+px/.exec(font)[0];
+             var fontSizeValue = parseFloat(fontSize);
+             fontSizeValue = (maxWidth / textWidth) * fontSizeValue;
+             font = font.replace(fontSize, fontSizeValue + 'px');
+
+             g.font = font;
+         }
+     }
+
+     function generateTextMaterial(text, options) {
+         var texWidth = options.width || 256;
+         var fontStack = '"Palatino Linotype", "Book Antiqua", Palatino, serif';
+
+         // set up canvas
+         var bmp = document.createElement('canvas');
+         var ctx = bmp.getContext('2d');
+         bmp.width = texWidth;
+         bmp.height = options.height || texWidth;
+
+         ctx.fillStyle = options.backgroundColor;
+         ctx.fillRect(0, 0, texWidth, options.height || texWidth);
+
+         // TODO: We can simplify this code if the nameplates had a sane UV mapping
+         ctx.font = '' + ((options.fontScale || 0.1) * bmp.height * fontScale) + 'px ' + fontStack;
+         makeSafeFont(ctx, [text], 0.9 * texWidth * fontScale);
+         ctx.textAlign = 'center';
+         if (options.textBaseline) {
+             ctx.textBaseline = options.textBaseline;
+         }
+         if (options.fillStyle) {
+             ctx.fillStyle = options.fillStyle;
+         } else {
+             ctx.fillStyle = 'black';
+         }
+         if (options.single) {
+             ctx.lineWidth = 5;
+             ctx.strokeText(text, texWidth / 2, bmp.height / 2);
+             ctx.fillText(text, texWidth / 2, bmp.height / 2);
+         } else {
+             ctx.fillText(text, texWidth / 2, 35);
+             ctx.fillText(text, texWidth / 2, 86);
+         }
+
+         return new THREE.MeshBasicMaterial({
+             map: new THREE.CanvasTexture(bmp)
+         });
+     }
+
+     function generateColorTextMaterial(text, w, h) {
+         var statusMat = generateTextMaterial(text, {
+             backgroundColor: 'transparent',
+             height: 50 * h,
+             width: 256 * w,
+             single: true,
+             fontScale: fontScale,
+             textBaseline: 'middle',
+             fillStyle: 'white'
+         });
+         statusMat.transparent = true;
+         statusMat.side = THREE.DoubleSide;
+         return statusMat;
+     }
+
+     //Create sphere and text
+     var sim = altspace.utilities.Simulation();
+     var geometry = new THREE.SphereGeometry(1.6, 32, 32);
+     var material = new THREE.MeshBasicMaterial({
+         color: 0x0077be
+     });
+     material.side = THREE.DoubleSide;
+     var sphere = new THREE.Mesh(geometry, material);
+     sphere.position.y = 2.7;
+     sim.scene.add(sphere);
+     var loading_material = generateColorTextMaterial("Hey there! Loading: 0%", 4, 4);
+     var plane = new THREE.Mesh(new THREE.PlaneGeometry(0.6, 0.3), loading_material);
+     plane.overdraw = true;
+     plane.material.side = THREE.DoubleSide;
+     plane.position.y = 2.7;
+     plane.position.z = -0.7;
+     sim.scene.add(plane);
+
+     THREE.DefaultLoadingManager.onProgress = function(item, loaded, total) {
+             var percent = loaded / total;
+             if (percent == 1) {
+				 //Give things a bit of time to render.
+                 var material_new = generateColorTextMaterial("Hey there! Loading: 60%", 4, 4);
+                 plane.material = material_new;
+                 plane.needsUpdate = true;
+                 setTimeout(function(e) {
+                     var material_new = generateColorTextMaterial("Hey there! Loading: 80%", 4, 4);
+                     plane.material = material_new;
+                     plane.needsUpdate = true;
+                 }, 4000);
+                 setTimeout(function(e) {
+                     sim.scene.remove(sphere);
+                     sim.scene.remove(plane);
+                 }, 8000);
+             } else {
+                 var material_new = generateColorTextMaterial("Hey there! Loading: " + Math.round(percent * 0.5) + "%", 4, 4);
+                 plane.material = material_new;
+                 plane.needsUpdate = true;
+             }
+     };
+
+     //Remove after 60 seconds, a timeout in the case where the loading sphere randomly doesn't remove for GearVR users.
+     setTimeout(function(e) {
+         sim.scene.remove(sphere);
+         sim.scene.remove(plane);
+     }, 60000);
+</script>
 
   </body>
 		
