@@ -321,7 +321,8 @@
 	    </a-sphere>
 	    
 	    <a-entity obj-model="obj: #landscape-obj; mtl: #landscape-mtl" position='1000 0 500' scale='3 3 3' class="not-clickable" 
-		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"></a-entity>
+		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"
+		n-sound="src: sounds/naturesounds1.wav; volume: .5; loop: true; autoplay: true; rolloff: linear; minDistance: 100; maxDistance: 200"></a-entity>
 	    
 	    <a-circle id='river'
 		      material='src: #water; side: double; repeat: 105 105'
@@ -329,7 +330,7 @@
 		      rotation="-90 0 0"
 		      opacity="0.7"
 		      altspace-cursor-collider="enabled: false"
-		      n-sound="src: sounds/naturesounds1.wav; volume: .5; loop: true; autoplay: true; rolloff: linear; minDistance: 100; maxDistance: 200">
+		      n-sound="src: sounds/riversounds.wav; volume: .5; loop: true; autoplay: true; rolloff: linear; minDistance: 30; maxDistance: 100">
 	    <a-animation attribute="position" 
 			from='1000 -3 498' to='1000 -3 502'
 			direction='alternate'
