@@ -1486,13 +1486,13 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
      });
      material.side = THREE.DoubleSide;
      var sphere = new THREE.Mesh(geometry, material);
-     sphere.position.y = 2.7;
+     sphere.position.y = 1.5;
      sim.scene.add(sphere);
      var loading_material = generateColorTextMaterial("Hey there! Loading: 0%", 4, 4);
      var plane = new THREE.Mesh(new THREE.PlaneGeometry(0.6, 0.3), loading_material);
      plane.overdraw = true;
      plane.material.side = THREE.DoubleSide;
-     plane.position.y = 2.7;
+     plane.position.y = 1.5;
      plane.position.z = -0.7;
      sim.scene.add(plane);
 
@@ -1507,11 +1507,11 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
                      var material_new = generateColorTextMaterial("Hey there! Loading: 80%", 4, 4);
                      plane.material = material_new;
                      plane.needsUpdate = true;
-                 }, 4000);
+                 }, 5000);
                  setTimeout(function(e) {
                      sim.scene.remove(sphere);
                      sim.scene.remove(plane);
-                 }, 8000);
+                 }, 10000);
              } else {
                  var material_new = generateColorTextMaterial("Hey there! Loading: " + Math.round(percent * 0.5) + "%", 4, 4);
                  plane.material = material_new;
