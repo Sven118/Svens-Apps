@@ -329,15 +329,18 @@
 		      rotation="-90 0 0"
 		      opacity="0.7"
 		      altspace-cursor-collider="enabled: false"
-		      n-sound="src: sounds/riversounds.wav; volume: .5; loop: true; autoplay: true; rolloff: linear; minDistance: 50; maxDistance: 100"
-			n-sound="src: sounds/naturesounds1.wav; volume: .5; loop: true; autoplay: true; rolloff: linear; minDistance: 100; maxDistance: 200">
+		      n-sound="src: sounds/riversounds.wav; volume: .5; loop: true; autoplay: true; rolloff: linear; minDistance: 50; maxDistance: 100">
 	    <a-animation attribute="position" 
 			from='1000 -3 498' to='1000 -3 502'
 			direction='alternate'
 			ease-in-out='linear' 
 			dur='30000'
 			repeat='indefinite'/>
-	    </a-circle>	     
+	    </a-circle>	
+	    <a-sphere visible="false"
+		      position='1000 20 500'
+		      radius='5'
+		      n-sound="src: sounds/naturesounds1.wav; volume: .5; loop: true; autoplay: true; rolloff: linear; minDistance: 100; maxDistance: 200"></a-sphere>
 					     
 	    <a-sphere material='color: white' 
 		      position='1000 350 500'
