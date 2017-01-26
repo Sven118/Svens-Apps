@@ -40,7 +40,7 @@
 	<img id="horizon" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/Sky2.jpg"/>
 	<img id="night" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/night.png"/>
 	<img id="water" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/d10ad020/moontest-master/moontest/models/water.jpg"/>
-	<audio id="gate" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/sounds/gate.wav"/>
+	<audio id="naturesounds" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/fa626a63/moontest-master/moontest/sounds/naturesounds1.wav"/>
         <a-asset-item id="ship-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacestation15.obj"></a-asset-item>
         <a-asset-item id="ship-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/master/moontest-master/moontest/models/spacestation/spacestation15.mtl"></a-asset-item>
         <a-asset-item id="ring-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/0a43bcce/moontest-master/moontest/models/spacestation/spacering2.obj"></a-asset-item>
@@ -321,7 +321,8 @@
 	    </a-sphere>
 	    
 	    <a-entity obj-model="obj: #landscape-obj; mtl: #landscape-mtl" position='1000 0 500' scale='3 3 3' class="not-clickable" 
-		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"></a-entity>
+		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"
+		n-sound="src: #naturesounds; volume: 1; loop: true; autoplay: true; "></a-entity>
 	    
 	    <a-circle id='river'
 		      material='src: #water; side: double; repeat: 105 105'
