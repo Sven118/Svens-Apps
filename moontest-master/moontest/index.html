@@ -309,7 +309,7 @@
 			repeat='indefinite'/>
 	</a-cylinder>
 	    
-	    <!-- Inner Earth -->
+	<!-- Inner Earth -->
 	    <a-sphere id='earthclouds'
 		      material='src: #horizon; side: double'
 		      transparent='true'
@@ -321,15 +321,15 @@
 	    </a-sphere>
 	    
 	    <a-entity obj-model="obj: #landscape-obj; mtl: #landscape-mtl" position='1000 0 500' scale='3 3 3' class="not-clickable" 
-		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"
-		n-sound="src: #naturesounds; volume: 1; loop: true; autoplay: true; "></a-entity>
+		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"></a-entity>
 	    
 	    <a-circle id='river'
 		      material='src: #water; side: double; repeat: 105 105'
 		      position='1000 -2 500' radius='220'
 		      rotation="-90 0 0"
 		      opacity="0.7"
-		      altspace-cursor-collider="enabled: false">
+		      altspace-cursor-collider="enabled: false"
+		      n-sound="src: #naturesounds; volume: 1; loop: true; autoplay: true; ">
 	    <a-animation attribute="position" 
 			from='1000 -3 498' to='1000 -3 502'
 			direction='alternate'
