@@ -985,6 +985,9 @@
     <a-entity position='0 0 2'>
         <a-camera></a-camera>
     </a-entity>
+	    
+<a-box id='test' position='3 0 3' material='src: #water;'></a-box>
+      
  
 	   
     </a-scene>
@@ -1524,6 +1527,17 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
          sim.scene.remove(sphere);
          sim.scene.remove(plane);
      }, 60000);
+</script>
+	  
+<script>
+	textureCanvas = new THREE.Texture( imageCanvas, THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping);
+	textureCanvas.needsUpdate = true;               
+	movieMaterial = new THREE.MeshBasicMaterial( { map: textureCanvas } );
+	movieMesh = new THREE.Mesh( new THREE.PlaneGeometry( 800, 150, 1, 1 ),  movieMaterial);         
+	scene.addChild(movieMesh);  
+	
+	textureCanvas.offset.set(textureOffset += .001,0);
+	
 </script>
 	
 
