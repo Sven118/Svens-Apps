@@ -1489,7 +1489,7 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
      sphere.position.y = 1.9;
      sim.scene.add(sphere);
      var loading_material = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: 0%", 8, 4);
-     var plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 0.5), loading_material);
+     var plane = new THREE.Mesh(new THREE.PlaneGeometry(1.5, 0.3), loading_material);
      plane.overdraw = true;
      plane.material.side = THREE.DoubleSide;
      plane.position.y = 1.9;
