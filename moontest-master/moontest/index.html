@@ -1488,7 +1488,7 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
      var sphere = new THREE.Mesh(geometry, material);
      sphere.position.y = 1.9;
      sim.scene.add(sphere);
-     var loading_material = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: 0%", 4, 4);
+     var loading_material = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: 0%", 8, 4);
      var plane = new THREE.Mesh(new THREE.PlaneGeometry(0.6, 0.3), loading_material);
      plane.overdraw = true;
      plane.material.side = THREE.DoubleSide;
@@ -1500,20 +1500,20 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
              var percent = loaded / total;
              if (percent == 1) {
 				 //Give things a bit of time to render.
-                 var material_new = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: 60%", 4, 4);
+                 var material_new = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: 60%", 8, 4);
                  plane.material = material_new;
                  plane.needsUpdate = true;
                  setTimeout(function(e) {
-                     var material_new = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: 80%", 4, 4);
+                     var material_new = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: 80%", 8, 4);
                      plane.material = material_new;
                      plane.needsUpdate = true;
-                 }, 6000);
+                 }, 8000);
                  setTimeout(function(e) {
                      sim.scene.remove(sphere);
                      sim.scene.remove(plane);
-                 }, 12000);
+                 }, 20000);
              } else {
-                 var material_new = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: " + Math.round(percent * 0.5) + "%", 4, 4);
+                 var material_new = generateColorTextMaterial("Welcome! Hold still while everything loads  Loading: " + Math.round(percent * 0.5) + "%", 8, 4);
                  plane.material = material_new;
                  plane.needsUpdate = true;
              }
