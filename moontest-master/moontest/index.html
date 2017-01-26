@@ -1400,7 +1400,7 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
 <script>
 //Pretty text functions from HaH (https://github.com/AltspaceVR/HaH)
      var fontScale;
-     if (mobile) {
+     if (/AltspaceVR-App build-[0-9a-f]{7} Mobile/.test(navigator.userAgent)) {
          fontScale = 0.85;
      } else {
          fontScale = 1.0;
