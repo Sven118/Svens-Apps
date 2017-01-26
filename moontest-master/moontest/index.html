@@ -1482,7 +1482,7 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
      var sim = altspace.utilities.Simulation();
      var geometry = new THREE.SphereGeometry(1.6, 32, 32);
      var material = new THREE.MeshBasicMaterial({
-         color: 0x0077be
+         color: 0x8BBBB2 
      });
      material.side = THREE.DoubleSide;
      var sphere = new THREE.Mesh(geometry, material);
@@ -1507,11 +1507,11 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
                      var material_new = generateColorTextMaterial("Hey there! Loading: 80%", 4, 4);
                      plane.material = material_new;
                      plane.needsUpdate = true;
-                 }, 5000);
+                 }, 6000);
                  setTimeout(function(e) {
                      sim.scene.remove(sphere);
                      sim.scene.remove(plane);
-                 }, 10000);
+                 }, 12000);
              } else {
                  var material_new = generateColorTextMaterial("Hey there! Loading: " + Math.round(percent * 0.5) + "%", 4, 4);
                  plane.material = material_new;
