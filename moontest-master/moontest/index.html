@@ -1530,13 +1530,18 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
 </script>
 	  
 <script>
-	textureCanvas = new THREE.Texture( imageCanvas, THREE.UVMapping, THREE.RepeatWrapping, THREE.RepeatWrapping);
-	textureCanvas.needsUpdate = true;               
-	movieMaterial = new THREE.MeshBasicMaterial( { map: textureCanvas } );
-	movieMesh = new THREE.Mesh( new THREE.PlaneGeometry( 800, 150, 1, 1 ),  movieMaterial);         
-	scene.addChild(movieMesh);  
-	
-	textureCanvas.offset.set(textureOffset += .001,0);
+var texture = THREE.ImageUtils.loadTexture( 'models/water1.jpg' );
+texture.wrapS = THREE.RepeatWrapping;
+texture.wrapT = THREE.RepeatWrapping;
+
+// And then every frame...
+
+function render() {
+
+    texture.offset.x += 0.1;
+    renderer.render( camera, material );
+
+}
 	
 </script>
 	
