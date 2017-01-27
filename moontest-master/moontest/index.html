@@ -59,6 +59,10 @@
             {% endfor %}
           {% endfor %}
 	</script>
+	<a-mixin id="laser" geometry="primitive: cylinder; radius: 0.05; translate: 0 -2 0"
+                      material="color: green; metalness: 0.2; opacity: 0.4; roughness: 0.3"
+                      projectile="speed: -0.5"></a-mixin>
+
 	</a-assets>
 	    
 	    <!-- Loading Bubble 
@@ -1529,6 +1533,18 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
      }, 60000);
 </script>
 	  
+<script>
+// projectile component to have an entity travel straight.
+AFRAME.registerComponent('projectile', {
+  schema: {
+    speed: { default: -0.4 }
+  },
+
+  tick: function () {
+    this.el.object3D.translateY(this.data.speed);
+  }
+});
+</script>	  
 
   </body>
 		
