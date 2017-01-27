@@ -1529,22 +1529,6 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
      }, 60000);
 </script>
 	  
-<script>
-var texture = THREE.TextureLoader('models/water1.jpg' );
-texture.wrapS = THREE.RepeatWrapping;
-texture.wrapT = THREE.RepeatWrapping;
-
-// And then every frame...
-
-function render() {
-
-    texture.offset.x += 0.1;
-    renderer.render( camera, material );
-
-}
-	
-</script>
-	
 
   </body>
 		
