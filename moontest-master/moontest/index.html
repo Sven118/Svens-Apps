@@ -51,6 +51,8 @@
         <a-asset-item id="statue-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/e1ad38b9/moontest-master/moontest/models/statue/goldstatue3.mtl"></a-asset-item>
 	<a-asset-item id="landscape-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/acb07d29/moontest-master/moontest/models/landscape/landscape3.obj"></a-asset-item>
         <a-asset-item id="landscape-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/acb07d29/moontest-master/moontest/models/landscape/landscape3.mtl"></a-asset-item>
+	<a-asset-item id="marsland-obj" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/b4f53633/moontest-master/moontest/models/landscape/marsland.obj"></a-asset-item>
+        <a-asset-item id="marsland-mtl" crossorigin src="https://cdn.rawgit.com/Sven118/Svens-Apps/b4f53633/moontest-master/moontest/models/landscape/marsland.mtl"></a-asset-item>
 	<script id="dancefloor" type="text/x-nunjucks-template">
           {% for x in range(0, 30) %}
             {% for z in range(0, 20) %}
@@ -133,9 +135,8 @@
 		     repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere position='400 100 -500' radius='25' material='src: #mars;'
-		geometry="segmentsWidth: 8; segmentsHeight: 8"
-		n-sphere-collider="type: environment; radius: 25">
+      <a-sphere id='mars' position='400 100 -500' radius='25' material='src: #mars;'
+		geometry="segmentsWidth: 8; segmentsHeight: 8">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
 		     easing='linear' 
@@ -347,6 +348,21 @@
 		      position='1000 350 500'
 		      radius='10'
 		      n-sphere-collider="type: environment; radius: 10"></a-sphere>
+	    
+<!-- Inner Mars -->
+	    <a-sphere id='marssky'
+		      material='color: #E3A549'
+		      opacity='0.5'
+		      position='400 100 -500' radius='23'></a-sphere>
+	    <a-entity obj-model="obj: #marsland-obj; mtl: #marsland-mtl" position='400 100 -500' scale='1 1 1' class="not-clickable" 
+		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"></a-entity>
+	    <a-sphere material='color: white' 
+		      position='400 130 -500'
+		      radius='10'
+		      n-sphere-collider="type: environment; radius: 10"></a-sphere>
+	    
+		    
+	    
 	   
 <!-- Dancefloor Platform -->
 <a-entity class='platform' position='0 15 40'>    
