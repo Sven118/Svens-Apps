@@ -135,7 +135,7 @@
 		     repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere id='mars' position='400 100 -500' radius='25' material='src: #mars;'
+      <a-sphere id='mars' position='400 100 -500' radius='30' material='src: #mars;'
 		geometry="segmentsWidth: 15; segmentsHeight: 15">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
@@ -352,7 +352,7 @@
 <!-- Inner Mars -->
 	    <a-sphere id='marssky'
 		      material='color: #E3A549; side: double'
-		      opacity='0.8'
+		      opacity='0.9'
 		      position='400 100 -500' radius='20'></a-sphere>
 	    <a-entity obj-model="obj: #marsland-obj; mtl: #marsland-mtl" position='400 100 -500' scale='.4 .4 .4' class="not-clickable" 
 		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"></a-entity>
