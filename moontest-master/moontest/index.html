@@ -135,7 +135,7 @@
 		     repeat='indefinite'/>
       </a-sphere>
       
-      <a-sphere id='mars' position='400 100 -500' radius='30' material='src: #mars;'
+      <a-sphere id='mars' position='420 100 -520' radius='50' material='src: #mars;'
 		geometry="segmentsWidth: 15; segmentsHeight: 15">
         <!-- add an animation to make it rotate -->
         <a-animation to='0 360 0' 
@@ -354,18 +354,18 @@
 	    <a-sphere id='marssky'
 		      material='color: #E3A549; side: double'
 		      opacity='0.9'
-		      position='400 100 -500' radius='20'></a-sphere>
-	    <a-entity obj-model="obj: #marsland-obj; mtl: #marsland-mtl" position='400 100 -500' scale='.4 .4 .4' class="not-clickable" 
+		      position='400 100 -500' radius='40'></a-sphere>
+	    <a-entity obj-model="obj: #marsland-obj; mtl: #marsland-mtl" position='420 100 -520' scale='.5 .5 .5' class="not-clickable" 
 		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"></a-entity>
 	    <a-sphere material='color: white' 
-		      position='400 150 -500'
+		      position='420 150 -520'
 		      radius='5'
 		      n-sphere-collider="type: environment; radius: 5"></a-sphere>
 	    <a-sphere material="visible: false"
-		      position='400 110 -500'
+		      position='420 110 -520'
 		      radius='5'
-		      n-sound="src: sounds/wind.wav; volume: .3; loop: true; autoplay: true; rolloff: linear; minDistance: 20; maxDistance: 22"></a-sphere>
-	    
+		      n-sound="src: sounds/wind.wav; volume: .3; loop: true; autoplay: true; rolloff: linear; minDistance: 40; maxDistance: 42"></a-sphere>
+
 		    
 	    
 	   
