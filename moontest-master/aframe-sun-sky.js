@@ -64,7 +64,7 @@
 	  defaultComponents: {
 	    geometry: {
 	      primitive: 'sphere',
-	      radius: 5000,
+	      radius: 2500,
 	      segmentsWidth: 64,
 	      segmentsHeight: 20
 	    },
