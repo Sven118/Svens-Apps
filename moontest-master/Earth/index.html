@@ -9,32 +9,8 @@
 	<script src="https://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
 	<script src="https://cdn.rawgit.com/norybiak/UltimateLoader/master/dist/UltimateLoader.min.js"></script>
 	<script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script>
-	<script src="https://cdn.rawgit.com/Sven118/Svens-Apps/efda0a5c/moontest-master/aframe-sun-sky.js"></script>
     </head>
   <body>
-        <script>
-      AFRAME.registerComponent('sun-position-setter', {
-        init: function () {
-          var skyEl = this.el;
-          var orbitEl = this.el.sceneEl.querySelector('#orbit');
-          orbitEl.addEventListener('componentchanged', function changeSun (evt) {
-            var sunPosition;
-            var phi;
-            var theta;
-            if (evt.detail.name !== 'rotation') { return; }
-            sunPosition = orbitEl.getComputedAttribute('rotation');
-            if(sunPosition === null) { return; }
-            theta = Math.PI * (- 0.5);
-            phi = 2 * Math.PI * (sunPosition.y / 360 - 0.5);
-            skyEl.setAttribute('material', 'sunPosition', {
-              x: Math.cos(phi),
-              y: Math.sin(phi) * Math.sin(theta),
-              z: -1
-            });
-          });
-        }
-      });
-    </script> 
 
     <!-- set up the scene -->
     <a-scene altspace= "fullspace: true">
@@ -46,19 +22,12 @@
         <img id='land' crossorigin src='https://cdn.rawgit.com/Sven118/Svens-Apps/68a0d5ee/moontest-master/Earth/models/grass.png'/>
 	</a-assets>
 
-     <a-plane class='lands' material='src: #land; repeat: 128 128' position='0 0 0' height="256" width="256" rotation="-90 180 0" class="not-clickable" 
+     <a-plane class='land' material='src: #land; repeat: 128 128' position='0 .2 0' height="256" width="256" rotation="-90 180 0" class="not-clickable" 
             altspace-cursor-collider="enabled: false" >
 
       </a-plane>
 
-    <!-- Add Skybox -->  
-   
-	<a-sun-sky sun-position-setter>
-        <a-entity id="orbit">
-          <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="20000"
-                       repeat="indefinite" easing="linear"></a-animation>
-        </a-entity>
-      </a-sun-sky> 
+    <!-- Add Skybox -->   
 
 	    
     <!-- add a view camera (2d only) -->
