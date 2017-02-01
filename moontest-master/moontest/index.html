@@ -63,7 +63,7 @@
 	</script>
 	</a-assets>
 	    
-<a-entity id="load-message" position="0 2.3 -0.7" n-text="text:Hey there!Loading: 0%; fontSize: 1; width: 1; height: 0.2;"></a-entity>
+<a-entity id="load-message" position="0 1.7 -0.7" n-text="text:Hey there!Loading: 0%; fontSize: 1; width: 1; height: 0.2;"></a-entity>
 
       <!-- Add Planets -->
      <a-sphere id='earth' position='1000 0 500' radius='250' material='src: #earth;'>
@@ -1412,7 +1412,7 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
     });
     material.side = THREE.DoubleSide;
     var sphere = new THREE.Mesh(geometry, material);
-    sphere.position.y = 2.3;
+    sphere.position.y = 1.7;
     sim.scene.add(sphere);
 
     THREE.DefaultLoadingManager.onProgress = function(item, loaded, total) {
