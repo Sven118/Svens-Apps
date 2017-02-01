@@ -1405,7 +1405,8 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
 	</script>
 	  
 <script>
-var geometry = new THREE.SphereGeometry(1.6, 6, 6);
+    var sim = altspace.utilities.Simulation();
+    var geometry = new THREE.SphereGeometry(1.6, 6, 6);
     var material = new THREE.MeshBasicMaterial({
         color: 0x0077be
     });
