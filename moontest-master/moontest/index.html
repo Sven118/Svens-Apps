@@ -63,7 +63,7 @@
 	</script>
 	</a-assets>
 	    
-<a-entity id="load-message" position="0 2.3 -0.7" n-text="text:Hey! Hold still while everything loads Loading: 0%; fontSize: 1; width: 1; height: 0.2;"></a-entity>
+<a-entity id="load-message" position="0 2.3 -0.7" n-text="text:Hey there!Loading: 0%; fontSize: 1; width: 1; height: 0.2;"></a-entity>
 
       <!-- Add Planets -->
      <a-sphere id='earth' position='1000 0 500' radius='250' material='src: #earth;'>
@@ -1420,9 +1420,9 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
             var percent = loaded / total;
             if (percent == 1) {
                 var message = document.querySelector('#load-message');
-                message.setAttribute('n-text', 'text', "Hey! Hold still while everything loads Loading: 60%");
+                message.setAttribute('n-text', 'text', "Hold still while everything loads Loading: 60%");
                 setTimeout(function(e) {
-                    message.setAttribute('n-text', 'text', "Hey! Hold still while everything loads Loading: 80%");
+                    message.setAttribute('n-text', 'text', "Hold still while everything loads Loading: 80%");
                 }, 4000);
                 setTimeout(function(e) {
                     sim.scene.remove(sphere);
@@ -1430,8 +1430,8 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
                 }, 8000);
             } else {
                 var message = document.querySelector('#load-message');
-                console.log("Hey! Hold still while everything loads Loading: " + (percent * 50).toFixed(2) + "%");
-                message.setAttribute('n-text', 'text', "Hey! Hold still while everything loads Loading: " + (percent * 50).toFixed(2) + "%");
+                console.log("Hold still while everything loads Loading: " + (percent * 50).toFixed(2) + "%");
+                message.setAttribute('n-text', 'text', "Hold still while everything loads Loading: " + (percent * 50).toFixed(2) + "%");
             }
         }
     };
