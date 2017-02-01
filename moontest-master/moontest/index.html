@@ -1423,11 +1423,11 @@ UltimateLoader.load('https://rawgit.com/Zerithax/zerithax.github.io/master/Hub/D
                 message.setAttribute('n-text', 'text', "Hold still while everything loads Loading: 60%");
                 setTimeout(function(e) {
                     message.setAttribute('n-text', 'text', "Hold still while everything loads Loading: 80%");
-                }, 4000);
+                }, 6000);
                 setTimeout(function(e) {
                     sim.scene.remove(sphere);
                     message.setAttribute('n-text', 'text', "");
-                }, 8000);
+                }, 12000);
             } else {
                 var message = document.querySelector('#load-message');
                 console.log("Hold still while everything loads Loading: " + (percent * 50).toFixed(2) + "%");
