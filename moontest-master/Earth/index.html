@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+		
+  <head>
+    <meta charset="utf-8">
+      <title>Earth</title>
+	<script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
+	<script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.3.1/dist/aframe-altspace-component.min.js"></script>
+	<script src="https://sdk.altvr.com/libs/altspace.js/0.28.1/altspace.min.js"></script>
+	<script src="https://cdn.rawgit.com/norybiak/UltimateLoader/master/dist/UltimateLoader.min.js"></script>
+	<script src="https://rawgit.com/ngokevin/aframe-template-component/master/dist/aframe-template-component.min.js"></script>
+    </head>
+  <body>
+
+    <!-- set up the scene -->
+    <a-scene altspace= "fullspace: true">
+	    
+
+	<!-- preload all our textures -->
+    <a-assets>
+        <img id='sky' crossorigin src=''/>
+        <img id='land' crossorigin src=''/>
+	</a-assets>
+
+     <a-plane material='src: #land; repeat: 128 128' position='0 0 0' height="256" width="256" rotation="-90 180 0" class="not-clickable" 
+            altspace-cursor-collider="enabled: false">
+      </a-plane>
+
+    <!-- Add Skybox -->    
+	<a-sky src='#sky' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false" rotation='0 0 0'>
+         <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='400000' 
+		     repeat='indefinite'/>
+    </a-sky>
+ 
+	    
+    <!-- add a view camera (2d only) -->
+    <a-entity position='0 0 2'>
+        <a-camera></a-camera>
+    </a-entity>
+	   
+    </a-scene>
+
+  </body>
+		
+</html>
