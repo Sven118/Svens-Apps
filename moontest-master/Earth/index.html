@@ -25,23 +25,8 @@
 	<a-plane class='land' material='src: #land; repeat: 256 256' position='0 .1 0' height="1000" width="1000" rotation="-90 180 0" class="not-clickable" 
             altspace-cursor-collider="enabled: false">
 	</a-plane>
-
-    <!-- Add Skybox -->   
-      <a-sun-sky sun-position-setter>
-        <a-entity id="orbit">
-          <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="5000"
-                       repeat="indefinite" easing="linear"></a-animation>
-        </a-entity>
-      </a-sun-sky>
 	    
-    <!-- add a view camera (2d only) -->
-    <a-entity position='0 0 2'>
-        <a-camera></a-camera>
-    </a-entity>
-	   
-    </a-scene>
-	  
-	<script>
+<script>
       AFRAME.registerComponent('sun-position-setter', {
         init: function () {
           var skyEl = this.el;
@@ -63,7 +48,22 @@
           });
         }
       });
-	</script>
+</script>
+
+    <!-- Add Skybox -->   
+      <a-sun-sky sun-position-setter>
+        <a-entity id="orbit">
+          <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="5000"
+                       repeat="indefinite" easing="linear"></a-animation>
+        </a-entity>
+      </a-sun-sky>
+	    
+    <!-- add a view camera (2d only) -->
+    <a-entity position='0 0 2'>
+        <a-camera></a-camera>
+    </a-entity>
+	   
+    </a-scene>
 
   </body>
 		
