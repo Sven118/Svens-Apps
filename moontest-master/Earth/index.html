@@ -28,12 +28,12 @@
 	</a-plane>
 
     <!-- Add Skybox -->   
-	<a-sky src='#sky' radius='2500' rotation='90 0 0'>
-	    <a-animation to='0 0 360' 
-		     easing='linear' 
-		     dur='100000' 
-		     repeat='indefinite'/>
-	 </a-sky>
+      <a-sun-sky sun-position-setter>
+        <a-entity id="orbit">
+          <a-animation attribute="rotation" from="0 0 0" to="0 360 0" dur="5000"
+                       repeat="indefinite" easing="linear"></a-animation>
+        </a-entity>
+      </a-sun-sky>
 	    
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
@@ -41,6 +41,30 @@
     </a-entity>
 	   
     </a-scene>
+	  
+	<script>
+      AFRAME.registerComponent('sun-position-setter', {
+        init: function () {
+          var skyEl = this.el;
+          var orbitEl = this.el.sceneEl.querySelector('#orbit');
+          orbitEl.addEventListener('componentchanged', function changeSun (evt) {
+            var sunPosition;
+            var phi;
+            var theta;
+            if (evt.detail.name !== 'rotation') { return; }
+            sunPosition = orbitEl.getComputedAttribute('rotation');
+            if(sunPosition === null) { return; }
+            theta = Math.PI * (- 0.5);
+            phi = 2 * Math.PI * (sunPosition.y / 360 - 0.5);
+            skyEl.setAttribute('material', 'sunPosition', {
+              x: Math.cos(phi),
+              y: Math.sin(phi) * Math.sin(theta),
+              z: -1
+            });
+          });
+        }
+      });
+	</script>
 
   </body>
 		
