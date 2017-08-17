@@ -28,7 +28,12 @@
 	</a-plane>
 
     <!-- Add Skybox -->   
-	<a-sky src='#sky' radius='2500' rotation='90 0 0'></a-sky>
+	<a-sky src='#sky' radius='2500' rotation='90 0 0'>
+	    <a-animation to='0 360 0' 
+		     easing='linear' 
+		     dur='100000' 
+		     repeat='indefinite'/>
+	 </a-sky>
 	    
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
