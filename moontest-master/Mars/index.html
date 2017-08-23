@@ -20,6 +20,7 @@
 	<a-assets>
         <a-asset-item id="mars-obj" crossorigin src="https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/Mars/models/mars.obj"></a-asset-item>
         <a-asset-item id="mars-mtl" crossorigin src="https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/Mars/models/mars.mtl"></a-asset-item>
+	<img id='sky' crossorigin src='https://rawgit.com/Sven118/Svens-Apps/master/moontest-master/Mars/models/marssky.png'/>	
 	</a-assets>
 	    
 
@@ -28,7 +29,7 @@
 	    
 
     <!-- Add Skybox -->   
-
+	<a-sky src='#sky' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false" geometry="segmentsWidth: 8; segmentsHeight: 8"></a-sky>
 	    
     <!-- add a view camera (2d only) -->
     <a-entity position='0 0 2'>
