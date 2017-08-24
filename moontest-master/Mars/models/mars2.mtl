@@ -1,4 +1,4 @@
-# Blender MTL File: 'mars2.blend'
+# Blender MTL File: 'None'
 # Material Count: 1
 
 newmtl Material.001
@@ -11,4 +11,4 @@ Ni 1.000000
 d 1.000000
 illum 2
 map_Kd marsbake.png
-disp Mars\\models\\marsbake.png
+disp marsbake.png
