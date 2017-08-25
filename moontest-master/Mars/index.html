@@ -39,6 +39,12 @@
 		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"></a-entity>
 	<a-entity obj-model="obj: #mars4-obj; mtl: #mars4-mtl" position='0 0 55' scale='15 15 15' class="not-clickable" 
 		altspace-collider="enabled: false" n-mesh-collider="type: environment; convex: false"></a-entity>
+	    
+	    <!-- Add Ambiance -->
+	<a-sphere material="visible: false"
+		position='0 10 0'
+		radius='5'
+		n-sound="src: sounds/wind.wav; volume: .2; loop: true; autoplay: true; rolloff: linear; minDistance: 60; maxDistance: 100"></a-sphere>
 
     <!-- Add Skybox -->   
 	<a-sky src='#sky' radius='2500' class="not-clickable" altspace-cursor-collider="enabled: false"></a-sky>
