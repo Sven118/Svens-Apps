@@ -87,7 +87,7 @@
 	* <head>
 	*   <title>My A-Frame Scene</title>
 	*   <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
-	*   <script src="https://cdn.rawgit.com/AltspaceVR/aframe-altspace-component/v1.1.1/dist/aframe-altspace-component.min.js"></script>
+	*   <script src="https://cdn.jsdelivr.net/gh/AltspaceVR/aframe-altspace-component@v1.1.1/dist/aframe-altspace-component.min.js"></script>
 	* </head>
 	* <body>
 	*   <a-scene altspace>
